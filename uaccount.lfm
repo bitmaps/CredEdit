@@ -10,7 +10,7 @@ object frAccount: TfrAccount
   OnCloseQuery = FormCloseQuery
   OnShow = FormShow
   Position = poOwnerFormCenter
-  LCLVersion = '1.2.4.0'
+  LCLVersion = '1.6.0.4'
   object GroupBox1: TGroupBox
     Left = 10
     Height = 431
@@ -19,46 +19,46 @@ object frAccount: TfrAccount
     Align = alClient
     BorderSpacing.Around = 10
     Caption = 'Account Details'
-    ClientHeight = 413
+    ClientHeight = 411
     ClientWidth = 336
     TabOrder = 0
     object Label1: TLabel
       Left = 16
-      Height = 13
+      Height = 15
       Top = 14
-      Width = 73
+      Width = 83
       Caption = 'Account Name:'
       ParentColor = False
     end
     object Label2: TLabel
       Left = 16
-      Height = 13
+      Height = 15
       Top = 46
-      Width = 70
+      Width = 77
       Caption = 'Account Type:'
       ParentColor = False
     end
     object Label3: TLabel
       Left = 16
-      Height = 13
+      Height = 15
       Top = 78
-      Width = 77
+      Width = 83
       Caption = 'Account Status:'
       ParentColor = False
     end
     object Label4: TLabel
       Left = 16
-      Height = 13
+      Height = 15
       Top = 110
-      Width = 70
+      Width = 76
       Caption = 'Initial Balance:'
       ParentColor = False
     end
     object Label5: TLabel
       Left = 16
-      Height = 13
+      Height = 15
       Top = 139
-      Width = 48
+      Width = 51
       Caption = 'Currency:'
       ParentColor = False
     end
@@ -72,10 +72,10 @@ object frAccount: TfrAccount
     end
     object cbAccountType: TComboBox
       Left = 123
-      Height = 21
+      Height = 23
       Top = 38
       Width = 185
-      ItemHeight = 13
+      ItemHeight = 15
       Items.Strings = (
         'Current'
         'Term'
@@ -86,10 +86,10 @@ object frAccount: TfrAccount
     end
     object cbAccountStatus: TComboBox
       Left = 123
-      Height = 21
+      Height = 23
       Top = 70
       Width = 185
-      ItemHeight = 13
+      ItemHeight = 15
       Items.Strings = (
         'Open'
         'Closed'
@@ -99,7 +99,7 @@ object frAccount: TfrAccount
     end
     object eAccountName: TDBEdit
       Left = 123
-      Height = 21
+      Height = 23
       Top = 6
       Width = 185
       DataField = 'ACCOUNTNAME'
@@ -112,7 +112,7 @@ object frAccount: TfrAccount
       Left = 123
       Height = 17
       Top = 174
-      Width = 108
+      Width = 119
       Caption = 'Favourite Account'
       DataField = 'FAVORITEACCT'
       DataSource = dmData.dsAccountList
@@ -123,7 +123,7 @@ object frAccount: TfrAccount
     end
     object eInitialBalance: TEdit
       Left = 123
-      Height = 21
+      Height = 23
       Top = 102
       Width = 184
       Alignment = taRightJustify
@@ -140,11 +140,11 @@ object frAccount: TfrAccount
       TabOrder = 6
       object tsNotes: TTabSheet
         Caption = 'Notes'
-        ClientHeight = 174
+        ClientHeight = 172
         ClientWidth = 304
         object memNotes: TDBMemo
           Left = 0
-          Height = 174
+          Height = 172
           Top = 0
           Width = 304
           Align = alClient

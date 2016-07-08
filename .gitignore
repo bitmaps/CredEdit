@@ -34,3 +34,7 @@ lib/
 
 # CredEdit database tables
 *.db3
+
+# CredEdit user created files
+*.ini
+*.mcv

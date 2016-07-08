@@ -9,7 +9,7 @@ object frAbout: TfrAbout
   ClientWidth = 377
   OnCreate = FormCreate
   Position = poOwnerFormCenter
-  LCLVersion = '1.7'
+  LCLVersion = '1.6.0.4'
   object pBottom: TPanel
     Left = 0
     Height = 34
@@ -57,7 +57,7 @@ object frAbout: TfrAbout
         ClientWidth = 325
         TabOrder = 0
         object lbProductVersion: TLabel
-          Left = 131
+          Left = 107
           Height = 15
           Top = 48
           Width = 91
@@ -65,7 +65,7 @@ object frAbout: TfrAbout
           ParentColor = False
         end
         object lbFileDate: TLabel
-          Left = 131
+          Left = 107
           Height = 15
           Top = 72
           Width = 52
@@ -73,7 +73,7 @@ object frAbout: TfrAbout
           ParentColor = False
         end
         object lbProductName: TLabel
-          Left = 131
+          Left = 107
           Height = 15
           Top = 8
           Width = 87
@@ -83,7 +83,7 @@ object frAbout: TfrAbout
           ParentFont = False
         end
         object lbWebsite: TLabel
-          Left = 131
+          Left = 107
           Height = 15
           Top = 120
           Width = 45
@@ -91,7 +91,7 @@ object frAbout: TfrAbout
           ParentColor = False
         end
         object lbWebsiteURL: TLabel
-          Left = 186
+          Left = 162
           Height = 15
           Top = 120
           Width = 73
@@ -550,7 +550,7 @@ object frAbout: TfrAbout
           Proportional = True
         end
         object lbZeosVersion: TLabel
-          Left = 131
+          Left = 107
           Height = 15
           Top = 96
           Width = 74
