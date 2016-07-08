@@ -1,0 +1,291 @@
+object frAccount: TfrAccount
+  Left = 427
+  Height = 485
+  Top = 260
+  Width = 360
+  BorderStyle = bsDialog
+  Caption = 'Edit Account'
+  ClientHeight = 485
+  ClientWidth = 360
+  OnCloseQuery = FormCloseQuery
+  OnShow = FormShow
+  Position = poOwnerFormCenter
+  LCLVersion = '1.2.4.0'
+  object GroupBox1: TGroupBox
+    Left = 10
+    Height = 431
+    Top = 10
+    Width = 340
+    Align = alClient
+    BorderSpacing.Around = 10
+    Caption = 'Account Details'
+    ClientHeight = 413
+    ClientWidth = 336
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 16
+      Height = 13
+      Top = 14
+      Width = 73
+      Caption = 'Account Name:'
+      ParentColor = False
+    end
+    object Label2: TLabel
+      Left = 16
+      Height = 13
+      Top = 46
+      Width = 70
+      Caption = 'Account Type:'
+      ParentColor = False
+    end
+    object Label3: TLabel
+      Left = 16
+      Height = 13
+      Top = 78
+      Width = 77
+      Caption = 'Account Status:'
+      ParentColor = False
+    end
+    object Label4: TLabel
+      Left = 16
+      Height = 13
+      Top = 110
+      Width = 70
+      Caption = 'Initial Balance:'
+      ParentColor = False
+    end
+    object Label5: TLabel
+      Left = 16
+      Height = 13
+      Top = 139
+      Width = 48
+      Caption = 'Currency:'
+      ParentColor = False
+    end
+    object bCurrency: TButton
+      Left = 123
+      Height = 25
+      Top = 134
+      Width = 185
+      Caption = 'Currency'
+      TabOrder = 0
+    end
+    object cbAccountType: TComboBox
+      Left = 123
+      Height = 21
+      Top = 38
+      Width = 185
+      ItemHeight = 13
+      Items.Strings = (
+        'Current'
+        'Term'
+        'Investment'
+      )
+      Style = csDropDownList
+      TabOrder = 1
+    end
+    object cbAccountStatus: TComboBox
+      Left = 123
+      Height = 21
+      Top = 70
+      Width = 185
+      ItemHeight = 13
+      Items.Strings = (
+        'Open'
+        'Closed'
+      )
+      Style = csDropDownList
+      TabOrder = 2
+    end
+    object eAccountName: TDBEdit
+      Left = 123
+      Height = 21
+      Top = 6
+      Width = 185
+      DataField = 'ACCOUNTNAME'
+      DataSource = dmData.dsAccountList
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 3
+    end
+    object cbFavouriteAccount: TDBCheckBox
+      Left = 123
+      Height = 17
+      Top = 174
+      Width = 108
+      Caption = 'Favourite Account'
+      DataField = 'FAVORITEACCT'
+      DataSource = dmData.dsAccountList
+      TabOrder = 4
+      ValueChecked = 'True'
+      ValueUnchecked = 'False'
+      Visible = False
+    end
+    object eInitialBalance: TEdit
+      Left = 123
+      Height = 21
+      Top = 102
+      Width = 184
+      Alignment = taRightJustify
+      OnExit = eInitialBalanceExit
+      TabOrder = 5
+    end
+    object PageControl1: TPageControl
+      Left = 12
+      Height = 200
+      Top = 199
+      Width = 312
+      ActivePage = tsNotes
+      TabIndex = 0
+      TabOrder = 6
+      object tsNotes: TTabSheet
+        Caption = 'Notes'
+        ClientHeight = 174
+        ClientWidth = 304
+        object memNotes: TDBMemo
+          Left = 0
+          Height = 174
+          Top = 0
+          Width = 304
+          Align = alClient
+          DataField = 'NOTES'
+          DataSource = dmData.dsAccountList
+          TabOrder = 0
+        end
+      end
+      object tsOthers: TTabSheet
+        Caption = 'Others'
+        ClientHeight = 174
+        ClientWidth = 304
+        object Label6: TLabel
+          Left = 12
+          Height = 13
+          Top = 23
+          Width = 83
+          Caption = 'Account Number:'
+          ParentColor = False
+        end
+        object Label7: TLabel
+          Left = 12
+          Height = 13
+          Top = 54
+          Width = 39
+          Caption = 'Held At:'
+          ParentColor = False
+        end
+        object Label8: TLabel
+          Left = 12
+          Height = 13
+          Top = 87
+          Width = 43
+          Caption = 'Website:'
+          ParentColor = False
+        end
+        object Label9: TLabel
+          Left = 12
+          Height = 13
+          Top = 117
+          Width = 42
+          Caption = 'Contact:'
+          ParentColor = False
+        end
+        object Label10: TLabel
+          Left = 12
+          Height = 13
+          Top = 147
+          Width = 60
+          Caption = 'Access Info:'
+          ParentColor = False
+        end
+        object eAccountNumber: TDBEdit
+          Left = 107
+          Height = 21
+          Top = 15
+          Width = 185
+          DataField = 'ACCOUNTNUM'
+          DataSource = dmData.dsAccountList
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 0
+        end
+        object eHeldAt: TDBEdit
+          Left = 107
+          Height = 21
+          Top = 46
+          Width = 185
+          DataField = 'HELDAT'
+          DataSource = dmData.dsAccountList
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 1
+        end
+        object eWebsite: TDBEdit
+          Left = 107
+          Height = 21
+          Top = 79
+          Width = 185
+          DataField = 'WEBSITE'
+          DataSource = dmData.dsAccountList
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 2
+        end
+        object eContact: TDBEdit
+          Left = 107
+          Height = 21
+          Top = 109
+          Width = 185
+          DataField = 'CONTACTINFO'
+          DataSource = dmData.dsAccountList
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 3
+        end
+        object eAccessInfo: TDBEdit
+          Left = 107
+          Height = 21
+          Top = 139
+          Width = 185
+          DataField = 'ACCESSINFO'
+          DataSource = dmData.dsAccountList
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 4
+        end
+      end
+    end
+  end
+  object pBottom: TPanel
+    Left = 0
+    Height = 34
+    Top = 451
+    Width = 360
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 34
+    ClientWidth = 360
+    TabOrder = 1
+    object bOk: TButton
+      Left = 191
+      Height = 25
+      Top = 1
+      Width = 75
+      Anchors = [akTop, akRight]
+      Caption = '&Ok'
+      Default = True
+      ModalResult = 1
+      TabOrder = 0
+    end
+    object bCancel: TButton
+      Left = 274
+      Height = 25
+      Top = 1
+      Width = 75
+      Anchors = [akTop, akRight]
+      Caption = '&Cancel'
+      ModalResult = 2
+      ParentShowHint = False
+      TabOrder = 1
+    end
+  end
+end

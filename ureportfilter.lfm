@@ -1,0 +1,110 @@
+object frReportFilter: TfrReportFilter
+  Left = 464
+  Height = 200
+  Top = 375
+  Width = 368
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsDialog
+  Caption = 'Report Filter'
+  ClientHeight = 200
+  ClientWidth = 368
+  OnClose = FormClose
+  OnShow = FormShow
+  Position = poMainFormCenter
+  LCLVersion = '1.2.2.0'
+  object pBottom: TPanel
+    Left = 0
+    Height = 34
+    Top = 166
+    Width = 368
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 34
+    ClientWidth = 368
+    TabOrder = 0
+    object bOk: TButton
+      Left = 199
+      Height = 25
+      Top = 1
+      Width = 75
+      Anchors = [akTop, akRight]
+      Caption = 'Ok'
+      Default = True
+      ModalResult = 1
+      TabOrder = 0
+    end
+    object bCancel: TButton
+      Left = 282
+      Height = 25
+      Top = 1
+      Width = 75
+      Anchors = [akTop, akRight]
+      Caption = 'Cancel'
+      ModalResult = 2
+      TabOrder = 1
+    end
+  end
+  object GroupBox1: TGroupBox
+    Left = 10
+    Height = 70
+    Top = 10
+    Width = 348
+    Align = alTop
+    BorderSpacing.Around = 10
+    Caption = 'Between Dates'
+    ClientHeight = 52
+    ClientWidth = 344
+    TabOrder = 1
+    object deFromDate: TDateEdit
+      Left = 16
+      Height = 21
+      Top = 8
+      Width = 113
+      CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+      OKCaption = 'OK'
+      CancelCaption = 'Cancel'
+      DateOrder = doYMd
+      ButtonWidth = 23
+      CharCase = ecNormal
+      NumGlyphs = 1
+      MaxLength = 10
+      TabOrder = 0
+    end
+    object deToDate: TDateEdit
+      Left = 192
+      Height = 21
+      Top = 8
+      Width = 113
+      CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+      OKCaption = 'OK'
+      CancelCaption = 'Cancel'
+      DateOrder = doYMd
+      ButtonWidth = 23
+      CharCase = ecNormal
+      NumGlyphs = 1
+      MaxLength = 10
+      TabOrder = 1
+    end
+  end
+  object GroupBox2: TGroupBox
+    Left = 10
+    Height = 66
+    Top = 90
+    Width = 348
+    Align = alClient
+    BorderSpacing.Around = 10
+    Caption = 'Bank Account'
+    ClientHeight = 48
+    ClientWidth = 344
+    TabOrder = 2
+    object cbBankAccount: TComboBox
+      Left = 16
+      Height = 21
+      Top = 9
+      Width = 312
+      ItemHeight = 13
+      Style = csDropDownList
+      TabOrder = 0
+    end
+  end
+end

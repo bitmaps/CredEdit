@@ -1,0 +1,309 @@
+object frOrganiseCategories: TfrOrganiseCategories
+  Left = 601
+  Height = 491
+  Top = 294
+  Width = 249
+  BorderStyle = bsDialog
+  Caption = 'Categories'
+  ClientHeight = 491
+  ClientWidth = 249
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnShow = FormShow
+  Position = poOwnerFormCenter
+  LCLVersion = '1.2.4.0'
+  object tvCategories: TTreeView
+    Left = 0
+    Height = 291
+    Top = 40
+    Width = 249
+    Align = alClient
+    DefaultItemHeight = 16
+    ReadOnly = True
+    ScrollBars = ssAutoBoth
+    ShowRoot = False
+    SortType = stData
+    TabOrder = 0
+    OnChange = tvCategoriesChange
+    Options = [tvoAutoItemHeight, tvoHideSelection, tvoKeepCollapsedNodes, tvoReadOnly, tvoShowButtons, tvoShowLines, tvoToolTips, tvoThemedDraw]
+  end
+  object panHeader: TPanel
+    Left = 0
+    Height = 40
+    Top = 0
+    Width = 249
+    Align = alTop
+    BevelOuter = bvNone
+    ClientHeight = 40
+    ClientWidth = 249
+    TabOrder = 1
+    object cbExpand: TCheckBox
+      Left = 16
+      Height = 17
+      Top = 11
+      Width = 56
+      Caption = 'Expand'
+      OnChange = cbExpandChange
+      TabOrder = 0
+    end
+    object bRelocateCat: TButton
+      Left = 96
+      Height = 25
+      Top = 7
+      Width = 128
+      Caption = 'Relocate Categories'
+      OnClick = bRelocateCatClick
+      TabOrder = 1
+      Visible = False
+    end
+  end
+  object panFooter: TPanel
+    Left = 0
+    Height = 160
+    Top = 331
+    Width = 249
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 160
+    ClientWidth = 249
+    TabOrder = 2
+    object eCategoryName: TEdit
+      Left = 4
+      Height = 21
+      Top = 6
+      Width = 239
+      TabOrder = 0
+    end
+    object bAdd: TButton
+      Left = 4
+      Height = 25
+      Top = 98
+      Width = 75
+      Caption = '&Add'
+      OnClick = bAddClick
+      TabOrder = 1
+    end
+    object bRename: TButton
+      Left = 86
+      Height = 25
+      Top = 98
+      Width = 75
+      Caption = '&Rename'
+      OnClick = bRenameClick
+      TabOrder = 2
+    end
+    object bDelete: TButton
+      Left = 168
+      Height = 25
+      Top = 98
+      Width = 75
+      Caption = '&Delete'
+      OnClick = bDeleteClick
+      TabOrder = 3
+    end
+    object bSelect: TButton
+      Left = 4
+      Height = 25
+      Top = 128
+      Width = 157
+      Caption = '&Select'
+      Default = True
+      ModalResult = 1
+      TabOrder = 4
+    end
+    object bClose: TButton
+      Left = 168
+      Height = 25
+      Top = 128
+      Width = 75
+      Caption = '&Close'
+      ModalResult = 1
+      OnClick = bCloseClick
+      TabOrder = 5
+    end
+    object Label8: TLabel
+      Left = 8
+      Height = 13
+      Top = 44
+      Width = 140
+      Caption = 'Main Category Report Colour'
+      ParentColor = False
+    end
+    object cdbCategory: TCDButton
+      Left = 168
+      Height = 25
+      Top = 37
+      Width = 75
+      DrawStyle = dsDefault
+      OnClick = cdbCategoryClick
+      TabOrder = 6
+      TabStop = True
+    end
+    object cbBudgetShow: TCheckBox
+      Left = 8
+      Height = 17
+      Top = 70
+      Width = 108
+      BidiMode = bdRightToLeft
+      Caption = 'Include in budgets'
+      OnChange = cbBudgetShowChange
+      OnClick = cbBudgetShowClick
+      ParentBidiMode = False
+      TabOrder = 7
+    end
+  end
+  object eCatedid: TEdit
+    Left = 100
+    Height = 21
+    Top = 193
+    Width = 80
+    TabOrder = 3
+  end
+  object eSubcategid: TEdit
+    Left = 100
+    Height = 21
+    Top = 220
+    Width = 80
+    TabOrder = 4
+  end
+  object eCategname: TEdit
+    Left = 100
+    Height = 21
+    Top = 247
+    Width = 80
+    TabOrder = 5
+  end
+  object eSubcategname: TEdit
+    Left = 100
+    Height = 21
+    Top = 272
+    Width = 80
+    TabOrder = 6
+  end
+  object dsCategories: TDataSource
+    DataSet = zqCategories
+    left = 67
+    top = 122
+  end
+  object zqCategories: TZQuery
+    Connection = dmData.zcDatabaseConnection
+    AfterOpen = zqCategoriesAfterOpen
+    SQL.Strings = (
+      'select c.categid, categname, c.colour, subcategid, subcategname, c.includebudget C_INCLUDEBUDGET, sc.includebudget S_INCLUDEBUDGET'
+      'from category_v1 c'
+      'left outer join subcategory_v1 sc on c.categid = sc.categid '
+      '--order by categid, subcategid'
+      'order by categname, subcategname'
+    )
+    Params = <>
+    left = 80
+    top = 111
+    object zqCategoriesCATEGID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'CATEGID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zqCategoriesCATEGNAME: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'CATEGNAME'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object zqCategoriesSUBCATEGID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUBCATEGID'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zqCategoriesSUBCATEGNAME: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUBCATEGNAME'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object zqCategoriesCOLOUR: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'COLOUR'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object zqCategoriesC_INCLUDEBUDGET: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'C_INCLUDEBUDGET'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object zqCategoriesS_INCLUDEBUDGET: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'S_INCLUDEBUDGET'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+  end
+  object ColorDialog1: TColorDialog
+    Color = clBlack
+    CustomColors.Strings = (
+      'ColorA=000000'
+      'ColorB=000080'
+      'ColorC=008000'
+      'ColorD=008080'
+      'ColorE=800000'
+      'ColorF=800080'
+      'ColorG=808000'
+      'ColorH=808080'
+      'ColorI=C0C0C0'
+      'ColorJ=0000FF'
+      'ColorK=00FF00'
+      'ColorL=00FFFF'
+      'ColorM=FF0000'
+      'ColorN=FF00FF'
+      'ColorO=FFFF00'
+      'ColorP=FFFFFF'
+      'ColorQ=C0DCC0'
+      'ColorR=F0CAA6'
+      'ColorS=F0FBFF'
+      'ColorT=A4A0A0'
+    )
+    left = 24
+    top = 200
+  end
+end

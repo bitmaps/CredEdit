@@ -1,0 +1,286 @@
+object frBudgetEntry: TfrBudgetEntry
+  Left = 424
+  Height = 220
+  Top = 419
+  Width = 517
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsDialog
+  Caption = 'Budget Entry Details'
+  ClientHeight = 220
+  ClientWidth = 517
+  OnCreate = FormCreate
+  OnShow = FormShow
+  Position = poMainFormCenter
+  LCLVersion = '1.2.4.0'
+  object pBottom: TPanel
+    Left = 0
+    Height = 34
+    Top = 186
+    Width = 517
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 34
+    ClientWidth = 517
+    TabOrder = 0
+    object bOk: TButton
+      Left = 348
+      Height = 25
+      Top = 1
+      Width = 75
+      Anchors = [akTop, akRight]
+      Caption = '&Ok'
+      Default = True
+      ModalResult = 1
+      TabOrder = 0
+    end
+    object bCancel: TButton
+      Left = 431
+      Height = 25
+      Top = 1
+      Width = 75
+      Anchors = [akTop, akRight]
+      Caption = '&Cancel'
+      ModalResult = 2
+      TabOrder = 1
+    end
+    object dbeBUDGETENTRYID: TDBEdit
+      Left = 8
+      Height = 21
+      Hint = 'dmData.dsBudget.BUDGETYEARID'
+      Top = 0
+      Width = 80
+      DataField = 'BUDGETENTRYID'
+      DataSource = dmData.dsBudget
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 2
+    end
+    object dbeBudgetYearID: TDBEdit
+      Left = 120
+      Height = 21
+      Hint = 'dmData.dsBudget.BUDGETYEARID'
+      Top = 0
+      Width = 80
+      DataField = 'BUDGETYEARID'
+      DataSource = dmData.dsBudget
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 3
+    end
+  end
+  object GroupBox2: TGroupBox
+    Left = 10
+    Height = 51
+    Top = 10
+    Width = 497
+    Align = alTop
+    BorderSpacing.Left = 5
+    BorderSpacing.Top = 5
+    BorderSpacing.Right = 5
+    BorderSpacing.Around = 5
+    Caption = 'Description'
+    ClientHeight = 33
+    ClientWidth = 493
+    TabOrder = 1
+    object Label6: TLabel
+      Left = 16
+      Height = 13
+      Top = 6
+      Width = 49
+      Caption = 'Category:'
+      ParentColor = False
+    end
+    object lbCatDescription: TLabel
+      Left = 83
+      Height = 13
+      Top = 6
+      Width = 349
+      AutoSize = False
+      Caption = 'lbCatDescription'
+      ParentColor = False
+    end
+    object dbeCatID: TDBEdit
+      Left = 176
+      Height = 21
+      Hint = 'dmData.dsCheckingAccount.categid'
+      Top = 0
+      Width = 80
+      DataField = 'CATEGID'
+      DataSource = dmData.dsBudget
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 0
+    end
+    object Label5: TLabel
+      Left = 288
+      Height = 13
+      Top = 6
+      Width = 70
+      Caption = 'Sub Category:'
+      ParentColor = False
+      Visible = False
+    end
+    object lbSubCatDescription: TLabel
+      Left = 379
+      Height = 13
+      Top = 6
+      Width = 185
+      AutoSize = False
+      Caption = 'lbSubCatDescription'
+      ParentColor = False
+      Visible = False
+    end
+    object dbeSubCatID: TDBEdit
+      Left = 400
+      Height = 21
+      Hint = 'dmData.dsCheckingAccount.subcategid'
+      Top = 0
+      Width = 80
+      DataField = 'SUBCATEGID'
+      DataSource = dmData.dsBudget
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 1
+    end
+  end
+  object GroupBox3: TGroupBox
+    Left = 10
+    Height = 52
+    Top = 66
+    Width = 497
+    Align = alTop
+    BorderSpacing.Left = 5
+    BorderSpacing.Right = 5
+    BorderSpacing.Around = 5
+    Caption = 'Values'
+    ClientHeight = 34
+    ClientWidth = 493
+    TabOrder = 2
+    object Label1: TLabel
+      Left = 200
+      Height = 13
+      Top = 6
+      Width = 51
+      Caption = 'Estimated:'
+      ParentColor = False
+    end
+    object lbEstimatedDescription: TLabel
+      Left = 264
+      Height = 13
+      Top = 6
+      Width = 80
+      AutoSize = False
+      Caption = 'lbEstimatedDescription'
+      ParentColor = False
+    end
+    object Label7: TLabel
+      Left = 352
+      Height = 13
+      Top = 6
+      Width = 34
+      Caption = 'Actual:'
+      ParentColor = False
+    end
+    object lbActualDescription: TLabel
+      Left = 400
+      Height = 13
+      Top = 6
+      Width = 80
+      AutoSize = False
+      Caption = 'lbActualDescription'
+      ParentColor = False
+    end
+    object Label4: TLabel
+      Left = 16
+      Height = 13
+      Top = 6
+      Width = 41
+      Caption = 'Amount:'
+      ParentColor = False
+    end
+    object eAmount: TEdit
+      Left = 83
+      Height = 21
+      Top = 2
+      Width = 69
+      Alignment = taRightJustify
+      OnExit = eAmountExit
+      TabOrder = 0
+    end
+    object eFormattedAmount: TDBEdit
+      Left = 264
+      Height = 21
+      Top = -2
+      Width = 40
+      DataField = 'AMOUNT'
+      DataSource = dmData.dsBudget
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 1
+      Visible = False
+    end
+  end
+  object GroupBox4: TGroupBox
+    Left = 10
+    Height = 53
+    Top = 123
+    Width = 497
+    Align = alTop
+    BorderSpacing.Left = 5
+    BorderSpacing.Right = 5
+    BorderSpacing.Around = 5
+    Caption = 'Variables'
+    ClientHeight = 35
+    ClientWidth = 493
+    TabOrder = 3
+    object Label2: TLabel
+      Left = 15
+      Height = 13
+      Top = 8
+      Width = 28
+      Caption = 'Type:'
+      ParentColor = False
+    end
+    object cbType: TComboBox
+      Left = 83
+      Height = 21
+      Top = 2
+      Width = 114
+      ItemHeight = 13
+      Items.Strings = (
+        'Income'
+        'Expense'
+      )
+      Style = csDropDownList
+      TabOrder = 0
+    end
+    object Label3: TLabel
+      Left = 240
+      Height = 13
+      Top = 8
+      Width = 55
+      Caption = 'Frequency:'
+      ParentColor = False
+    end
+    object cbFrequency: TComboBox
+      Left = 331
+      Height = 21
+      Top = 2
+      Width = 114
+      ItemHeight = 13
+      Items.Strings = (
+        'None'
+        'Weekly'
+        'Bi-Weekly'
+        'Monthly'
+        'Bi-Monthly'
+        'Quarterly'
+        'Half-Yearly'
+        'Yearly'
+        'Daily'
+      )
+      Style = csDropDownList
+      TabOrder = 1
+    end
+  end
+end

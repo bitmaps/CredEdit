@@ -1,0 +1,533 @@
+object frRepeatingTransaction: TfrRepeatingTransaction
+  Left = 225
+  Height = 424
+  Top = 293
+  Width = 770
+  BorderStyle = bsDialog
+  Caption = 'Repeating Transaction'
+  ClientHeight = 424
+  ClientWidth = 770
+  OnClose = FormClose
+  OnCloseQuery = FormCloseQuery
+  OnCreate = FormCreate
+  OnShow = FormShow
+  Position = poOwnerFormCenter
+  LCLVersion = '1.2.4.0'
+  object pBottom: TPanel
+    Left = 0
+    Height = 34
+    Top = 390
+    Width = 770
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 34
+    ClientWidth = 770
+    TabOrder = 2
+    object bOk1: TButton
+      Left = 601
+      Height = 25
+      Top = 1
+      Width = 75
+      Anchors = [akTop, akRight]
+      Caption = '&Ok'
+      Default = True
+      ModalResult = 1
+      OnClick = bOk1Click
+      TabOrder = 0
+    end
+    object bCancel: TButton
+      Left = 684
+      Height = 25
+      Top = 1
+      Width = 75
+      Anchors = [akTop, akRight]
+      Caption = '&Cancel'
+      ModalResult = 2
+      TabOrder = 1
+    end
+  end
+  object gbTranDetails: TGroupBox
+    Left = 311
+    Height = 370
+    Top = 10
+    Width = 449
+    Align = alRight
+    BorderSpacing.Around = 10
+    Caption = 'Transaction Details'
+    ClientHeight = 352
+    ClientWidth = 445
+    TabOrder = 1
+    object Label1: TLabel
+      Left = 16
+      Height = 13
+      Top = 19
+      Width = 23
+      Caption = 'Date'
+      ParentColor = False
+    end
+    object Label2: TLabel
+      Left = 16
+      Height = 13
+      Top = 54
+      Width = 31
+      Caption = 'Status'
+      ParentColor = False
+    end
+    object Label3: TLabel
+      Left = 248
+      Height = 13
+      Top = 54
+      Width = 24
+      Caption = 'Type'
+      ParentColor = False
+    end
+    object Label4: TLabel
+      Left = 15
+      Height = 13
+      Top = 193
+      Width = 37
+      Caption = 'Amount'
+      ParentColor = False
+    end
+    object lbAccount: TLabel
+      Left = 16
+      Height = 13
+      Top = 87
+      Width = 39
+      Caption = 'Account'
+      ParentColor = False
+    end
+    object lbPayee: TLabel
+      Left = 16
+      Height = 13
+      Top = 121
+      Width = 30
+      Caption = 'Payee'
+      ParentColor = False
+    end
+    object Label8: TLabel
+      Left = 237
+      Height = 13
+      Top = 189
+      Width = 37
+      Caption = 'Number'
+      ParentColor = False
+    end
+    object cbStatus: TComboBox
+      Left = 73
+      Height = 21
+      Top = 46
+      Width = 138
+      ItemHeight = 13
+      Items.Strings = (
+        'None'
+        'Reconciled'
+        'Void'
+        'Follow Up'
+        'Duplicate'
+      )
+      Style = csDropDownList
+      TabOrder = 3
+    end
+    object cbType: TComboBox
+      Left = 289
+      Height = 21
+      Top = 46
+      Width = 138
+      ItemHeight = 13
+      Items.Strings = (
+        'Withdrawal'
+        'Deposit'
+        'Transfer'
+      )
+      OnChange = cbTypeChange
+      Style = csDropDownList
+      TabOrder = 4
+    end
+    object bCategory: TButton
+      Left = 118
+      Height = 25
+      Top = 144
+      Width = 309
+      Caption = 'Category Description'
+      OnClick = bCategoryClick
+      TabOrder = 9
+    end
+    object Label9: TLabel
+      Left = 15
+      Height = 13
+      Top = 223
+      Width = 28
+      Caption = 'Notes'
+      ParentColor = False
+    end
+    object dblcbPayeeName: TDBLookupComboBox
+      Left = 73
+      Height = 21
+      Top = 113
+      Width = 355
+      AutoComplete = True
+      DataField = 'PAYEEID'
+      DataSource = dmData.dsRepeatTransactions
+      KeyField = 'PAYEEID'
+      ListField = 'PAYEENAME'
+      ListFieldIndex = 0
+      ListSource = dmData.dsPayee
+      LookupCache = False
+      OnChange = dblcbPayeeNameChange
+      Sorted = True
+      TabOrder = 1
+    end
+    object dblcbAccount: TDBLookupComboBox
+      Left = 73
+      Height = 21
+      Top = 79
+      Width = 355
+      AutoComplete = True
+      DataField = 'ACCOUNTID'
+      DataSource = dmData.dsRepeatTransactions
+      KeyField = 'ACCOUNTID'
+      ListField = 'ACCOUNTNAME'
+      ListFieldIndex = 0
+      ListSource = dmData.dsAccountList
+      LookupCache = False
+      Sorted = True
+      TabOrder = 0
+    end
+    object dbmNotes: TDBMemo
+      Left = 73
+      Height = 114
+      Top = 218
+      Width = 354
+      DataField = 'NOTES'
+      DataSource = dmData.dsRepeatTransactions
+      ScrollBars = ssBoth
+      TabOrder = 7
+    end
+    object eNumber: TDBEdit
+      Left = 289
+      Height = 21
+      Top = 184
+      Width = 138
+      DataField = 'TRANSACTIONNUMBER'
+      DataSource = dmData.dsRepeatTransactions
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 6
+    end
+    object deDate: TDateEdit
+      Left = 73
+      Height = 21
+      Top = 11
+      Width = 113
+      CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+      OKCaption = 'OK'
+      CancelCaption = 'Cancel'
+      DateOrder = doYMd
+      ButtonWidth = 23
+      CharCase = ecNormal
+      NumGlyphs = 1
+      Enabled = False
+      MaxLength = 10
+      OnChange = deDateChange
+      TabOrder = 2
+    end
+    object dbeCatID: TDBEdit
+      Left = 111
+      Height = 21
+      Hint = 'dmData.dsCheckingAccount.categid'
+      Top = 234
+      Width = 80
+      DataField = 'CATEGID'
+      DataSource = dmData.dsRepeatTransactions
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 10
+      Visible = False
+    end
+    object dbeSubCatID: TDBEdit
+      Left = 111
+      Height = 21
+      Hint = 'dmData.dsCheckingAccount.subcategid'
+      Top = 259
+      Width = 80
+      DataField = 'SUBCATEGID'
+      DataSource = dmData.dsRepeatTransactions
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 11
+      Visible = False
+    end
+    object dbePayeeID: TDBEdit
+      Left = 183
+      Height = 21
+      Top = 113
+      Width = 80
+      DataField = 'PAYEEID'
+      DataSource = dmData.dsRepeatTransactions
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 12
+      Visible = False
+    end
+    object eAmount: TEdit
+      Left = 73
+      Height = 21
+      Top = 185
+      Width = 138
+      Alignment = taRightJustify
+      OnExit = eAmountExit
+      TabOrder = 5
+    end
+    object dbeAccountID: TDBEdit
+      Left = 183
+      Height = 21
+      Top = 79
+      Width = 80
+      DataField = 'ACCOUNTID'
+      DataSource = dmData.dsRepeatTransactions
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 13
+      Visible = False
+    end
+    object cbSplit: TCheckBox
+      Left = 14
+      Height = 17
+      Top = 149
+      Width = 88
+      BidiMode = bdRightToLeft
+      Caption = 'Split Category'
+      OnChange = cbSplitChange
+      OnClick = cbSplitClick
+      ParentBidiMode = False
+      TabOrder = 8
+    end
+    object udDay: TUpDown
+      Left = 214
+      Height = 23
+      Top = 10
+      Width = 12
+      Enabled = False
+      Min = 1
+      Max = 31
+      Position = 1
+      TabOrder = 14
+      Wrap = False
+      OnClick = udDayClick
+    end
+    object lbDayofWeek: TLabel
+      Left = 233
+      Height = 13
+      Top = 15
+      Width = 64
+      Caption = 'lbDayofWeek'
+      Enabled = False
+      ParentColor = False
+    end
+    object dblcbTransferToAccount: TDBLookupComboBox
+      Left = 81
+      Height = 21
+      Top = 108
+      Width = 355
+      AutoComplete = True
+      DataField = 'TOACCOUNTID'
+      DataSource = dmData.dsRepeatTransactions
+      KeyField = 'ACCOUNTID'
+      ListField = 'ACCOUNTNAME'
+      ListFieldIndex = 0
+      ListSource = dmData.dsAccountList
+      LookupCache = False
+      Sorted = True
+      TabOrder = 15
+    end
+    object dbeToAccountID: TDBEdit
+      Left = 272
+      Height = 21
+      Top = 111
+      Width = 80
+      DataField = 'TOACCOUNTID'
+      DataSource = dmData.dsRepeatTransactions
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 16
+      Visible = False
+    end
+  end
+  object gbRepeatDetails: TGroupBox
+    Left = 10
+    Height = 370
+    Top = 10
+    Width = 291
+    Align = alClient
+    BorderSpacing.Around = 10
+    Caption = 'Repeating Details'
+    ClientHeight = 352
+    ClientWidth = 287
+    TabOrder = 0
+    object Panel1: TPanel
+      Left = 43
+      Height = 167
+      Top = 18
+      Width = 196
+      BevelInner = bvLowered
+      BevelOuter = bvSpace
+      ClientHeight = 167
+      ClientWidth = 196
+      TabOrder = 0
+      object Calendar1: TCalendar
+        Left = 3
+        Height = 161
+        Top = 3
+        Width = 190
+        Align = alClient
+        AutoSize = True
+        BorderSpacing.Around = 1
+        DateTime = 41778
+        OnDayChanged = Calendar1DayChanged
+        TabOrder = 0
+      end
+    end
+    object Label11: TLabel
+      Left = 16
+      Height = 13
+      Top = 209
+      Width = 77
+      Caption = 'Next Occurence'
+      ParentColor = False
+    end
+    object Label12: TLabel
+      Left = 16
+      Height = 13
+      Top = 274
+      Width = 40
+      Caption = 'Repeats'
+      ParentColor = False
+    end
+    object Label13: TLabel
+      Left = 16
+      Height = 13
+      Top = 242
+      Width = 77
+      Caption = 'Times Repeated'
+      ParentColor = False
+    end
+    object deNextOccDate: TDateEdit
+      Left = 132
+      Height = 21
+      Top = 201
+      Width = 113
+      CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+      OKCaption = 'OK'
+      CancelCaption = 'Cancel'
+      DateOrder = doYMd
+      ButtonWidth = 23
+      CharCase = ecNormal
+      NumGlyphs = 1
+      MaxLength = 10
+      OnChange = deNextOccDateChange
+      TabOrder = 1
+    end
+    object cbRepeats: TComboBox
+      Left = 132
+      Height = 21
+      Top = 234
+      Width = 137
+      ItemHeight = 13
+      ItemIndex = 0
+      Items.Strings = (
+        'None'
+        'Weekly'
+        'Bi-Weekly'
+        'Monthly'
+        'Bi-Monthly'
+        'Quartertly'
+        'Half-Yearly'
+        'Yearly'
+        'Four Months'
+        'Four Weeks'
+        'Daily'
+        'In (x) Days'
+        'In (x) Months'
+        'Every (x) Days'
+        'Every (x) Months'
+        'Monthly (last day)'
+        'Monthly (last business day)'
+      )
+      Style = csDropDownList
+      TabOrder = 2
+      Text = 'None'
+    end
+    object eTimesRepeated: TEdit
+      Left = 132
+      Height = 21
+      Top = 266
+      Width = 136
+      TabOrder = 3
+    end
+    object cbAutoExec: TCheckBox
+      Left = 16
+      Height = 17
+      Top = 299
+      Width = 238
+      Caption = 'Set to Auto Execute on Next Occurence Date'
+      TabOrder = 4
+    end
+    object cbAutoExecNoUser: TCheckBox
+      Left = 16
+      Height = 17
+      Top = 321
+      Width = 256
+      Caption = 'Set Auto Execute without user acknowledgement'
+      TabOrder = 5
+    end
+  end
+  object ztPayeeLookup: TZTable
+    Connection = dmData.zcDatabaseConnection
+    TableName = 'PAYEE_V1'
+    left = 448
+    top = 305
+    object ztPayeeLookupPAYEEID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'PAYEEID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ztPayeeLookupPAYEENAME: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'PAYEENAME'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object ztPayeeLookupCATEGID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'CATEGID'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ztPayeeLookupSUBCATEGID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUBCATEGID'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+end

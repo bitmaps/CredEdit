@@ -1,0 +1,4171 @@
+object dmData: TdmData
+  OldCreateOrder = False
+  Height = 662
+  HorizontalOffset = 214
+  VerticalOffset = 208
+  Width = 998
+  object ztAccountList: TZTable
+    Connection = zcDatabaseConnection
+    TableName = 'ACCOUNTLIST_V1'
+    left = 168
+    top = 16
+    object ztAccountListACCOUNTID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ACCOUNTID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ztAccountListACCOUNTNAME: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ACCOUNTNAME'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object ztAccountListACCOUNTTYPE: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ACCOUNTTYPE'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object ztAccountListACCOUNTNUM: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ACCOUNTNUM'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object ztAccountListSTATUS: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'STATUS'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object ztAccountListNOTES: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'NOTES'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object ztAccountListHELDAT: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'HELDAT'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object ztAccountListWEBSITE: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'WEBSITE'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object ztAccountListCONTACTINFO: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'CONTACTINFO'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object ztAccountListACCESSINFO: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ACCESSINFO'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object ztAccountListINITIALBAL: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'INITIALBAL'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '0.00'
+      Currency = True
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ztAccountListFAVORITEACCT: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'FAVORITEACCT'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object ztAccountListCURRENCYID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'CURRENCYID'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+  end
+  object dsAccountList: TDataSource
+    DataSet = ztAccountList
+    left = 168
+    top = 72
+  end
+  object zcDatabaseConnection: TZConnection
+    ControlsCodePage = cCP_UTF8
+    AutoEncodeStrings = False
+    Properties.Strings = (
+      'AutoEncodeStrings='
+    )
+    Connected = True
+    DesignConnection = True
+    SQLHourGlass = True
+    Port = 0
+    Database = 'C:\Code\Lazarus\MoneyManager\creddata.db3'
+    Password = 'jeremy'
+    Protocol = 'sqlite-3'
+    left = 40
+    top = 16
+  end
+  object ZSQLMonitor: TZSQLMonitor
+    AutoSave = True
+    MaxTraceCount = 100
+    left = 40
+    top = 64
+  end
+  object ZUpdateSQL1: TZUpdateSQL
+    UseSequenceFieldForRefreshSQL = False
+    left = 40
+    top = 456
+  end
+  object ZQuery1: TZQuery
+    Connection = zcDatabaseConnection
+    AfterOpen = ZQuery1AfterOpen
+    UpdateObject = ZUpdateSQL1
+    AfterApplyUpdates = ZQuery1AfterApplyUpdates
+    AfterPost = ZQuery1AfterPost
+    Params = <>
+    left = 160
+    top = 400
+  end
+  object ztCategory: TZTable
+    Connection = zcDatabaseConnection
+    TableName = 'CATEGORY_V1'
+    left = 472
+    top = 16
+    object ztCategoryCATEGID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'CATEGID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ztCategoryCATEGNAME: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'CATEGNAME'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object ztCategoryCOLOUR: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'COLOUR'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object ztCategoryINCLUDEBUDGET: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'INCLUDEBUDGET'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+  end
+  object dsCategory: TDataSource
+    DataSet = ztCategory
+    left = 472
+    top = 72
+  end
+  object ztAssets: TZTable
+    Connection = zcDatabaseConnection
+    TableName = 'ASSETS_V1'
+    left = 240
+    top = 16
+    object ztAssetsASSETID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ASSETID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object ztAssetsSTARTDATE: TMemoField
+      DisplayLabel = 'Date'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'STARTDATE'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object ztAssetsASSETNAME: TMemoField
+      DisplayLabel = 'Name'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ASSETNAME'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object ztAssetsVALUE: TFloatField
+      DisplayLabel = 'Initial Value'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'VALUE'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      OnGetText = ShowDBTextFields
+      Currency = True
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ztAssetsVALUECHANGE: TMemoField
+      DisplayLabel = 'Current Value'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'VALUECHANGE'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object ztAssetsNOTES: TMemoField
+      DisplayLabel = 'Notes'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'NOTES'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      OnGetText = ShowDBTextFields
+      BlobType = ftMemo
+      Transliterate = False
+    end
+    object ztAssetsVALUECHANGERATE: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'VALUECHANGERATE'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ztAssetsASSETTYPE: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ASSETTYPE'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object ztAssetsCURRENTVALUE: TCurrencyField
+      DisplayLabel = 'Current Value'
+      DisplayWidth = 10
+      FieldKind = fkCalculated
+      FieldName = 'CURRENTVALUE'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+      MaxValue = 0
+      MinValue = 0
+    end
+  end
+  object dsAssets: TDataSource
+    AutoEdit = False
+    DataSet = ztAssets
+    left = 240
+    top = 72
+  end
+  object ztSubCategory: TZTable
+    Connection = zcDatabaseConnection
+    TableName = 'SUBCATEGORY_V1'
+    left = 624
+    top = 152
+    object ztSubCategorySUBCATEGID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUBCATEGID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ztSubCategorySUBCATEGNAME: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUBCATEGNAME'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object ztSubCategoryCATEGID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'CATEGID'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object ztSubCategoryINCLUDEBUDGET: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'INCLUDEBUDGET'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+  end
+  object dsSubCategory: TDataSource
+    DataSet = ztSubCategory
+    left = 624
+    top = 208
+  end
+  object ztPayee: TZTable
+    Connection = zcDatabaseConnection
+    AfterOpen = ztPayeeAfterOpen
+    AfterRefresh = ztPayeeAfterRefresh
+    OnCalcFields = ztPayeeCalcFields
+    TableName = 'PAYEE_V1'
+    left = 832
+    top = 16
+    object ztPayeePAYEEID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'PAYEEID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object ztPayeePAYEENAME: TMemoField
+      DisplayLabel = 'Payee'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'PAYEENAME'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object ztPayeeCATEGID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'CATEGID'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object ztPayeeSUBCATEGID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUBCATEGID'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object ztPayeeDefaultCategory: TStringField
+      DisplayLabel = 'Default Category'
+      DisplayWidth = 100
+      FieldKind = fkCalculated
+      FieldName = 'DefaultCategory'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 100
+    end
+    object MemoField1: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkLookup
+      FieldName = 'CATEGNAME'
+      Index = 5
+      KeyFields = 'CATEGID'
+      LookupCache = False
+      LookupDataSet = ztCategory
+      LookupKeyFields = 'CATEGID'
+      LookupResultField = 'CATEGNAME'
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object MemoField2: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkLookup
+      FieldName = 'SUBCATEGNAME'
+      Index = 6
+      KeyFields = 'SUBCATEGID'
+      LookupCache = False
+      LookupDataSet = ztSubCategory
+      LookupKeyFields = 'SUBCATEGID'
+      LookupResultField = 'SUBCATEGNAME'
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object ztPayeeCOLOUR: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'COLOUR'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+  end
+  object dsPayee: TDataSource
+    DataSet = ztPayee
+    left = 832
+    top = 72
+  end
+  object ztCheckingAccount: TZTable
+    Connection = zcDatabaseConnection
+    TableName = 'CHECKINGACCOUNT_V1'
+    left = 560
+    top = 16
+    object ztCheckingAccountTRANSID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TRANSID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ztCheckingAccountACCOUNTID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ACCOUNTID'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object ztCheckingAccountTOACCOUNTID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TOACCOUNTID'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ztCheckingAccountPAYEEID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'PAYEEID'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object ztCheckingAccountTRANSCODE: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TRANSCODE'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object ztCheckingAccountTRANSAMOUNT: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TRANSAMOUNT'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      OnGetText = ShowDBTextFields
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ztCheckingAccountSTATUS: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'STATUS'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object ztCheckingAccountTRANSACTIONNUMBER: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TRANSACTIONNUMBER'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object ztCheckingAccountNOTES: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'NOTES'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object ztCheckingAccountCATEGID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'CATEGID'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ztCheckingAccountSUBCATEGID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUBCATEGID'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ztCheckingAccountTRANSDATE: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TRANSDATE'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object ztCheckingAccountFOLLOWUPID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'FOLLOWUPID'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ztCheckingAccountTOTRANSAMOUNT: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TOTRANSAMOUNT'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      OnGetText = ShowDBTextFields
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+  end
+  object dsCheckingAccount: TDataSource
+    DataSet = ztCheckingAccount
+    left = 560
+    top = 72
+  end
+  object dsqAssets: TDataSource
+    AutoEdit = False
+    DataSet = zqAssets
+    left = 232
+    top = 456
+  end
+  object zqAssets: TZQuery
+    Connection = zcDatabaseConnection
+    AfterOpen = zqAssetsAfterOpen
+    AfterRefresh = zqAssetsAfterRefresh
+    OnCalcFields = zqAssetsCalcFields
+    SQL.Strings = (
+      'select assetid, assetname, startdate, value, '
+      'valuechange, valuechangerate,  notes, assettype, '
+      ' strftime(''%Y/%m/%d'',startdate)  frmstartdate,'
+      'case when valuechange = ''Appreciates'' then'
+      'value + (cast(round(julianday(''now'') - julianday(startdate)) as integer) / 365) * '
+      '((value / 100) * valuechangerate) '
+      'when valuechange = ''Depreciates'' then'
+      'value - (cast(round(julianday(''now'') - julianday(startdate)) as integer) / 365) * '
+      '((value / 100) * valuechangerate) '
+      'else value'
+      'end as CURRENTVALUE'
+      'from ASSETS_V1 order by assetid'
+    )
+    Params = <>
+    left = 232
+    top = 400
+    object zqAssetsASSETID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ASSETID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object zqAssetsASSETNAME: TMemoField
+      DisplayLabel = 'Name'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ASSETNAME'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object zqAssetsSTARTDATE: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'STARTDATE'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Visible = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object zqAssetsfrmstartdate: TStringField
+      DisplayLabel = 'Start Date'
+      DisplayWidth = 1020
+      FieldKind = fkData
+      FieldName = 'frmstartdate'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 1020
+    end
+    object zqAssetsASSETTYPE: TMemoField
+      DisplayLabel = 'Type'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ASSETTYPE'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object zqAssetsVALUE: TFloatField
+      DisplayLabel = 'Value'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'VALUE'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      OnGetText = ShowDBTextFields
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zqAssetsVALUECHANGE: TMemoField
+      DisplayLabel = 'Value Change'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'VALUECHANGE'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object zqAssetsVALUECHANGERATE: TFloatField
+      DisplayLabel = 'Value Change Rate'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'VALUECHANGERATE'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+      OnGetText = ShowDBTextFields
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zqAssetsNOTES: TMemoField
+      DisplayLabel = 'Notes'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'NOTES'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object zqAssetsCALCURVALUE1: TCurrencyField
+      DisplayLabel = 'Estimated Value'
+      DisplayWidth = 10
+      FieldKind = fkCalculated
+      FieldName = 'CALCURVALUE'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      OnGetText = ShowDBTextFields
+      MaxValue = 0
+      MinValue = 0
+    end
+  end
+  object zqReport: TZQuery
+    Connection = zcDatabaseConnection
+    AfterOpen = zqReportAfterOpen
+    Params = <>
+    left = 232
+    top = 528
+  end
+  object dszqReport: TDataSource
+    DataSet = zqReport
+    left = 232
+    top = 584
+  end
+  object dsInfoTable: TDataSource
+    DataSet = ztInfoTable
+    left = 656
+    top = 72
+  end
+  object ztInfoTable: TZTable
+    Connection = zcDatabaseConnection
+    TableName = 'INFOTABLE_V1'
+    left = 656
+    top = 16
+  end
+  object dsBudgetYear: TDataSource
+    DataSet = ztBudgetYear
+    left = 392
+    top = 72
+  end
+  object ztBudgetYear: TZTable
+    Connection = zcDatabaseConnection
+    SortedFields = 'BUDGETYEARNAME'
+    TableName = 'BUDGET_HEADER'
+    IndexFieldNames = 'BUDGETYEARNAME Asc'
+    left = 392
+    top = 16
+    object ztBudgetYearBUDGETYEARID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'BUDGETYEARID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ztBudgetYearBUDGETYEARNAME: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'BUDGETYEARNAME'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object ztBudgetYearBUDGETFREQUENCY: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'BUDGETFREQUENCY'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object ztBudgetYearBUDGETYEAR: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'BUDGETYEAR'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object ztBudgetYearBUDGETMONTH: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'BUDGETMONTH'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object ztBudgetYearARCHIVED: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ARCHIVED'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object ztBudgetYearBUDGETACCOUNT: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'BUDGETACCOUNT'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+  end
+  object dsBudget: TDataSource
+    DataSet = ztBudget
+    left = 312
+    top = 72
+  end
+  object ztBudget: TZTable
+    Connection = zcDatabaseConnection
+    TableName = 'BUDGET_DETAIL'
+    left = 312
+    top = 16
+    object ztBudgetBUDGETENTRYID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'BUDGETENTRYID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ztBudgetBUDGETYEARID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'BUDGETYEARID'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ztBudgetCATEGID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'CATEGID'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ztBudgetSUBCATEGID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUBCATEGID'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ztBudgetPERIOD: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'PERIOD'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object ztBudgetAMOUNT: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'AMOUNT'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+  end
+  object frReport1: TfrReport
+    Dataset = frDBDataSet1
+    InitialZoom = pzDefault
+    Options = []
+    PreviewButtons = [pbZoom, pbLoad, pbSave, pbPrint, pbFind, pbHelp, pbExit]
+    DataType = dtDataSet
+    left = 40
+    top = 288
+  end
+  object frDBDataSet1: TfrDBDataSet
+    left = 40
+    top = 344
+  end
+  object frTextExport1: TfrTextExport
+    left = 40
+    top = 176
+  end
+  object frHTMExport1: TfrHTMExport
+    left = 40
+    top = 232
+  end
+  object frCSVExport1: TfrCSVExport
+    left = 40
+    top = 120
+  end
+  object dsqCategories: TDataSource
+    DataSet = zqCategories
+    left = 552
+    top = 456
+  end
+  object zqCategories: TZQuery
+    Connection = zcDatabaseConnection
+    AfterOpen = zqCategoriesAfterOpen
+    SQL.Strings = (
+      'select c.categid, c.categname, sc.subcategname '
+      'from category_v1 c'
+      'left outer join subcategory_v1 sc on c.categid = sc.categid'
+      'order by c.categname, sc.subcategname'
+    )
+    Params = <>
+    left = 552
+    top = 400
+    object zqCategoriesCATEGID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'CATEGID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zqCategoriesCATEGNAME: TMemoField
+      DisplayLabel = 'Category Name'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'CATEGNAME'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object zqCategoriesSUBCATEGNAME: TMemoField
+      DisplayLabel = 'Subcategory Name'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUBCATEGNAME'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      BlobType = ftBlob
+      Transliterate = False
+    end
+  end
+  object dszqTransactions: TDataSource
+    DataSet = zqTransactions
+    left = 640
+    top = 584
+  end
+  object zqTransactions: TZQuery
+    Connection = zcDatabaseConnection
+    AfterOpen = zqTransactionsAfterOpen
+    SQL.Strings = (
+      'select transid, a.accountid, a.accountname, strftime(''%Y/%m/%d'',transdate) frmtrandate, transdate,'
+      'transactionnumber, payeename, ch.status, '
+      'case ch.categid when -1 then '''''
+      'else'
+      '  case ch.subcategid when -1 then categname '
+      '  else coalesce(categname,'''') ||'': ''||coalesce(subcategname,'''') '
+      '  end '
+      'end as category, '
+      'case transcode '
+      'when ''Withdrawal'' then '
+      'case when substr(transamount,length(ROUND(transamount,2))-1,1) = "." then transamount || "0" '
+      'when substr(transamount,length(ROUND(transamount,2))-1,1) = "" then transamount || ".00" '
+      'else transamount '
+      'end '
+      'else '''''
+      'end as WITHDRAWAL, '
+      'case transcode '
+      'when ''Deposit'' then '
+      'case when substr(transamount,length(ROUND(transamount,2))-1,1) = "." then transamount || "0" '
+      'when substr(transamount,length(ROUND(transamount,2))-1,1) = "" then transamount || ".00" '
+      'else transamount '
+      'end '
+      'else '''''
+      'end as DEPOSIT, '
+      'amount, '
+      ' case when substr((select round(sum(case transcode when ''Withdrawal'' then transamount * -1 '
+      'else transamount end), 2)  '
+      ' from CHECKINGACCOUNT_V1 where accountid = ch.accountid and transid<=ch.transid),length(ROUND((select round(sum(case transcode when ''Withdrawal'' then transamount * -1 '
+      'else transamount end), 2)  '
+      ' from CHECKINGACCOUNT_V1 where accountid = ch.accountid and transid<=ch.transid),2))-1,1) = "." '
+      ' then (select round(sum(case transcode when ''Withdrawal'' then transamount * -1 '
+      'else transamount end), 2)  '
+      ' from CHECKINGACCOUNT_V1 where accountid = ch.accountid and transid<=ch.transid) || "0"  when substr((select round(sum(case transcode when ''Withdrawal'' then transamount * -1 '
+      'else transamount end), 2)  '
+      ' from CHECKINGACCOUNT_V1 where accountid = ch.accountid and transid<=ch.transid),length(ROUND((select round(sum(case transcode when ''Withdrawal'' then transamount * -1 '
+      'else transamount end), 2)  '
+      ' from CHECKINGACCOUNT_V1 where accountid = ch.accountid and transid<=ch.transid),2))-1,1) = "" then (select round(sum(case transcode when ''Withdrawal'' then transamount * -1 '
+      'else transamount end), 2)  '
+      ' from CHECKINGACCOUNT_V1 where accountid = ch.accountid and transid<=ch.transid) || ".00"  else (select round(sum(case transcode when ''Withdrawal'' then transamount * -1 '
+      'else transamount end), 2)  '
+      ' from CHECKINGACCOUNT_V1 where accountid = ch.accountid and transid<=ch.transid)  '
+      ' end as BALANCE,'
+      'transcode,transamount, ch.notes'
+      'from checkingaccount_v1 ch'
+      'inner join payee_v1 p on ch.payeeid = p.payeeid'
+      'inner join accountlist_v1 a on ch.accountid = a.accountid'
+      'left outer join category_v1 c on ch.categid = c.categid '
+      'left outer join subcategory_v1 sc on c.categid = sc.categid and ch.subcategid = sc.subcategid '
+      'where 1 = 1'
+      'order by transid, transdate'
+    )
+    Params = <>
+    left = 642
+    top = 528
+    object zqTransactionsTRANSID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TRANSID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zqTransactionsACCOUNTID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ACCOUNTID'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object zqTransactionsACCOUNTNAME: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ACCOUNTNAME'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object zqTransactionsTRANSDATE: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TRANSDATE'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object zqTransactionsfrmtrandate: TStringField
+      DisplayLabel = 'Date'
+      DisplayWidth = 1020
+      FieldKind = fkData
+      FieldName = 'frmtrandate'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 1020
+    end
+    object zqTransactionsTRANSACTIONNUMBER: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TRANSACTIONNUMBER'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object zqTransactionsPAYEENAME: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'PAYEENAME'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object zqTransactionsSTATUS: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'STATUS'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object zqTransactionscategory: TStringField
+      DisplayWidth = 1020
+      FieldKind = fkData
+      FieldName = 'category'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 1020
+    end
+    object zqTransactionsWITHDRAWAL: TStringField
+      DisplayWidth = 1020
+      FieldKind = fkData
+      FieldName = 'WITHDRAWAL'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      OnGetText = ShowDBTextFields
+      Size = 1020
+    end
+    object zqTransactionsDEPOSIT: TStringField
+      DisplayWidth = 1020
+      FieldKind = fkData
+      FieldName = 'DEPOSIT'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      OnGetText = ShowDBTextFields
+      Size = 1020
+    end
+    object zqTransactionsBALANCE: TStringField
+      DisplayWidth = 1020
+      FieldKind = fkData
+      FieldName = 'BALANCE'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      OnGetText = ShowDBTextFields
+      Size = 1020
+    end
+    object zqTransactionsTRANSCODE: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TRANSCODE'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object zqTransactionsTRANSAMOUNT: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TRANSAMOUNT'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      OnGetText = ShowDBTextFields
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zqTransactionsNOTES: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'NOTES'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+  end
+  object ztSplitTransactions: TZTable
+    Connection = zcDatabaseConnection
+    TableName = 'SPLITTRANSACTIONS_V1'
+    left = 520
+    top = 152
+    object ztSplitTransactionsSPLITTRANSID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SPLITTRANSID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ztSplitTransactionsTRANSID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TRANSID'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object ztSplitTransactionsCATEGID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'CATEGID'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ztSplitTransactionsSUBCATEGID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUBCATEGID'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ztSplitTransactionsSPLITTRANSAMOUNT: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SPLITTRANSAMOUNT'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      OnGetText = ShowDBTextFields
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+  end
+  object dsSplitTransactions: TDataSource
+    DataSet = ztSplitTransactions
+    left = 520
+    top = 208
+  end
+  object dsqSplitTransactions: TDataSource
+    DataSet = zqSplitTransactions
+    left = 448
+    top = 584
+  end
+  object zqSplitTransactions: TZQuery
+    Connection = zcDatabaseConnection
+    SQL.Strings = (
+      'select s.*,'
+      'case s.categid when -1 then '''''
+      'else'
+      'case s.subcategid when -1 then categname '
+      'else coalesce(categname,'''') ||'': ''||coalesce(subcategname,'''')'
+      'end'
+      'end as category'
+      'from SPLITTRANSACTIONS_V1 s'
+      'left outer join category_v1 c on s.categid = c.categid'
+      'left outer join subcategory_v1 sc on c.categid = sc.categid and s.subcategid = sc.subcategid'
+    )
+    Params = <>
+    left = 448
+    top = 528
+    object zqSplitTransactionsSPLITTRANSID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SPLITTRANSID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object zqSplitTransactionsTRANSID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TRANSID'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Visible = False
+    end
+    object zqSplitTransactionsCATEGID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'CATEGID'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object zqSplitTransactionsSUBCATEGID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUBCATEGID'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object zqSplitTransactionscategory: TStringField
+      DisplayLabel = 'Category'
+      DisplayWidth = 25
+      FieldKind = fkData
+      FieldName = 'category'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 200
+    end
+    object zqSplitTransactionsSPLITTRANSAMOUNT: TFloatField
+      DisplayLabel = 'Amount'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SPLITTRANSAMOUNT'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      OnGetText = ShowDBTextFields
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+  end
+  object Timer: TTimer
+    Enabled = False
+    left = 40
+    top = 400
+  end
+  object zqBudget: TZQuery
+    Connection = zcDatabaseConnection
+    AfterOpen = zqBudgetAfterOpen
+    SQL.Strings = (
+      'select c.categid, c.categname, sc.subcategid, sc.subcategname, '
+      'coalesce(case bt2.subcategid when -1 then bt2.budgetyearid else bt.budgetyearid end, -1) as BUDGET_YEAR_ID,'
+      'coalesce(case bt2.budgetentryid when -1 then bt2.budgetentryid else bt.budgetentryid end, -1) as BUDGET_ENTRY_ID,'
+      'coalesce(case bt2.subcategid when -1 then bt2.amount else bt.amount end, 0) as BUDGET_AMOUNT,'
+      'coalesce(case bt2.subcategid when -1 then bt2.period else bt.period end, ''None'') as BUDGET_PERIOD'
+      'from category_v1 c'
+      'left outer join subcategory_v1 sc on sc.categid = c.categid'
+      'left outer join budget_v1 bt2 on bt2.categid = c.categid and bt2.subcategid = -1 and bt2.budgetyearid = 1'
+      'left outer join budget_v1 bt on bt.subcategid = sc.subcategid and bt.categid = sc.categid and bt.budgetyearid = 1'
+      'order by c.categname, sc.subcategname '
+      ''
+      ''
+    )
+    Params = <>
+    left = 384
+    top = 400
+    object zqBudgetCATEGID: TLargeintField
+      DisplayWidth = 60
+      FieldKind = fkData
+      FieldName = 'CATEGID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object zqBudgetCATEGNAME: TMemoField
+      DisplayLabel = 'Category'
+      DisplayWidth = 150
+      FieldKind = fkData
+      FieldName = 'CATEGNAME'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object zqBudgetSUBCATEGID: TLargeintField
+      DisplayWidth = 60
+      FieldKind = fkData
+      FieldName = 'SUBCATEGID'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object zqBudgetSUBCATEGNAME: TMemoField
+      DisplayLabel = 'Subcategory'
+      DisplayWidth = 150
+      FieldKind = fkData
+      FieldName = 'SUBCATEGNAME'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object zqBudgetBUDGET_YEAR_ID: TStringField
+      DisplayWidth = 80
+      FieldKind = fkData
+      FieldName = 'BUDGET_YEAR_ID'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Visible = False
+      Size = 1020
+    end
+    object zqBudgetBUDGET_ENTRY_ID: TStringField
+      DisplayWidth = 80
+      FieldKind = fkData
+      FieldName = 'BUDGET_ENTRY_ID'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Visible = False
+      Size = 1020
+    end
+    object zqBudgetBUDGET_AMOUNT: TStringField
+      Alignment = taRightJustify
+      DisplayLabel = 'Amount'
+      DisplayWidth = 70
+      FieldKind = fkData
+      FieldName = 'BUDGET_AMOUNT'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      OnGetText = ShowDBTextFields
+      Size = 1020
+    end
+    object zqBudgetBUDGET_PERIOD: TStringField
+      DisplayLabel = 'Period'
+      DisplayWidth = 100
+      FieldKind = fkData
+      FieldName = 'BUDGET_PERIOD'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 1020
+    end
+  end
+  object dsqBudget: TDataSource
+    DataSet = zqBudget
+    left = 384
+    top = 456
+  end
+  object dsRepeatTransactions: TDataSource
+    DataSet = ztRepeatTransactions
+    left = 168
+    top = 208
+  end
+  object ztRepeatTransactions: TZTable
+    Connection = zcDatabaseConnection
+    TableName = 'REPEATTRANSACTIONS_V1'
+    left = 168
+    top = 152
+    object ztRepeatTransactionsREPTRANSID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'REPTRANSID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ztRepeatTransactionsACCOUNTID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ACCOUNTID'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object ztRepeatTransactionsTOACCOUNTID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TOACCOUNTID'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ztRepeatTransactionsPAYEEID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'PAYEEID'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object ztRepeatTransactionsTRANSCODE: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TRANSCODE'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object ztRepeatTransactionsTRANSAMOUNT: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TRANSAMOUNT'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      OnGetText = ShowDBTextFields
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ztRepeatTransactionsSTATUS: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'STATUS'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object ztRepeatTransactionsTRANSACTIONNUMBER: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TRANSACTIONNUMBER'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object ztRepeatTransactionsNOTES: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'NOTES'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object ztRepeatTransactionsCATEGID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'CATEGID'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ztRepeatTransactionsSUBCATEGID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUBCATEGID'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ztRepeatTransactionsTRANSDATE: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TRANSDATE'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object ztRepeatTransactionsFOLLOWUPID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'FOLLOWUPID'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ztRepeatTransactionsTOTRANSAMOUNT: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TOTRANSAMOUNT'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      OnGetText = ShowDBTextFields
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ztRepeatTransactionsREPEATS: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'REPEATS'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ztRepeatTransactionsNEXTOCCURRENCEDATE: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'NEXTOCCURRENCEDATE'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object ztRepeatTransactionsNUMOCCURRENCES: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'NUMOCCURRENCES'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ztRepeatTransactionsAUTORUN: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'AUTORUN'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object ztRepeatTransactionsAUTORUNUSER: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'AUTORUNUSER'
+      Index = 18
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+  end
+  object dszqRepeatTransactions: TDataSource
+    DataSet = zqRepeatTransactions
+    left = 328
+    top = 584
+  end
+  object zqRepeatTransactions: TZQuery
+    Connection = zcDatabaseConnection
+    AfterOpen = zqRepeatTransactionsAfterOpen
+    OnCalcFields = zqRepeatTransactionsCalcFields
+    SQL.Strings = (
+      'select a.accountname, p.payeename, rt.*, '
+      'strftime(''%Y/%m/%d'',rt.transdate) frmtrandate, '
+      'strftime(''%Y/%m/%d'',rt.NEXTOCCURRENCEDATE) frmnextdate, '
+      'case rt.repeats  '
+      'when 1 then ''Weekly'' '
+      'when 2 then ''Bi-Weekly'' '
+      'when 3 then ''Monthly'' '
+      'when 4 then ''Bi-Monthly'' '
+      'when 5 then ''Quartertly'' '
+      'when 6 then ''Half-Yearly'' '
+      'when 7 then ''Yearly'''
+      'when 8 then ''Four Months'''
+      'when 9 then ''Four Weeks'''
+      'when 10 then ''Daily'''
+      'when 11 then ''In (x) Days'''
+      'when 12 then ''In (x) Months'''
+      'when 13 then ''Every (x) Days'''
+      'when 14 then ''Every (x) Months'''
+      'when 15 then ''Monthly (last day)'''
+      'when 16 then ''Monthly (last business day)'''
+      'else ''None'' end as FREQUENCY'
+      'from REPEATTRANSACTIONS_V1 rt, accountlist_v1 a, payee_v1 p'
+      'where a.accountid = rt.accountid'
+      'and p.payeeid = rt.payeeid'
+    )
+    Params = <>
+    left = 328
+    top = 528
+    object zqRepeatTransactionsPAYEENAME: TMemoField
+      DisplayLabel = 'Payee'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'PAYEENAME'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object zqRepeatTransactionsACCOUNTNAME: TMemoField
+      DisplayLabel = 'Account'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ACCOUNTNAME'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object zqRepeatTransactionsTRANSCODE: TMemoField
+      DisplayLabel = 'Type'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TRANSCODE'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object zqRepeatTransactionsTRANSAMOUNT: TFloatField
+      DisplayLabel = 'Amount'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TRANSAMOUNT'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      OnGetText = ShowDBTextFields
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zqRepeatTransactionsNEXTOCCURRENCEDATE: TMemoField
+      Alignment = taRightJustify
+      DisplayLabel = 'Next Due Date'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'NEXTOCCURRENCEDATE'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object zqRepeatTransactionsfrmnextdate: TStringField
+      DisplayLabel = 'Next Due Date'
+      DisplayWidth = 1020
+      FieldKind = fkData
+      FieldName = 'frmnextdate'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 1020
+    end
+    object zqRepeatTransactionsFREQUENCY: TStringField
+      DisplayLabel = 'Frequency'
+      DisplayWidth = 1020
+      FieldKind = fkData
+      FieldName = 'FREQUENCY'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 1020
+    end
+    object zqRepeatTransactionsREMAININGDAYS1: TStringField
+      DisplayLabel = 'Remaining Days'
+      DisplayWidth = 20
+      FieldKind = fkCalculated
+      FieldName = 'REMAININGDAYS'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zqRepeatTransactionsNOTES: TMemoField
+      DisplayLabel = 'Notes'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'NOTES'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object zqRepeatTransactionsREPTRANSID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'REPTRANSID'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object zqRepeatTransactionsACCOUNTID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ACCOUNTID'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Visible = False
+    end
+    object zqRepeatTransactionsTOACCOUNTID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TOACCOUNTID'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object zqRepeatTransactionsPAYEEID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'PAYEEID'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Visible = False
+    end
+    object zqRepeatTransactionsSTATUS: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'STATUS'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object zqRepeatTransactionsTRANSACTIONNUMBER: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TRANSACTIONNUMBER'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object zqRepeatTransactionsCATEGID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'CATEGID'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object zqRepeatTransactionsSUBCATEGID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUBCATEGID'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object zqRepeatTransactionsTRANSDATE: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TRANSDATE'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object zqRepeatTransactionsfrmtrandate: TStringField
+      DisplayWidth = 1020
+      FieldKind = fkData
+      FieldName = 'frmtrandate'
+      Index = 18
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Visible = False
+      Size = 1020
+    end
+    object zqRepeatTransactionsFOLLOWUPID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'FOLLOWUPID'
+      Index = 19
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object zqRepeatTransactionsTOTRANSAMOUNT: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TOTRANSAMOUNT'
+      Index = 20
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+      OnGetText = ShowDBTextFields
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zqRepeatTransactionsREPEATS: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'REPEATS'
+      Index = 21
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object zqRepeatTransactionsNUMOCCURRENCES: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'NUMOCCURRENCES'
+      Index = 22
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+  end
+  object dsZQuery1: TDataSource
+    DataSet = ZQuery1
+    left = 160
+    top = 456
+  end
+  object ztTransFilter: TZTable
+    Connection = zcDatabaseConnection
+    TableName = 'TRANSFILTERS'
+    left = 705
+    top = 152
+    object ztTransFilterTRANSFILTERID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TRANSFILTERID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object ztTransFilterTRANSFILTERNAME: TMemoField
+      DisplayLabel = 'Filter Name'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TRANSFILTERNAME'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object ztTransFilterFROMDATE: TMemoField
+      DisplayLabel = 'From Date'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'FROMDATE'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object ztTransFilterTODATE: TMemoField
+      DisplayLabel = 'To Date'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TODATE'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object ztTransFilterTRANSCODE: TMemoField
+      DisplayLabel = 'Transaction Type'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TRANSCODE'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object ztTransFilterFROMAMOUNT: TFloatField
+      DisplayLabel = 'From Amount'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'FROMAMOUNT'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      OnGetText = ShowDBTextFields
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ztTransFilterTOAMOUNT: TFloatField
+      DisplayLabel = 'To Amount'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TOAMOUNT'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      OnGetText = ShowDBTextFields
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ztTransFilterPAYEENAME: TMemoField
+      DisplayLabel = 'Payee'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'PAYEENAME'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object ztTransFilterCATEGID: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'CATEGID'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ztTransFilterSUBCATEGID: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUBCATEGID'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ztTransFilterARCHIVED: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ARCHIVED'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object ztTransFilterDATEFILTER: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'DATEFILTER'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+  end
+  object dsTransFilter: TDataSource
+    DataSet = ztTransFilter
+    left = 704
+    top = 207
+  end
+  object dszqTransFilters: TDataSource
+    DataSet = zqTransFilters
+    left = 736
+    top = 584
+  end
+  object zqTransFilters: TZQuery
+    Connection = zcDatabaseConnection
+    AfterOpen = zqTransFiltersAfterOpen
+    SQL.Strings = (
+      'select tf.* ,'
+      'case datefilter when 0 then ''None'' else'
+      'case datefilter when 1 then Fromdate ||'':''|| ToDate else'
+      'case datefilter when 2 then ''Current Week'' else  '
+      'case datefilter when 3 then ''Current Month'' else'
+      'case datefilter when 4 then ''Current Quarter'' else'
+      'case datefilter when 5 then ''Current Year'''
+      'end end end end end end as DATERANGE,'
+      '-- tf.fromdate FRMFROMDATE, tf.todate FRMTODATE,'
+      'categname ||'': ''||subcategname CATEGORY'
+      'from transfilters tf'
+      'left outer join category_v1 c on tf.categid = c.categid '
+      'left outer join subcategory_v1 sc on c.categid = sc.categid and tf.subcategid = sc.subcategid'
+      ''
+      ''
+    )
+    Params = <>
+    left = 736
+    top = 528
+    object zqTransFiltersTRANSFILTERID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TRANSFILTERID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object zqTransFiltersTRANSFILTERNAME: TMemoField
+      DisplayLabel = 'Filter Name'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TRANSFILTERNAME'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object zqTransFiltersDATERANGE: TStringField
+      DisplayLabel = 'Date Range'
+      DisplayWidth = 1020
+      FieldKind = fkData
+      FieldName = 'DATERANGE'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 1020
+    end
+    object zqTransFiltersPAYEENAME: TMemoField
+      DisplayLabel = 'Payee'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'PAYEENAME'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object zqTransFiltersDATEFILTER: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'DATEFILTER'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zqTransFiltersFROMDATE: TMemoField
+      DisplayLabel = 'From Date'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'FROMDATE'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object zqTransFiltersFRMFROMDATE: TMemoField
+      DisplayLabel = 'From Date'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'FRMFROMDATE'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object zqTransFiltersTODATE: TMemoField
+      DisplayLabel = 'To Date'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TODATE'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object zqTransFiltersFRMTODATE: TMemoField
+      DisplayLabel = 'To Date'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'FRMTODATE'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object zqTransFiltersTRANSCODE: TMemoField
+      DisplayLabel = 'Type'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TRANSCODE'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object zqTransFiltersFROMAMOUNT: TFloatField
+      DisplayLabel = 'From Amount'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'FROMAMOUNT'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      OnGetText = ShowDBTextFields
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zqTransFiltersTOAMOUNT: TFloatField
+      DisplayLabel = 'To Amount'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TOAMOUNT'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      OnGetText = ShowDBTextFields
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zqTransFiltersCATEGID: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'CATEGID'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zqTransFiltersSUBCATEGID: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUBCATEGID'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zqTransFiltersCATEGORY: TStringField
+      DisplayLabel = 'Category'
+      DisplayWidth = 1020
+      FieldKind = fkData
+      FieldName = 'CATEGORY'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 1020
+    end
+    object zqTransFiltersARCHIVED: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ARCHIVED'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Visible = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+  end
+  object dszqBudgetYear: TDataSource
+    DataSet = zqBudgetYear
+    left = 464
+    top = 456
+  end
+  object zqBudgetYear: TZQuery
+    Connection = zcDatabaseConnection
+    OnCalcFields = zqBudgetYearCalcFields
+    SQL.Strings = (
+      'select * from budget_header'
+      'order by BUDGETYEARNAME'
+    )
+    Params = <>
+    Properties.Strings = (
+      ''
+    )
+    DataSource = dsBudgetYear
+    left = 464
+    top = 400
+    object zqBudgetYearBUDGETYEARID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'BUDGETYEARID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object zqBudgetYearBUDGETACCOUNT: TMemoField
+      DisplayLabel = 'Account'
+      DisplayWidth = 40
+      FieldKind = fkData
+      FieldName = 'BUDGETACCOUNT'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object zqBudgetYearBUDGETYEARNAME: TMemoField
+      DisplayLabel = 'Budget Name'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'BUDGETYEARNAME'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object zqBudgetYearBUDGETFREQUENCY: TMemoField
+      DisplayLabel = 'Frequency'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'BUDGETFREQUENCY'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object zqBudgetYearBUDGETYEAR: TMemoField
+      DisplayLabel = 'Year'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'BUDGETYEAR'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object zqBudgetYearBUDGETMONTH: TMemoField
+      DisplayLabel = 'Month'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'BUDGETMONTH'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object zqBudgetYearMONTHDESCRIPTION1: TStringField
+      DisplayLabel = 'Month'
+      DisplayWidth = 20
+      FieldKind = fkCalculated
+      FieldName = 'MONTHDESCRIPTION'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      OnGetText = ShowDBTextFields
+    end
+    object zqBudgetYearARCHIVED: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ARCHIVED'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+  end
+  object dszqUpcomingTrans: TDataSource
+    DataSet = zqUpcomingTrans
+    left = 832
+    top = 584
+  end
+  object zqUpcomingTrans: TZQuery
+    Connection = zcDatabaseConnection
+    AfterOpen = zqUpcomingTransAfterOpen
+    AfterRefresh = zqUpcomingTransAfterRefresh
+    OnCalcFields = zqUpcomingTransCalcFields
+    SQL.Strings = (
+      'select a.accountname, p.payeename, rt.*, '
+      'strftime(''%Y/%m/%d'',rt.transdate) frmtrandate, '
+      'strftime(''%Y/%m/%d'',rt.NEXTOCCURRENCEDATE) frmnextdate, '
+      'case rt.repeats  '
+      'when 1 then ''Weekly'' '
+      'when 2 then ''Bi-Weekly'' '
+      'when 3 then ''Monthly'' '
+      'when 4 then ''Bi-Monthly'' '
+      'when 5 then ''Quartertly'' '
+      'when 6 then ''Half-Yearly'' '
+      'when 7 then ''Yearly'''
+      'when 8 then ''Four Months'''
+      'when 9 then ''Four Weeks'''
+      'when 10 then ''Daily'''
+      'when 11 then ''In (x) Days'''
+      'when 12 then ''In (x) Months'''
+      'when 13 then ''Every (x) Days'''
+      'when 14 then ''Every (x) Months'''
+      'when 15 then ''Monthly (last day)'''
+      'when 16 then ''Monthly (last business day)'''
+      'else ''None'' end as FREQUENCY'
+      'from REPEATTRANSACTIONS_V1 rt, accountlist_v1 a, payee_v1 p'
+      'where a.accountid = rt.accountid'
+      'and p.payeeid = rt.payeeid'
+    )
+    Params = <>
+    left = 832
+    top = 528
+    object zqUpcomingTransPAYEENAME: TMemoField
+      DisplayLabel = 'Payee'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'PAYEENAME'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object zqUpcomingTransACCOUNTNAME: TMemoField
+      DisplayLabel = 'Account'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ACCOUNTNAME'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object zqUpcomingTransTRANSCODE: TMemoField
+      DisplayLabel = 'Type'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TRANSCODE'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object zqUpcomingTransTRANSAMOUNT: TFloatField
+      DisplayLabel = 'Amount'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TRANSAMOUNT'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      OnGetText = ShowDBTextFields
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zqUpcomingTransNEXTOCCURRENCEDATE: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'NEXTOCCURRENCEDATE'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object zqUpcomingTransfrmnextdate: TStringField
+      DisplayLabel = 'Next Due Date'
+      DisplayWidth = 1020
+      FieldKind = fkData
+      FieldName = 'frmnextdate'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      OnGetText = ShowDBTextFields
+      Size = 1020
+    end
+    object zqUpcomingTransFREQUENCY: TStringField
+      DisplayLabel = 'Frequency'
+      DisplayWidth = 1020
+      FieldKind = fkData
+      FieldName = 'FREQUENCY'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      OnGetText = ShowDBTextFields
+      Size = 1020
+    end
+    object zqUpcomingTransREMAININGDAYS1: TStringField
+      DisplayLabel = 'Remaining Days'
+      DisplayWidth = 20
+      FieldKind = fkCalculated
+      FieldName = 'REMAININGDAYS'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zqUpcomingTransNOTES: TMemoField
+      DisplayLabel = 'Notes'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'NOTES'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object zqUpcomingTransREPTRANSID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'REPTRANSID'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object zqUpcomingTransACCOUNTID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ACCOUNTID'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Visible = False
+    end
+    object zqUpcomingTransTOACCOUNTID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TOACCOUNTID'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object zqUpcomingTransPAYEEID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'PAYEEID'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Visible = False
+    end
+    object zqUpcomingTransSTATUS: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'STATUS'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object zqUpcomingTransTRANSACTIONNUMBER: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TRANSACTIONNUMBER'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object zqUpcomingTransCATEGID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'CATEGID'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object zqUpcomingTransSUBCATEGID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUBCATEGID'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object zqUpcomingTransTRANSDATE: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TRANSDATE'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object zqUpcomingTransfrmtrandate: TStringField
+      DisplayWidth = 1020
+      FieldKind = fkData
+      FieldName = 'frmtrandate'
+      Index = 18
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Visible = False
+      Size = 1020
+    end
+    object zqUpcomingTransFOLLOWUPID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'FOLLOWUPID'
+      Index = 19
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object zqUpcomingTransTOTRANSAMOUNT: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TOTRANSAMOUNT'
+      Index = 20
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zqUpcomingTransREPEATS: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'REPEATS'
+      Index = 21
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object zqUpcomingTransNUMOCCURRENCES: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'NUMOCCURRENCES'
+      Index = 22
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+  end
+  object dszqHomepageRep1: TDataSource
+    DataSet = zqHomepageRep1
+    left = 640
+    top = 456
+  end
+  object dszqHomepageRep2: TDataSource
+    DataSet = zqHomepageRep2
+    left = 744
+    top = 456
+  end
+  object zqHomepageRep1: TZQuery
+    Connection = zcDatabaseConnection
+    AfterOpen = zqHomepageRep1AfterOpen
+    Params = <>
+    left = 640
+    top = 400
+  end
+  object zqHomepageRep2: TZQuery
+    Connection = zcDatabaseConnection
+    AfterOpen = zqHomepageRep2AfterOpen
+    Params = <>
+    left = 744
+    top = 400
+  end
+  object ztPayeeImport: TZTable
+    Connection = zcDatabaseConnection
+    TableName = 'PAYEEIMPORT'
+    left = 904
+    top = 16
+    object ztPayeeImportPAYEEIMPORTID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'PAYEEIMPORTID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object ztPayeeImportMATCHTEXT: TMemoField
+      DisplayLabel = 'Match'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'MATCHTEXT'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object ztPayeeImportPAYEEID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'PAYEEID'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+  end
+  object dsztPayeeImport: TDataSource
+    DataSet = ztPayeeImport
+    left = 906
+    top = 72
+  end
+  object dszqPayeeImport: TDataSource
+    DataSet = zqPayeeImport
+    left = 160
+    top = 584
+  end
+  object zqPayeeImport: TZQuery
+    Connection = zcDatabaseConnection
+    SQL.Strings = (
+      'select pi.*, p.payeename '
+      'from PAYEEIMPORT pi, payee_v1 p'
+      'where pi.payeeid = p.payeeid'
+    )
+    Params = <>
+    left = 160
+    top = 528
+    object zqPayeeImportPAYEEIMPORTID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'PAYEEIMPORTID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object zqPayeeImportMATCHTEXT: TMemoField
+      DisplayLabel = 'Match'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'MATCHTEXT'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object zqPayeeImportPAYEEID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'PAYEEID'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object zqPayeeImportPAYEENAME: TMemoField
+      DisplayLabel = 'Payee'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'PAYEENAME'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+  end
+  object dszqPayee: TDataSource
+    DataSet = zqPayee
+    left = 832
+    top = 456
+  end
+  object zqPayee: TZQuery
+    Connection = zcDatabaseConnection
+    AfterOpen = zqPayeeAfterOpen
+    AfterRefresh = zqPayeeAfterRefresh
+    SQL.Strings = (
+      'select p.*,'
+      'case p.categid when 0 then '''' else  '
+      'case p.categid when -1 then '''' else    '
+      'case p.subcategid when -1 then c.categname    '
+      'else coalesce(c.categname,'''') ||'': ''||coalesce(sc.subcategname,'''')    '
+      'end end end as CATEGORY'
+      'from payee_v1 p'
+      'left outer join CATEGORY_V1 c on p.categid = c.categid  '
+      'left outer join SUBCATEGORY_V1 sc on c.categid = sc.categid and p.subcategid = sc.subcategid'
+    )
+    Params = <>
+    left = 832
+    top = 400
+    object zqPayeePAYEEID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'PAYEEID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object zqPayeePAYEENAME: TMemoField
+      DisplayLabel = 'Payee'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'PAYEENAME'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object zqPayeeCATEGID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'CATEGID'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object zqPayeeSUBCATEGID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUBCATEGID'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object zqPayeeCOLOUR: TMemoField
+      DisplayLabel = 'Colour'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'COLOUR'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object zqPayeeCATEGORY: TStringField
+      DisplayLabel = 'Category'
+      DisplayWidth = 1020
+      FieldKind = fkData
+      FieldName = 'CATEGORY'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      OnGetText = ShowDBTextFields
+      Size = 1020
+    end
+  end
+  object dsRepeatSplitTransactions: TDataSource
+    DataSet = ztRepeatSplitTransactions
+    left = 312
+    top = 208
+  end
+  object ztRepeatSplitTransactions: TZTable
+    Connection = zcDatabaseConnection
+    TableName = 'REPEATSPLITTRANSACTIONS_V1'
+    left = 312
+    top = 152
+    object ztRepeatSplitTransactionsSPLITTRANSID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SPLITTRANSID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ztRepeatSplitTransactionsTRANSID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TRANSID'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object ztRepeatSplitTransactionsCATEGID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'CATEGID'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ztRepeatSplitTransactionsSUBCATEGID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUBCATEGID'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ztRepeatSplitTransactionsSPLITTRANSAMOUNT: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SPLITTRANSAMOUNT'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+  end
+  object zqTodaysRepTrans: TZQuery
+    Connection = zcDatabaseConnection
+    AfterOpen = ZQuery1AfterOpen
+    UpdateObject = ZUpdateSQL1
+    AfterApplyUpdates = ZQuery1AfterApplyUpdates
+    AfterPost = ZQuery1AfterPost
+    SQL.Strings = (
+      'select rt.*'
+      'from REPEATTRANSACTIONS_V1 rt'
+      'where 1=1'
+    )
+    Params = <>
+    left = 552
+    top = 528
+    object zqTodaysRepTransREPTRANSID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'REPTRANSID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zqTodaysRepTransACCOUNTID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ACCOUNTID'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object zqTodaysRepTransTOACCOUNTID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TOACCOUNTID'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zqTodaysRepTransPAYEEID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'PAYEEID'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object zqTodaysRepTransTRANSCODE: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TRANSCODE'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object zqTodaysRepTransTRANSAMOUNT: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TRANSAMOUNT'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zqTodaysRepTransSTATUS: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'STATUS'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object zqTodaysRepTransTRANSACTIONNUMBER: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TRANSACTIONNUMBER'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object zqTodaysRepTransNOTES: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'NOTES'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object zqTodaysRepTransCATEGID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'CATEGID'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zqTodaysRepTransSUBCATEGID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUBCATEGID'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zqTodaysRepTransTRANSDATE: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TRANSDATE'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object zqTodaysRepTransFOLLOWUPID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'FOLLOWUPID'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zqTodaysRepTransTOTRANSAMOUNT: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TOTRANSAMOUNT'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zqTodaysRepTransREPEATS: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'REPEATS'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zqTodaysRepTransNEXTOCCURRENCEDATE: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'NEXTOCCURRENCEDATE'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object zqTodaysRepTransNUMOCCURRENCES: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'NUMOCCURRENCES'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zqTodaysRepTransAUTORUN: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'AUTORUN'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object zqTodaysRepTransAUTORUNUSER: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'AUTORUNUSER'
+      Index = 18
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+  end
+  object dszqTodaysRepTrans: TDataSource
+    DataSet = zqTodaysRepTrans
+    left = 552
+    top = 584
+  end
+  object zqBankAccounts: TZQuery
+    Connection = zcDatabaseConnection
+    AfterOpen = zqBankAccountsAfterOpen
+    AfterRefresh = zqBankAccountsAfterRefresh
+    OnCalcFields = zqBankAccountsCalcFields
+    SQL.Strings = (
+      ' select ch.transid,  strftime(''%Y/%m/%d'',transdate)  frmtrandate,  ch.transactionnumber, ch.status, ch.payeeid,  '
+      ' '
+      ' case when (ch.payeeid = -1) then  case when (ch.accountid = 2) then ''> ''||ta.accountname else ''< ''||ta.accountname  '
+      ' end else p.payeename  end as PAYEE,  '
+      ' p.payeename,  '
+      ' '
+      ' case s.transid when ch.transid then ''...'' else  '
+      ' case ch.categid when 0 then '''' else  '
+      ' case ch.categid when -1 then '''' else    '
+      ' case ch.subcategid when -1 then categname    else coalesce(categname,'''') ||'': ''||coalesce(subcategname,'''')    '
+      ' end  end end end as category,  '
+      ' '
+      ' case when (transcode = ''Withdrawal'' or transcode = ''Transfer'') then  '
+      ' case when (transcode = ''Transfer'' and ch.accountid = 2) then  '
+      ' case when substr(transamount,length(ROUND(transamount,2))-1,1) = "." then transamount || "0"  '
+      ' when substr(transamount,length(ROUND(transamount,2))-1,1) = "" then transamount || ".00"  '
+      ' else transamount end else  case when (transcode = ''Withdrawal'') then  '
+      ' case when substr(transamount,length(ROUND(transamount,2))-1,1) = "." then transamount || "0"  '
+      ' when substr(transamount,length(ROUND(transamount,2))-1,1) = "" then transamount || ".00"  '
+      ' else transamount end else ''''  end end end as WITHDRAWAL,  '
+      ' '
+      ' case when (transcode = ''Deposit'' or transcode = ''Transfer'') then  '
+      ' case when (transcode = ''Transfer'' and ch.toaccountid =2) then  '
+      ' case when substr(transamount,length(ROUND(transamount,2))-1,1) = "." then transamount || "0"  '
+      ' when substr(transamount,length(ROUND(transamount,2))-1,1) = "" then transamount || ".00"  '
+      ' else transamount end else  case when (transcode = ''Deposit'') then  '
+      ' case when substr(transamount,length(ROUND(transamount,2))-1,1) = "." then transamount || "0"  '
+      ' when substr(transamount,length(ROUND(transamount,2))-1,1) = "" then transamount || ".00"  '
+      ' else transamount end else ''''   end end end as DEPOSIT,  '
+      ' '
+      ' case when substr((select round(sum(case transcode when ''Withdrawal'' then transamount * -1  else transamount end), 2)  '
+      ' from CHECKINGACCOUNT_V1 where accountid = ch.accountid and transid<=ch.transid),'
+      ' length(ROUND((select round(sum(case transcode when ''Withdrawal'' then transamount * -1  else transamount end), 2)  '
+      ' from CHECKINGACCOUNT_V1 where accountid = ch.accountid and transid<=ch.transid),2))-1,1) = "."  '
+      ' then (select round(sum(case transcode when ''Withdrawal'' then transamount * -1  else transamount end), 2)  '
+      ' from CHECKINGACCOUNT_V1 where accountid = ch.accountid and transid<=ch.transid) || "0"  '
+      ' when substr((select round(sum(case transcode when ''Withdrawal'' then transamount * -1  else transamount end), 2)  '
+      ' from CHECKINGACCOUNT_V1 where accountid = ch.accountid and transid<=ch.transid),'
+      ' length(ROUND((select round(sum(case transcode when ''Withdrawal'' then transamount * -1  else transamount end), 2)  '
+      ' from CHECKINGACCOUNT_V1 where accountid = ch.accountid and transid<=ch.transid),2))-1,1) = "" '
+      ' then (select round(sum(case transcode when ''Withdrawal'' then transamount * -1  else transamount end), 2)  '
+      ' from CHECKINGACCOUNT_V1 where accountid = ch.accountid and transid<=ch.transid) || ".00"  '
+      ' else (select round(sum(case transcode when ''Withdrawal'' then transamount * -1  else transamount end), 2)  '
+      ' from CHECKINGACCOUNT_V1 where accountid = ch.accountid and transid<=ch.transid)  '
+      ' end as BALANCE,  '
+      ' '
+      ' ch.transcode,ch.transamount, ch.notes, ch.transdate, ch.subcategid, ch.categid  '
+      ' from CHECKINGACCOUNT_V1 ch '
+      ' left outer join PAYEE_V1 p on ch.payeeid = p.payeeid  '
+      ' left outer join ACCOUNTLIST_V1 ta on ch.toaccountid = ta.accountid  '
+      ' left outer join CATEGORY_V1 c on ch.categid = c.categid  '
+      ' left outer join SUBCATEGORY_V1 sc on c.categid = sc.categid and ch.subcategid = sc.subcategid  '
+      ' left outer join SPLITTRANSACTIONS_V1 s on ch.transid = s.transid  '
+      ' where (ch.accountid = 2 or ch.toaccountid = 2)  '
+      ' group by ch.transid '
+    )
+    Params = <>
+    left = 312
+    top = 400
+    object zqBankAccountsfrmtrandate: TStringField
+      DisplayLabel = 'Date'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'frmtrandate'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      OnGetText = ShowDBTextFields
+      Size = 1020
+    end
+    object zqBankAccounts2chtransactionnumber: TMemoField
+      DisplayLabel = 'Number'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'transactionnumber'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object zqBankAccountsPAYEE: TStringField
+      DisplayLabel = 'Payee'
+      DisplayWidth = 1020
+      FieldKind = fkData
+      FieldName = 'PAYEE'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      OnGetText = ShowDBTextFields
+      Size = 1020
+    end
+    object zqBankAccounts2ppayeename: TMemoField
+      DisplayLabel = 'p.payeename'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'payeename'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Visible = False
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object zqBankAccounts2chstatus: TMemoField
+      DisplayLabel = 'Status'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'status'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object zqBankAccountsSTATUSDESCRIPTION1: TStringField
+      DisplayLabel = 'Status'
+      DisplayWidth = 20
+      FieldKind = fkCalculated
+      FieldName = 'STATUSDESCRIPTION'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      OnGetText = ShowDBTextFields
+    end
+    object zqBankAccountscategory: TStringField
+      DisplayLabel = 'Category'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'category'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      OnGetText = ShowDBTextFields
+      Size = 1020
+    end
+    object zqBankAccountsWITHDRAWAL: TStringField
+      DisplayWidth = 1020
+      FieldKind = fkData
+      FieldName = 'WITHDRAWAL'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Visible = False
+      OnGetText = ShowDBTextFields
+      Size = 1020
+    end
+    object zqBankAccountsWITHDRAWALCURRENCY: TFloatField
+      DisplayLabel = 'Withdrawal'
+      DisplayWidth = 10
+      FieldKind = fkCalculated
+      FieldName = 'WITHDRAWALCURRENCY'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      OnGetText = ShowDBTextFields
+      MaxValue = 0
+      MinValue = 0
+    end
+    object zqBankAccountsDEPOSIT: TStringField
+      DisplayWidth = 1020
+      FieldKind = fkData
+      FieldName = 'DEPOSIT'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Visible = False
+      OnGetText = ShowDBTextFields
+      Size = 1020
+    end
+    object zqBankAccountsDEPOSITCURRENCY: TFloatField
+      DisplayLabel = 'Deposit'
+      DisplayWidth = 10
+      FieldKind = fkCalculated
+      FieldName = 'DEPOSITCURRENCY'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      OnGetText = ShowDBTextFields
+      MaxValue = 0
+      MinValue = 0
+    end
+    object zqBankAccountsBALANCE: TStringField
+      DisplayWidth = 1020
+      FieldKind = fkData
+      FieldName = 'BALANCE'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Visible = False
+      OnGetText = ShowDBTextFields
+      Size = 1020
+    end
+    object zqBankAccountsBALANCECURRENCY: TFloatField
+      DisplayLabel = 'Balance'
+      DisplayWidth = 10
+      FieldKind = fkCalculated
+      FieldName = 'BALANCECURRENCY'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      OnGetText = ShowDBTextFields
+      MaxValue = 0
+      MinValue = 0
+    end
+    object zqBankAccounts2chnotes: TMemoField
+      DisplayLabel = 'Notes'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'notes'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object zqBankAccounts2chtransid: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'transid'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object zqBankAccounts2chtransdate: TMemoField
+      DisplayLabel = 'ch.transdate'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'transdate'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object zqBankAccounts2chsubcategid: TLargeintField
+      DisplayLabel = 'ch.subcategid'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'subcategid'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object zqBankAccounts2chcategid: TLargeintField
+      DisplayLabel = 'ch.categid'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'categid'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object zqBankAccounts2chtranscode: TMemoField
+      DisplayLabel = 'ch.transcode'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'transcode'
+      Index = 18
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Visible = False
+      OnGetText = ShowDBTextFields
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object zqBankAccounts2chtransamount: TFloatField
+      DisplayLabel = 'ch.transamount'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'transamount'
+      Index = 19
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Visible = False
+      OnGetText = ShowDBTextFields
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zqBankAccounts2chpayeeid: TLargeintField
+      DisplayLabel = 'ch.payeeid'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'payeeid'
+      Index = 20
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Visible = False
+    end
+  end
+  object dsqBankAccounts: TDataSource
+    DataSet = zqBankAccounts
+    left = 312
+    top = 456
+  end
+  object dsGridSettings: TDataSource
+    DataSet = ztGridSettings
+    left = 752
+    top = 72
+  end
+  object ztGridSettings: TZTable
+    Connection = zcDatabaseConnection
+    TableName = 'GRID_SETTINGS'
+    left = 752
+    top = 16
+    object ztGridSettingsGRIDSETTINGSID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'GRIDSETTINGSID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ztGridSettingsGRIDNAME: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'GRIDNAME'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object ztGridSettingsFIELDNAME: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'FIELDNAME'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object ztGridSettingsCOLUMNINDEX: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'COLUMNINDEX'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ztGridSettingsCOLUMNWIDTH: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'COLUMNWIDTH'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ztGridSettingsVISIBLE: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'VISIBLE'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object ztGridSettingsCAPTION: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'CAPTION'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+  end
+  object dsRepFilters: TDataSource
+    DataSet = ztRepFilters
+    left = 432
+    top = 207
+  end
+  object ztRepFilters: TZTable
+    Connection = zcDatabaseConnection
+    TableName = 'REP_FILTERS'
+    left = 432
+    top = 151
+  end
+end

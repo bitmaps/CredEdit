@@ -1,0 +1,127 @@
+object frSplitTransaction: TfrSplitTransaction
+  Left = 340
+  Height = 264
+  Top = 413
+  Width = 482
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsDialog
+  Caption = 'Split Transaction'
+  ClientHeight = 264
+  ClientWidth = 482
+  OnCloseQuery = FormCloseQuery
+  OnCreate = FormCreate
+  OnShow = FormShow
+  Position = poMainFormCenter
+  LCLVersion = '1.2.4.0'
+  object panFooter: TPanel
+    Left = 0
+    Height = 36
+    Top = 228
+    Width = 482
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 36
+    ClientWidth = 482
+    TabOrder = 0
+    object bAdd: TButton
+      Left = 10
+      Height = 25
+      Top = 2
+      Width = 75
+      Caption = '&Add'
+      OnClick = bAddClick
+      TabOrder = 0
+    end
+    object bEdit: TButton
+      Left = 92
+      Height = 25
+      Top = 2
+      Width = 75
+      Caption = '&Edit'
+      OnClick = bEditClick
+      TabOrder = 1
+    end
+    object bRemove: TButton
+      Left = 174
+      Height = 25
+      Top = 2
+      Width = 75
+      Caption = '&Remove'
+      OnClick = bRemoveClick
+      TabOrder = 2
+    end
+    object bOk: TButton
+      Left = 312
+      Height = 25
+      Top = 2
+      Width = 75
+      Caption = '&Ok'
+      Default = True
+      ModalResult = 1
+      TabOrder = 3
+    end
+    object bCancel: TButton
+      Left = 394
+      Height = 25
+      Top = 2
+      Width = 75
+      Caption = '&Cancel'
+      ModalResult = 2
+      OnClick = bCancelClick
+      TabOrder = 4
+    end
+  end
+  object GroupBox1: TGroupBox
+    Left = 10
+    Height = 208
+    Top = 10
+    Width = 462
+    Align = alClient
+    BorderSpacing.Around = 10
+    Caption = 'Split Category Details'
+    ClientHeight = 190
+    ClientWidth = 458
+    TabOrder = 1
+    object lbTotalType: TLabel
+      Left = 217
+      Height = 13
+      Top = 163
+      Width = 149
+      Alignment = taRightJustify
+      AutoSize = False
+      Caption = 'Total:'
+      ParentColor = False
+    end
+    object lbTotValue: TLabel
+      Left = 372
+      Height = 13
+      Top = 163
+      Width = 77
+      Alignment = taRightJustify
+      AutoSize = False
+      Caption = 'lbTotValue'
+      ParentColor = False
+    end
+    object dbgSplitTransactions: TDBGrid
+      Left = 10
+      Height = 140
+      Top = 10
+      Width = 438
+      Align = alTop
+      BorderSpacing.Around = 10
+      Color = clWindow
+      Columns = <>
+      DataSource = dmData.dsqSplitTransactions
+      TabOrder = 0
+    end
+    object dbeTransID: TDBEdit
+      Left = 16
+      Height = 21
+      Top = 163
+      Width = 80
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 1
+    end
+  end
+end

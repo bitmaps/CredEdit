@@ -1,0 +1,92 @@
+object frRelocateCategory: TfrRelocateCategory
+  Left = 356
+  Height = 155
+  Top = 335
+  Width = 519
+  BorderStyle = bsDialog
+  Caption = 'Relocate Category'
+  ClientHeight = 155
+  ClientWidth = 519
+  OnCloseQuery = FormCloseQuery
+  OnCreate = FormCreate
+  Position = poOwnerFormCenter
+  LCLVersion = '1.2.2.0'
+  object pBottom: TPanel
+    Left = 0
+    Height = 34
+    Top = 121
+    Width = 519
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 34
+    ClientWidth = 519
+    TabOrder = 0
+    object bOk: TButton
+      Left = 350
+      Height = 25
+      Top = 1
+      Width = 75
+      Anchors = [akTop, akRight]
+      Caption = 'Ok'
+      Default = True
+      ModalResult = 1
+      TabOrder = 0
+    end
+    object bCancel: TButton
+      Left = 433
+      Height = 25
+      Top = 1
+      Width = 75
+      Anchors = [akTop, akRight]
+      Caption = 'Cancel'
+      ModalResult = 2
+      TabOrder = 1
+    end
+  end
+  object GroupBox1: TGroupBox
+    Left = 10
+    Height = 101
+    Top = 10
+    Width = 499
+    Align = alClient
+    BorderSpacing.Around = 10
+    Caption = 'Relocate all source categories to the destination category'
+    ClientHeight = 83
+    ClientWidth = 495
+    TabOrder = 1
+    object Label1: TLabel
+      Left = 20
+      Height = 13
+      Top = 14
+      Width = 46
+      Caption = 'Relocate:'
+      ParentColor = False
+    end
+    object Label2: TLabel
+      Left = 260
+      Height = 13
+      Top = 14
+      Width = 14
+      Caption = 'to:'
+      ParentColor = False
+    end
+    object bFrom: TButton
+      Left = 20
+      Height = 25
+      Top = 38
+      Width = 215
+      Caption = 'Category'
+      OnClick = bFromClick
+      TabOrder = 0
+    end
+    object bTo: TButton
+      Left = 260
+      Height = 25
+      Top = 38
+      Width = 215
+      Caption = 'Category'
+      OnClick = bToClick
+      TabOrder = 1
+    end
+  end
+end

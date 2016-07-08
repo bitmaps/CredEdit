@@ -1,0 +1,205 @@
+object frPieChart: TfrPieChart
+  Left = 406
+  Height = 642
+  Top = 202
+  Width = 884
+  Caption = 'frPieChart'
+  ClientHeight = 642
+  ClientWidth = 884
+  Position = poOwnerFormCenter
+  LCLVersion = '1.2.2.0'
+  object DBGrid1: TDBGrid
+    Left = 0
+    Height = 176
+    Top = 466
+    Width = 884
+    Align = alBottom
+    Color = clWindow
+    Columns = <>
+    DataSource = DataSource1
+    TabOrder = 0
+  end
+  object bPieChart: TButton
+    Left = 680
+    Height = 25
+    Top = 176
+    Width = 75
+    Caption = 'Pie Chart'
+    OnClick = bPieChartClick
+    TabOrder = 1
+  end
+  object Chart1: TChart
+    Left = 0
+    Height = 466
+    Top = 0
+    Width = 664
+    AutoFocus = True
+    AntialiasingMode = amOn
+    AxisList = <    
+      item
+        Grid.Visible = False
+        Marks.Source = ListChartSource1
+        Marks.Stripes = ChartStyles1
+        Minors = <>
+        PositionUnits = cuAxis
+        Title.LabelFont.Orientation = 900
+        Title.Visible = True
+      end    
+      item
+        TickLength = 0
+        Alignment = calBottom
+        Marks.Format = '%2:s'
+        Marks.Source = ListChartSource1
+        Marks.Stripes = ChartStyles1
+        Marks.Style = smsLabel
+        Minors = <>
+        Title.Visible = True
+      end>
+    Foot.Brush.Color = clBtnFace
+    Foot.Font.Color = clBlue
+    Legend.Alignment = laBottomRight
+    Legend.GridHorizontal.Visible = True
+    Legend.GridVertical.Width = 4
+    Legend.GridVertical.Visible = True
+    Legend.GroupTitles.Strings = (
+      'test'
+      'test2'
+      'test3'
+    )
+    Legend.UseSidebar = False
+    Legend.Visible = True
+    Margins.Left = 50
+    Margins.Top = 50
+    Margins.Right = 50
+    Margins.Bottom = 50
+    Title.Brush.Color = clBtnFace
+    Title.Font.Color = clBlue
+    Title.Text.Strings = (
+      'TAChart'
+    )
+    Title.Visible = True
+    Toolset = ChartToolset1
+    Align = alLeft
+    DoubleBuffered = True
+    ParentColor = False
+    ParentShowHint = False
+    object Chart1PieSeries1: TPieSeries
+      Legend.Format = '%2:s %1:.2f%%'
+      Legend.Multiplicity = lmPoint
+      Active = False
+      Marks.Clipped = False
+      Marks.Format = '%1:.2f%%'
+      Marks.Style = smsPercent
+      Exploded = True
+      Source = ListChartSource1
+    end
+    object Chart1BarSeries1: TBarSeries
+      AxisIndexX = 1
+      AxisIndexY = 1
+      BarBrush.Color = clRed
+      Source = ListChartSource1
+    end
+  end
+  object bBarChart: TButton
+    Left = 681
+    Height = 25
+    Top = 136
+    Width = 75
+    Caption = 'Bar Chart'
+    OnClick = bBarChartClick
+    TabOrder = 3
+  end
+  object ZQuery1: TZQuery
+    Connection = dmData.zcDatabaseConnection
+    SQL.Strings = (
+      'select transcode, payeename, sum(transamount) TOTAMOUNT, count(*) CNT'
+      'from checkingaccount_v1 ch'
+      'inner join payee_v1 p on ch.payeeid = p.payeeid'
+      'where transcode = ''Withdrawal''  '
+      'group by transcode, payeename'
+    )
+    Params = <>
+    Properties.Strings = (
+      ''
+    )
+    left = 280
+    top = 384
+    object ZQuery1TRANSCODE: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TRANSCODE'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object ZQuery1PAYEENAME: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'PAYEENAME'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object ZQuery1TOTAMOUNT: TStringField
+      DisplayWidth = 1020
+      FieldKind = fkData
+      FieldName = 'TOTAMOUNT'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 1020
+    end
+    object ZQuery1CNT: TStringField
+      DisplayWidth = 1020
+      FieldKind = fkData
+      FieldName = 'CNT'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 1020
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = ZQuery1
+    left = 232
+    top = 384
+  end
+  object ListChartSource1: TListChartSource
+    DataPoints.Strings = (
+      '0|67|?|yellow'
+      '0|3|?|red'
+      '0|78|?|green'
+    )
+    left = 160
+    top = 392
+  end
+  object ChartToolset1: TChartToolset
+    left = 80
+    top = 392
+    object ChartToolset1ZoomMouseWheelTool1: TZoomMouseWheelTool
+    end
+    object ChartToolset1ZoomClickTool1: TZoomClickTool
+    end
+    object ChartToolset1ZoomDragTool1: TZoomDragTool
+    end
+  end
+  object ChartStyles1: TChartStyles
+    Styles = <    
+      item
+      end>
+    left = 496
+    top = 195
+  end
+end

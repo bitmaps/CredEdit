@@ -1,0 +1,366 @@
+object frImport: TfrImport
+  Left = 297
+  Height = 711
+  Top = 153
+  Width = 774
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsDialog
+  Caption = 'Import'
+  ClientHeight = 711
+  ClientWidth = 774
+  OnClose = FormClose
+  OnCreate = FormCreate
+  Position = poOwnerFormCenter
+  LCLVersion = '1.2.0.3'
+  object PageControl1: TPageControl
+    Left = 8
+    Height = 688
+    Top = 8
+    Width = 664
+    ActivePage = tsImport
+    TabIndex = 0
+    TabOrder = 0
+    object tsImport: TTabSheet
+      Caption = 'Import File'
+      ClientHeight = 662
+      ClientWidth = 656
+      object fneImportFile: TFileNameEdit
+        Left = 16
+        Height = 21
+        Top = 32
+        Width = 466
+        Filter = 'CSV Files|*.csv'
+        FilterIndex = 0
+        HideDirectories = False
+        ButtonWidth = 23
+        NumGlyphs = 1
+        MaxLength = 0
+        TabOrder = 0
+        OnChange = fneImportFileChange
+      end
+      object sgImportFile: TStringGrid
+        Left = 17
+        Height = 136
+        Top = 441
+        Width = 619
+        DefaultColWidth = 90
+        FixedCols = 0
+        FixedRows = 0
+        Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goRowSizing, goColSizing, goRowSelect, goDblClickAutoSize, goSmoothScroll, goCellEllipsis]
+        TabOrder = 1
+      end
+      object pbImport: TProgressBar
+        Left = 16
+        Height = 20
+        Top = 619
+        Width = 620
+        TabOrder = 2
+      end
+      object lbCSVFields: TListBox
+        Left = 17
+        Height = 176
+        Top = 184
+        Width = 130
+        Items.Strings = (
+          'Date'
+          'Payee'
+          'Amount(+/-)'
+          'Category'
+          'SubCategory'
+          'Number'
+          'Notes'
+          'Ignore'
+          'Withdrawal'
+          'Deposit'
+          'To/From(+/-)'
+          'Balance'
+        )
+        ItemHeight = 13
+        OnDblClick = bAddClick
+        TabOrder = 3
+      end
+      object Label3: TLabel
+        Left = 17
+        Height = 13
+        Top = 164
+        Width = 190
+        Caption = 'Specify the order of fields in the csv file'
+        ParentColor = False
+      end
+      object bAdd: TButton
+        Left = 157
+        Height = 25
+        Top = 184
+        Width = 75
+        Caption = 'Add'
+        OnClick = bAddClick
+        TabOrder = 4
+      end
+      object bRemove: TButton
+        Left = 157
+        Height = 25
+        Top = 216
+        Width = 75
+        Caption = 'Remove'
+        OnClick = bRemoveClick
+        TabOrder = 5
+      end
+      object bUp: TButton
+        Left = 385
+        Height = 25
+        Top = 184
+        Width = 75
+        Caption = 'Up'
+        OnClick = bUpClick
+        TabOrder = 6
+      end
+      object bDown: TButton
+        Left = 385
+        Height = 25
+        Top = 215
+        Width = 75
+        Caption = 'Down'
+        OnClick = bDownClick
+        TabOrder = 7
+      end
+      object bOpen: TButton
+        Left = 385
+        Height = 25
+        Top = 245
+        Width = 75
+        Caption = 'Open'
+        OnClick = bOpenClick
+        TabOrder = 8
+      end
+      object bSaveAs: TButton
+        Left = 385
+        Height = 25
+        Top = 277
+        Width = 75
+        Caption = 'Save As...'
+        OnClick = bSaveAsClick
+        TabOrder = 9
+      end
+      object lbChosenCSVFields: TListBox
+        Left = 245
+        Height = 176
+        Top = 184
+        Width = 130
+        ItemHeight = 0
+        OnDblClick = bRemoveClick
+        OnDragDrop = lbChosenCSVFieldsDragDrop
+        OnDragOver = lbChosenCSVFieldsDragOver
+        OnMouseDown = lbChosenCSVFieldsMouseDown
+        TabOrder = 10
+      end
+      object bDefault: TButton
+        Left = 157
+        Height = 25
+        Top = 252
+        Width = 75
+        Caption = 'Default'
+        OnClick = bDefaultClick
+        TabOrder = 11
+      end
+      object Label4: TLabel
+        Left = 18
+        Height = 13
+        Top = 420
+        Width = 90
+        Caption = 'Import file preview'
+        ParentColor = False
+      end
+      object Label5: TLabel
+        Left = 17
+        Height = 13
+        Top = 10
+        Width = 49
+        Caption = 'Import file'
+        ParentColor = False
+      end
+      object Label6: TLabel
+        Left = 17
+        Height = 13
+        Top = 596
+        Width = 42
+        Caption = 'Progress'
+        ParentColor = False
+      end
+      object Label7: TLabel
+        Left = 16
+        Height = 13
+        Top = 68
+        Width = 39
+        Caption = 'Account'
+        ParentColor = False
+      end
+      object Label8: TLabel
+        Left = 297
+        Height = 13
+        Top = 68
+        Width = 60
+        Caption = 'Date Format'
+        ParentColor = False
+      end
+      object rgCSVDelimiter: TRadioGroup
+        Left = 16
+        Height = 49
+        Top = 101
+        Width = 484
+        AutoFill = True
+        Caption = 'CSV Delimiter'
+        ChildSizing.LeftRightSpacing = 6
+        ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+        ChildSizing.EnlargeVertical = crsHomogenousChildResize
+        ChildSizing.ShrinkHorizontal = crsScaleChilds
+        ChildSizing.ShrinkVertical = crsScaleChilds
+        ChildSizing.Layout = cclTopToBottomThenLeftToRight
+        ChildSizing.ControlsPerLine = 1
+        ClientHeight = 31
+        ClientWidth = 480
+        ColumnLayout = clVerticalThenHorizontal
+        Columns = 4
+        ItemIndex = 0
+        Items.Strings = (
+          'Comma'
+          'Semicolon'
+          'TAB'
+          'User Defined'
+        )
+        OnChangeBounds = rgCSVDelimiterChangeBounds
+        OnClick = rgCSVDelimiterClick
+        OnSelectionChanged = rgCSVDelimiterSelectionChanged
+        TabOrder = 12
+      end
+      object eUserDefined: TEdit
+        Left = 505
+        Height = 21
+        Top = 121
+        Width = 131
+        TabOrder = 13
+        Text = ','
+      end
+      object cbDateFormat: TComboBox
+        Left = 365
+        Height = 21
+        Top = 65
+        Width = 141
+        ItemHeight = 13
+        Items.Strings = (
+          'DDMMYY'
+          'DD-MM-YY'
+          'DD.MM.YY'
+          'DD/MM/YY'
+          'DDMMYYYY'
+          'DD-MM-YYYY'
+          'DD.MM.YYYY'
+          'DD/MM/YYYY'
+          'MMDDYY'
+          'MM-DD-YY'
+          'MM.DD.YY'
+          'MM/DD/YY'
+          'MMDDYYYY'
+          'MM-DD-YYYY'
+          'MM.DD.YYYY'
+          'MM/DD/YYYY'
+          'YYMMDD'
+          'YY-MM-DD'
+          'YY.MM.DD'
+          'YY/MM/DD'
+          'YYYYMMDD'
+          'YYYY-MM-DD'
+          'YYYY.MM.DD'
+          'YYYY/MM/DD'
+        )
+        Style = csDropDownList
+        TabOrder = 14
+      end
+      object seIgnoreLines: TSpinEdit
+        Left = 196
+        Height = 21
+        Top = 381
+        Width = 82
+        TabOrder = 15
+      end
+      object Label9: TLabel
+        Left = 17
+        Height = 13
+        Top = 386
+        Width = 158
+        Caption = 'Ignore first (x) lines of import file'
+        ParentColor = False
+      end
+      object cbStripApostrophe: TCheckBox
+        Left = 332
+        Height = 17
+        Top = 382
+        Width = 210
+        BidiMode = bdRightToLeft
+        Caption = 'Strip apostrophes from start of columns'
+        ParentBidiMode = False
+        TabOrder = 16
+      end
+      object dbcbAccountName: TDBComboBox
+        Left = 68
+        Height = 21
+        Top = 65
+        Width = 212
+        DataField = 'ACCOUNTNAME'
+        DataSource = dmData.dsAccountList
+        ItemHeight = 13
+        MaxLength = 0
+        Sorted = True
+        Style = csDropDownList
+        TabOrder = 17
+      end
+    end
+  end
+  object bImport: TButton
+    Left = 688
+    Height = 25
+    Top = 30
+    Width = 75
+    Caption = 'Import'
+    OnClick = bImportClick
+    TabOrder = 1
+  end
+  object bClose: TButton
+    Left = 688
+    Height = 25
+    Top = 62
+    Width = 75
+    Caption = 'Close'
+    OnClick = bCloseClick
+    TabOrder = 2
+  end
+  object bCreateTables: TButton
+    Left = 688
+    Height = 25
+    Top = 134
+    Width = 75
+    Caption = 'Create Tables'
+    OnClick = bCreateTablesClick
+    TabOrder = 3
+  end
+  object bEmptyTables: TButton
+    Left = 688
+    Height = 25
+    Top = 166
+    Width = 75
+    Caption = 'Empty Tables'
+    OnClick = bEmptyTablesClick
+    TabOrder = 4
+  end
+  object OpenDialogCSVOrder: TOpenDialog
+    DefaultExt = '.mcv'
+    Filter = '*.mcv|*.mcv'
+    left = 528
+    top = 240
+  end
+  object SaveDialogCSVOrder: TSaveDialog
+    DefaultExt = '.mcv'
+    Filter = '*.mcv|*.mcv'
+    left = 528
+    top = 296
+  end
+end
