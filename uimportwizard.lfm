@@ -10,7 +10,7 @@ object frImportWizard: TfrImportWizard
   OnClose = FormClose
   OnShow = FormShow
   Position = poOwnerFormCenter
-  LCLVersion = '1.2.4.0'
+  LCLVersion = '1.6.0.4'
   object nbPages: TNotebook
     Left = 0
     Height = 426
@@ -29,29 +29,29 @@ object frImportWizard: TfrImportWizard
         Align = alClient
         BorderSpacing.Around = 10
         Caption = 'Step 1 of 4 : Import File Setup'
-        ClientHeight = 388
+        ClientHeight = 386
         ClientWidth = 512
         TabOrder = 0
         object cbAccountName: TComboBox
           Left = 16
-          Height = 21
+          Height = 23
           Top = 103
           Width = 299
-          ItemHeight = 13
+          ItemHeight = 15
           Style = csDropDownList
           TabOrder = 1
         end
         object Label6: TLabel
           Left = 17
-          Height = 13
+          Height = 15
           Top = 83
-          Width = 276
+          Width = 308
           Caption = 'Please select the account you would like to import file into'
           ParentColor = False
         end
         object fneImportFile: TFileNameEdit
           Left = 16
-          Height = 21
+          Height = 23
           Top = 33
           Width = 458
           Filter = 'CSV Files|*.csv'
@@ -65,9 +65,9 @@ object frImportWizard: TfrImportWizard
         end
         object Label5: TLabel
           Left = 17
-          Height = 13
+          Height = 15
           Top = 11
-          Width = 112
+          Width = 124
           Caption = 'Please select import file'
           ParentColor = False
         end
@@ -85,7 +85,7 @@ object frImportWizard: TfrImportWizard
           ChildSizing.ShrinkVertical = crsScaleChilds
           ChildSizing.Layout = cclTopToBottomThenLeftToRight
           ChildSizing.ControlsPerLine = 1
-          ClientHeight = 31
+          ClientHeight = 29
           ClientWidth = 365
           ColumnLayout = clVerticalThenHorizontal
           Columns = 4
@@ -101,7 +101,7 @@ object frImportWizard: TfrImportWizard
         end
         object eUserDefined: TEdit
           Left = 396
-          Height = 21
+          Height = 23
           Top = 182
           Width = 83
           TabOrder = 4
@@ -110,18 +110,18 @@ object frImportWizard: TfrImportWizard
         end
         object Label8: TLabel
           Left = 357
-          Height = 13
+          Height = 15
           Top = 83
-          Width = 60
+          Width = 65
           Caption = 'Date Format'
           ParentColor = False
         end
         object cbDateFormat: TComboBox
           Left = 356
-          Height = 21
+          Height = 23
           Top = 102
           Width = 141
-          ItemHeight = 13
+          ItemHeight = 15
           Items.Strings = (
             'DDMMYY'
             'DD-MM-YY'
@@ -157,29 +157,29 @@ object frImportWizard: TfrImportWizard
           Top = 254
           Width = 480
           Caption = 'Advanced Options'
-          ClientHeight = 59
+          ClientHeight = 57
           ClientWidth = 476
           TabOrder = 5
           object Label9: TLabel
-            Left = 17
-            Height = 13
+            Left = 5
+            Height = 15
             Top = 22
-            Width = 125
+            Width = 133
             Caption = 'Ignore first (x) lines of file'
             ParentColor = False
           end
           object seIgnoreLines: TSpinEdit
-            Left = 156
-            Height = 21
+            Left = 144
+            Height = 23
             Top = 14
             Width = 58
             TabOrder = 0
           end
           object cbStripApostrophe: TCheckBox
-            Left = 233
-            Height = 17
+            Left = 221
+            Height = 19
             Top = 18
-            Width = 233
+            Width = 251
             BidiMode = bdRightToLeft
             Caption = 'Remove apostrophes from the start of fields'
             ParentBidiMode = False
