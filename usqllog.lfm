@@ -1,0 +1,44 @@
+object frSQLLog: TfrSQLLog
+  Left = 286
+  Height = 460
+  Top = 262
+  Width = 460
+  Caption = 'SQL Log'
+  ClientHeight = 460
+  ClientWidth = 460
+  OnCreate = FormCreate
+  LCLVersion = '1.2.0.3'
+  object mLog: TMemo
+    Left = 0
+    Height = 460
+    Top = 0
+    Width = 460
+    Align = alClient
+    PopupMenu = pmLog
+    ScrollBars = ssAutoBoth
+    TabOrder = 0
+  end
+  object pmLog: TPopupMenu
+    left = 137
+    top = 136
+    object miCopy: TMenuItem
+      Caption = 'Copy'
+      OnClick = miCopyClick
+    end
+    object miSelectAll: TMenuItem
+      Caption = 'Select All'
+      OnClick = miSelectAllClick
+    end
+    object miClearLog: TMenuItem
+      Caption = 'Clear Log'
+      OnClick = miClearLogClick
+    end
+    object MenuItem1: TMenuItem
+      Caption = '-'
+    end
+    object miClose: TMenuItem
+      Caption = 'Close'
+      OnClick = miCloseClick
+    end
+  end
+end

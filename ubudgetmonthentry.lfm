@@ -1,0 +1,119 @@
+object frBudgetMonthEntry: TfrBudgetMonthEntry
+  Left = 414
+  Height = 188
+  Top = 412
+  Width = 288
+  BorderStyle = bsDialog
+  Caption = 'Budget Month Entry'
+  ClientHeight = 188
+  ClientWidth = 288
+  OnShow = FormShow
+  Position = poOwnerFormCenter
+  LCLVersion = '1.2.2.0'
+  object GroupBox1: TGroupBox
+    Left = 10
+    Height = 134
+    Top = 10
+    Width = 268
+    Align = alClient
+    BorderSpacing.Around = 10
+    ClientHeight = 116
+    ClientWidth = 264
+    TabOrder = 0
+    object Label2: TLabel
+      Left = 16
+      Height = 13
+      Top = 14
+      Width = 63
+      Caption = 'Budget Year:'
+      ParentColor = False
+    end
+    object Label3: TLabel
+      Left = 16
+      Height = 13
+      Top = 83
+      Width = 79
+      Caption = 'Base budget on:'
+      ParentColor = False
+    end
+    object Label4: TLabel
+      Left = 16
+      Height = 13
+      Top = 174
+      Width = 41
+      Caption = 'Amount:'
+      ParentColor = False
+    end
+    object cbBudgets: TComboBox
+      Left = 107
+      Height = 21
+      Top = 75
+      Width = 141
+      ItemHeight = 13
+      Items.Strings = (
+        ''
+      )
+      Style = csDropDownList
+      TabOrder = 2
+    end
+    object seYear: TSpinEdit
+      Left = 107
+      Height = 21
+      Top = 6
+      Width = 99
+      MaxValue = 2999
+      MinValue = 1976
+      TabOrder = 0
+      Value = 2014
+    end
+    object Label5: TLabel
+      Left = 16
+      Height = 13
+      Top = 48
+      Width = 71
+      Caption = 'Budget Month:'
+      ParentColor = False
+    end
+    object seMonth: TSpinEdit
+      Left = 107
+      Height = 21
+      Top = 40
+      Width = 99
+      MaxValue = 12
+      MinValue = 1
+      TabOrder = 1
+      Value = 5
+    end
+  end
+  object pBottom: TPanel
+    Left = 0
+    Height = 34
+    Top = 154
+    Width = 288
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 34
+    ClientWidth = 288
+    TabOrder = 1
+    object bOk: TButton
+      Left = 119
+      Height = 25
+      Top = 1
+      Width = 75
+      Anchors = [akTop, akRight]
+      Caption = 'Ok'
+      ModalResult = 1
+      TabOrder = 0
+    end
+    object bCancel: TButton
+      Left = 202
+      Height = 25
+      Top = 1
+      Width = 75
+      Anchors = [akTop, akRight]
+      Caption = 'Cancel'
+      ModalResult = 2
+      TabOrder = 1
+    end
+  end
+end

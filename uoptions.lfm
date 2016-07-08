@@ -1,0 +1,897 @@
+object frOptions: TfrOptions
+  Left = 452
+  Height = 453
+  Top = 333
+  Width = 585
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsDialog
+  Caption = 'Options'
+  ClientHeight = 453
+  ClientWidth = 585
+  OnClose = FormClose
+  OnShow = FormShow
+  Position = poOwnerFormCenter
+  LCLVersion = '1.2.6.0'
+  object pBottom: TPanel
+    Left = 0
+    Height = 34
+    Top = 419
+    Width = 585
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 34
+    ClientWidth = 585
+    TabOrder = 2
+    object bOk: TButton
+      Left = 416
+      Height = 25
+      Top = 1
+      Width = 75
+      Anchors = [akTop, akRight]
+      Caption = '&Ok'
+      Default = True
+      ModalResult = 1
+      TabOrder = 0
+    end
+    object bCancel: TButton
+      Left = 499
+      Height = 25
+      Top = 1
+      Width = 75
+      Anchors = [akTop, akRight]
+      Caption = '&Cancel'
+      ModalResult = 2
+      TabOrder = 1
+    end
+  end
+  object tvOptions: TTreeView
+    Left = 10
+    Height = 399
+    Top = 10
+    Width = 190
+    Align = alLeft
+    BorderSpacing.Around = 10
+    DefaultItemHeight = 18
+    HideSelection = False
+    ReadOnly = True
+    ScrollBars = ssAutoBoth
+    TabOrder = 0
+    OnChange = tvOptionsChange
+    Options = [tvoAutoItemHeight, tvoKeepCollapsedNodes, tvoReadOnly, tvoShowButtons, tvoShowLines, tvoShowRoot, tvoToolTips, tvoThemedDraw]
+    Items.Data = {
+      F9FFFFFF020006000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000
+      0000000700000047656E6572616CFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF0000
+      000000000000000800000044656661756C7473FFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFF000000000000000000080000004461746162617365FFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFF00000000000000000007000000436F6C6F757273FFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFF000000000000000000070000005265706F727473
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF00000000000000000009000000496E74
+      657266616365
+    }
+  end
+  object nbOptions: TNotebook
+    Left = 210
+    Height = 399
+    Top = 10
+    Width = 365
+    PageIndex = 0
+    Align = alClient
+    BorderSpacing.Around = 10
+    TabOrder = 1
+    TabStop = True
+    object pgGeneral: TPage
+      object gbFinancialYear: TGroupBox
+        Left = 0
+        Height = 89
+        Top = 195
+        Width = 365
+        Align = alTop
+        BorderSpacing.Bottom = 5
+        Caption = 'Financial Year'
+        ClientHeight = 71
+        ClientWidth = 361
+        TabOrder = 0
+        object Label2: TLabel
+          Left = 18
+          Height = 15
+          Top = 10
+          Width = 47
+          Caption = 'Start Day'
+          ParentColor = False
+        end
+        object seStartDay: TSpinEdit
+          Left = 18
+          Height = 23
+          Top = 31
+          Width = 60
+          MaxValue = 31
+          MinValue = 1
+          TabOrder = 0
+          Value = 1
+        end
+        object Label3: TLabel
+          Left = 102
+          Height = 15
+          Top = 10
+          Width = 63
+          Caption = 'Start Month'
+          ParentColor = False
+        end
+        object cbStartMonth: TComboBox
+          Left = 102
+          Height = 23
+          Top = 31
+          Width = 141
+          ItemHeight = 15
+          Items.Strings = (
+            'January'
+            'February'
+            'March'
+            'April'
+            'May'
+            'June'
+            'July'
+            'August'
+            'September'
+            'October'
+            'November'
+            'December'
+          )
+          Style = csDropDownList
+          TabOrder = 1
+        end
+      end
+      object gbDisplayDateFormat: TGroupBox
+        Left = 0
+        Height = 105
+        Top = 85
+        Width = 365
+        Align = alTop
+        BorderSpacing.Bottom = 5
+        Caption = 'Display Date Format'
+        ClientHeight = 87
+        ClientWidth = 361
+        TabOrder = 1
+        object cbDisplayDateFormat: TComboBox
+          Left = 14
+          Height = 23
+          Top = 16
+          Width = 141
+          ItemHeight = 15
+          Items.Strings = (
+            'DDMMYY'
+            'DD-MM-YY'
+            'DD.MM.YY'
+            'DD/MM/YY'
+            'DDMMYYYY'
+            'DD-MM-YYYY'
+            'DD.MM.YYYY'
+            'DD/MM/YYYY'
+            'MMDDYY'
+            'MM-DD-YY'
+            'MM.DD.YY'
+            'MM/DD/YY'
+            'MMDDYYYY'
+            'MM-DD-YYYY'
+            'MM.DD.YYYY'
+            'MM/DD/YYYY'
+            'YYMMDD'
+            'YY-MM-DD'
+            'YY.MM.DD'
+            'YY/MM/DD'
+            'YYYYMMDD'
+            'YYYY-MM-DD'
+            'YYYY.MM.DD'
+            'YYYY/MM/DD'
+          )
+          OnChange = cbDisplayDateFormatChange
+          Style = csDropDownList
+          TabOrder = 0
+        end
+        object Label4: TLabel
+          Left = 14
+          Height = 15
+          Top = 55
+          Width = 139
+          Caption = 'New date format example:'
+          ParentColor = False
+        end
+        object lbDate: TLabel
+          Left = 154
+          Height = 15
+          Top = 55
+          Width = 34
+          Caption = 'lbDate'
+          ParentColor = False
+        end
+      end
+      object gbUserName: TGroupBox
+        Left = 0
+        Height = 80
+        Top = 0
+        Width = 365
+        Align = alTop
+        BorderSpacing.Bottom = 5
+        Caption = 'Display Heading'
+        ClientHeight = 62
+        ClientWidth = 361
+        TabOrder = 2
+        object eUserName: TEdit
+          Left = 14
+          Height = 23
+          Top = 16
+          Width = 301
+          TabOrder = 0
+        end
+      end
+      object gbFinancialDetails: TGroupBox
+        Left = 0
+        Height = 77
+        Top = 289
+        Width = 365
+        Align = alTop
+        BorderSpacing.Bottom = 5
+        Caption = 'Financial Details'
+        ClientHeight = 59
+        ClientWidth = 361
+        TabOrder = 3
+        object seDecPlaces: TSpinEdit
+          Left = 278
+          Height = 23
+          Top = 16
+          Width = 60
+          MaxValue = 4
+          MinValue = 2
+          TabOrder = 1
+          Value = 2
+        end
+        object Label18: TLabel
+          Left = 186
+          Height = 15
+          Top = 24
+          Width = 82
+          Caption = 'Decimal Places:'
+          ParentColor = False
+        end
+        object Label19: TLabel
+          Left = 16
+          Height = 15
+          Top = 24
+          Width = 94
+          Caption = 'Currency Symbol:'
+          ParentColor = False
+        end
+        object eCurrencySymbol: TEdit
+          Left = 118
+          Height = 23
+          Top = 17
+          Width = 43
+          TabOrder = 0
+        end
+      end
+    end
+    object pgTranDefaults: TPage
+      object gbTransDefaults: TGroupBox
+        Left = 0
+        Height = 208
+        Top = 0
+        Width = 365
+        Align = alTop
+        BorderSpacing.Bottom = 5
+        Caption = 'New Transaction Defaults'
+        ClientHeight = 190
+        ClientWidth = 361
+        TabOrder = 0
+        object Label9: TLabel
+          Left = 21
+          Height = 13
+          Top = 13
+          Width = 60
+          Caption = 'Default date'
+          ParentColor = False
+        end
+        object cbDefaultNewDate: TComboBox
+          Left = 20
+          Height = 21
+          Top = 34
+          Width = 141
+          ItemHeight = 13
+          Items.Strings = (
+            'None'
+            'Todays Date'
+            'Last Used'
+          )
+          Style = csDropDownList
+          TabOrder = 0
+        end
+        object Label6: TLabel
+          Left = 193
+          Height = 13
+          Top = 72
+          Width = 76
+          Caption = 'Default account'
+          ParentColor = False
+        end
+        object cbDefaultAccount: TComboBox
+          Left = 192
+          Height = 19
+          Top = 92
+          Width = 141
+          ItemHeight = 13
+          Items.Strings = (
+            'None'
+            'Last Used'
+          )
+          ReadOnly = True
+          Style = csOwnerDrawFixed
+          TabOrder = 3
+        end
+        object Label7: TLabel
+          Left = 22
+          Height = 13
+          Top = 128
+          Width = 68
+          Caption = 'Default payee'
+          ParentColor = False
+        end
+        object cbDefPayee: TComboBox
+          Left = 21
+          Height = 21
+          Top = 146
+          Width = 141
+          ItemHeight = 13
+          Items.Strings = (
+            'None'
+            'Last Used'
+          )
+          Style = csDropDownList
+          TabOrder = 4
+        end
+        object cbDefCategory: TComboBox
+          Left = 192
+          Height = 21
+          Top = 146
+          Width = 140
+          ItemHeight = 13
+          Items.Strings = (
+            'None'
+            'Last Used'
+          )
+          Style = csDropDownList
+          TabOrder = 5
+        end
+        object Label11: TLabel
+          Left = 192
+          Height = 13
+          Top = 13
+          Width = 68
+          Caption = 'Default status'
+          ParentColor = False
+        end
+        object cbDefStatus: TComboBox
+          Left = 192
+          Height = 21
+          Top = 33
+          Width = 140
+          ItemHeight = 13
+          Items.Strings = (
+            'Last Used'
+            'None'
+            'Reconciled'
+            'Void'
+            'Follow Up'
+            'Duplicate'
+          )
+          Style = csDropDownList
+          TabOrder = 1
+        end
+        object Label12: TLabel
+          Left = 21
+          Height = 13
+          Top = 72
+          Width = 60
+          Caption = 'Default type'
+          ParentColor = False
+        end
+        object cbDefType: TComboBox
+          Left = 21
+          Height = 21
+          Top = 92
+          Width = 140
+          ItemHeight = 13
+          Items.Strings = (
+            'Last Used'
+            'Withdrawal'
+            'Deposit'
+            'Transfer'
+          )
+          Style = csDropDownList
+          TabOrder = 2
+        end
+        object Label10: TLabel
+          Left = 193
+          Height = 13
+          Top = 128
+          Width = 81
+          Caption = 'Default category'
+          ParentColor = False
+        end
+      end
+      object gbBudgetDefaults: TGroupBox
+        Left = 0
+        Height = 89
+        Top = 213
+        Width = 365
+        Align = alTop
+        BorderSpacing.Bottom = 5
+        Caption = 'New Budget Defaults'
+        ClientHeight = 71
+        ClientWidth = 361
+        TabOrder = 1
+        object cbDefBudgetType: TComboBox
+          Left = 21
+          Height = 21
+          Top = 28
+          Width = 141
+          ItemHeight = 13
+          Items.Strings = (
+            'Last Used'
+            'Income'
+            'Expense'
+          )
+          Style = csDropDownList
+          TabOrder = 0
+        end
+        object Label20: TLabel
+          Left = 21
+          Height = 13
+          Top = 8
+          Width = 60
+          Caption = 'Default type'
+          ParentColor = False
+        end
+        object cbDefBudgetFrequency: TComboBox
+          Left = 192
+          Height = 21
+          Top = 28
+          Width = 140
+          ItemHeight = 13
+          Items.Strings = (
+            'Last Used'
+            'None'
+            'Weekly'
+            'Bi-Weekly'
+            'Monthly'
+            'Bi-Monthly'
+            'Quarterly'
+            'Half-Yearly'
+            'Yearly'
+            'Daily'
+          )
+          Style = csDropDownList
+          TabOrder = 1
+        end
+        object Label21: TLabel
+          Left = 192
+          Height = 13
+          Top = 8
+          Width = 87
+          Caption = 'Default frequency'
+          ParentColor = False
+        end
+      end
+    end
+    object pgDatabase: TPage
+      object gbDatabaseLocation: TGroupBox
+        Left = 0
+        Height = 112
+        Top = 0
+        Width = 365
+        Align = alTop
+        BorderSpacing.Bottom = 5
+        Caption = 'Database Location'
+        ClientHeight = 94
+        ClientWidth = 361
+        TabOrder = 0
+        object edDatabaseLocation: TEdit
+          Left = 12
+          Height = 21
+          Top = 16
+          Width = 320
+          Color = clBtnFace
+          ReadOnly = True
+          TabOrder = 0
+        end
+        object cbShowLocationCaption: TCheckBox
+          Left = 14
+          Height = 17
+          Top = 56
+          Width = 137
+          Caption = 'Show location in title bar'
+          TabOrder = 1
+        end
+      end
+      object gbDatabaseBackup: TGroupBox
+        Left = 0
+        Height = 128
+        Top = 117
+        Width = 365
+        Align = alTop
+        BorderSpacing.Bottom = 5
+        Caption = 'Database Backup'
+        ClientHeight = 110
+        ClientWidth = 361
+        TabOrder = 1
+        object cbStartupBackup: TCheckBox
+          Left = 14
+          Height = 17
+          Top = 13
+          Width = 175
+          Caption = 'Create a new backup on startup'
+          TabOrder = 0
+        end
+        object cbBackupExit: TCheckBox
+          Left = 14
+          Height = 17
+          Top = 41
+          Width = 138
+          Caption = 'Backup database on exit'
+          TabOrder = 1
+        end
+        object seMaxBackup: TSpinEdit
+          Left = 78
+          Height = 21
+          Top = 68
+          Width = 60
+          MaxValue = 10
+          TabOrder = 2
+          Visible = False
+        end
+        object Label1: TLabel
+          Left = 15
+          Height = 13
+          Top = 76
+          Width = 42
+          Caption = 'Max files'
+          ParentColor = False
+          Visible = False
+        end
+      end
+      object gbDatabasePassword: TGroupBox
+        Left = 0
+        Height = 80
+        Top = 250
+        Width = 365
+        Align = alTop
+        BorderSpacing.Bottom = 5
+        Caption = 'Database Password'
+        ClientHeight = 62
+        ClientWidth = 361
+        TabOrder = 2
+        object edDatabasePassword: TEdit
+          Left = 12
+          Height = 21
+          Top = 16
+          Width = 320
+          TabOrder = 0
+        end
+      end
+    end
+    object pgColours: TPage
+      object GroupBox2: TGroupBox
+        Left = 0
+        Height = 399
+        Top = 0
+        Width = 365
+        Align = alClient
+        Caption = 'Colour Settings'
+        ClientHeight = 381
+        ClientWidth = 361
+        TabOrder = 0
+        object Label5: TLabel
+          Left = 27
+          Height = 13
+          Top = 25
+          Width = 49
+          Caption = 'List Row 0'
+          ParentColor = False
+        end
+        object cdbListRow0: TCDButton
+          Left = 128
+          Height = 25
+          Top = 14
+          Width = 75
+          DrawStyle = dsDefault
+          OnClick = cdbListRow0Click
+          TabOrder = 0
+          TabStop = True
+        end
+        object Label8: TLabel
+          Left = 27
+          Height = 13
+          Top = 62
+          Width = 49
+          Caption = 'List Row 1'
+          ParentColor = False
+        end
+        object cdbListRow1: TCDButton
+          Left = 128
+          Height = 25
+          Top = 54
+          Width = 75
+          DrawStyle = dsDefault
+          OnClick = cdbListRow1Click
+          TabOrder = 1
+          TabStop = True
+        end
+        object Label13: TLabel
+          Left = 27
+          Height = 13
+          Top = 104
+          Width = 75
+          Caption = 'List Background'
+          ParentColor = False
+        end
+        object cdbListBackground: TCDButton
+          Left = 128
+          Height = 25
+          Top = 96
+          Width = 75
+          DrawStyle = dsDefault
+          OnClick = cdbListBackgroundClick
+          TabOrder = 2
+          TabStop = True
+        end
+        object Label14: TLabel
+          Left = 27
+          Height = 13
+          Top = 144
+          Width = 76
+          Caption = 'Navigation Tree'
+          ParentColor = False
+        end
+        object cdbNavTree: TCDButton
+          Left = 128
+          Height = 25
+          Top = 136
+          Width = 75
+          DrawStyle = dsDefault
+          OnClick = cdbNavTreeClick
+          TabOrder = 3
+          TabStop = True
+        end
+        object bResetDefaults: TButton
+          Left = 128
+          Height = 25
+          Top = 296
+          Width = 75
+          Caption = 'Defaults'
+          OnClick = bResetDefaultsClick
+          TabOrder = 7
+        end
+        object Label15: TLabel
+          Left = 27
+          Height = 13
+          Top = 184
+          Width = 86
+          Caption = 'Chart Background'
+          ParentColor = False
+        end
+        object cdbChartBack: TCDButton
+          Left = 128
+          Height = 25
+          Top = 176
+          Width = 75
+          DrawStyle = dsDefault
+          OnClick = cdbChartBackClick
+          TabOrder = 4
+          TabStop = True
+        end
+        object cbShowBudgetColours: TCheckBox
+          Left = 24
+          Height = 17
+          Top = 340
+          Width = 252
+          Caption = 'Show category colours on the Budget Setup grid'
+          TabOrder = 8
+        end
+        object cdbExpenses: TCDButton
+          Left = 128
+          Height = 25
+          Top = 216
+          Width = 75
+          DrawStyle = dsDefault
+          OnClick = cdbExpensesClick
+          TabOrder = 5
+          TabStop = True
+        end
+        object cdbIncome: TCDButton
+          Left = 128
+          Height = 25
+          Top = 256
+          Width = 75
+          DrawStyle = dsDefault
+          OnClick = cdbIncomeClick
+          TabOrder = 6
+          TabStop = True
+        end
+        object Label16: TLabel
+          Left = 27
+          Height = 13
+          Top = 224
+          Width = 46
+          Caption = 'Expenses'
+          ParentColor = False
+        end
+        object Label17: TLabel
+          Left = 27
+          Height = 13
+          Top = 264
+          Width = 35
+          Caption = 'Income'
+          ParentColor = False
+        end
+      end
+    end
+    object pgReports: TPage
+      object rgDefaultReport: TRadioGroup
+        Left = 0
+        Height = 65
+        Top = 0
+        Width = 365
+        Align = alTop
+        AutoFill = True
+        BorderSpacing.Bottom = 5
+        Caption = 'Default Report'
+        ChildSizing.LeftRightSpacing = 6
+        ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+        ChildSizing.EnlargeVertical = crsHomogenousChildResize
+        ChildSizing.ShrinkHorizontal = crsScaleChilds
+        ChildSizing.ShrinkVertical = crsScaleChilds
+        ChildSizing.Layout = cclLeftToRightThenTopToBottom
+        ChildSizing.ControlsPerLine = 2
+        ClientHeight = 47
+        ClientWidth = 361
+        Columns = 2
+        ItemIndex = 0
+        Items.Strings = (
+          'Bar Chart'
+          'Pie Chart'
+        )
+        TabOrder = 0
+      end
+      object gbDefSelection: TGroupBox
+        Left = 0
+        Height = 112
+        Top = 70
+        Width = 365
+        Align = alTop
+        BorderSpacing.Bottom = 5
+        Caption = 'Default Selection'
+        ClientHeight = 94
+        ClientWidth = 361
+        TabOrder = 1
+        object cbRepAccounts: TComboBox
+          Left = 14
+          Height = 21
+          Top = 13
+          Width = 196
+          ItemHeight = 13
+          Style = csDropDownList
+          TabOrder = 0
+        end
+        object cbItemLimit: TComboBox
+          Left = 244
+          Height = 21
+          Top = 13
+          Width = 96
+          ItemHeight = 13
+          Items.Strings = (
+            'All Items'
+            'Top 10'
+            'Top 20'
+            'Top 30'
+          )
+          Style = csDropDownList
+          TabOrder = 1
+        end
+        object cbRepGroup: TComboBox
+          Left = 14
+          Height = 21
+          Top = 52
+          Width = 128
+          ItemHeight = 13
+          Items.Strings = (
+            'Payees'
+            'Categories'
+          )
+          Style = csDropDownList
+          TabOrder = 2
+        end
+      end
+    end
+    object pgInterface: TPage
+      object rgToolbarPosition: TRadioGroup
+        Left = 0
+        Height = 57
+        Top = 0
+        Width = 365
+        Align = alTop
+        AutoFill = True
+        BorderSpacing.Bottom = 5
+        Caption = 'Toolbar grid position'
+        ChildSizing.LeftRightSpacing = 6
+        ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+        ChildSizing.EnlargeVertical = crsHomogenousChildResize
+        ChildSizing.ShrinkHorizontal = crsScaleChilds
+        ChildSizing.ShrinkVertical = crsScaleChilds
+        ChildSizing.Layout = cclLeftToRightThenTopToBottom
+        ChildSizing.ControlsPerLine = 2
+        ClientHeight = 39
+        ClientWidth = 361
+        Columns = 2
+        ItemIndex = 0
+        Items.Strings = (
+          'Top'
+          'Bottom'
+        )
+        TabOrder = 0
+      end
+      object gbMouseOver: TGroupBox
+        Left = 0
+        Height = 93
+        Top = 62
+        Width = 365
+        Align = alTop
+        BorderSpacing.Bottom = 5
+        Caption = 'Buttons'
+        ClientHeight = 75
+        ClientWidth = 361
+        TabOrder = 1
+        object cbMouseOver: TCheckBox
+          Left = 16
+          Height = 17
+          Top = 8
+          Width = 207
+          Caption = 'Change mouse icon when over buttons'
+          TabOrder = 0
+        end
+        object cbToolbarCaptions: TCheckBox
+          Left = 16
+          Height = 17
+          Top = 40
+          Width = 223
+          Caption = 'Show captions next to the toolbar buttons'
+          TabOrder = 1
+        end
+      end
+    end
+  end
+  object ColorDialog1: TColorDialog
+    Color = clBlack
+    CustomColors.Strings = (
+      'ColorA=000000'
+      'ColorB=000080'
+      'ColorC=008000'
+      'ColorD=008080'
+      'ColorE=800000'
+      'ColorF=800080'
+      'ColorG=808000'
+      'ColorH=808080'
+      'ColorI=C0C0C0'
+      'ColorJ=0000FF'
+      'ColorK=00FF00'
+      'ColorL=00FFFF'
+      'ColorM=FF0000'
+      'ColorN=FF00FF'
+      'ColorO=FFFF00'
+      'ColorP=FFFFFF'
+      'ColorQ=C0DCC0'
+      'ColorR=F0CAA6'
+      'ColorS=F0FBFF'
+      'ColorT=A4A0A0'
+    )
+    left = 24
+    top = 368
+  end
+end

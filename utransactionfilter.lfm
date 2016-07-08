@@ -1,0 +1,233 @@
+object frTransactionFilter: TfrTransactionFilter
+  Left = 225
+  Height = 526
+  Top = 234
+  Width = 346
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsDialog
+  Caption = 'Transaction Filter'
+  ClientHeight = 526
+  ClientWidth = 346
+  OnClose = FormClose
+  OnCloseQuery = FormCloseQuery
+  OnShow = FormShow
+  Position = poOwnerFormCenter
+  LCLVersion = '1.2.4.0'
+  object pBottom: TPanel
+    Left = 0
+    Height = 34
+    Top = 492
+    Width = 346
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 34
+    ClientWidth = 346
+    TabOrder = 6
+    object bOk: TButton
+      Left = 177
+      Height = 25
+      Top = 1
+      Width = 75
+      Anchors = [akTop, akRight]
+      Caption = 'Ok'
+      Default = True
+      ModalResult = 1
+      TabOrder = 0
+    end
+    object bCancel: TButton
+      Left = 260
+      Height = 25
+      Top = 1
+      Width = 75
+      Anchors = [akTop, akRight]
+      Caption = 'Cancel'
+      ModalResult = 2
+      TabOrder = 1
+    end
+  end
+  object gbDates: TGroupBox
+    Left = 10
+    Height = 100
+    Top = 95
+    Width = 325
+    BorderSpacing.Around = 10
+    Caption = 'Between Dates'
+    ClientHeight = 82
+    ClientWidth = 321
+    TabOrder = 1
+    object deFromDate: TDateEdit
+      Left = 16
+      Height = 21
+      Top = 42
+      Width = 113
+      CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+      OKCaption = 'OK'
+      CancelCaption = 'Cancel'
+      DateOrder = doYMd
+      ButtonWidth = 23
+      CharCase = ecNormal
+      NumGlyphs = 1
+      MaxLength = 10
+      TabOrder = 1
+    end
+    object deToDate: TDateEdit
+      Left = 168
+      Height = 21
+      Top = 42
+      Width = 113
+      CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+      OKCaption = 'OK'
+      CancelCaption = 'Cancel'
+      DateOrder = doYMd
+      ButtonWidth = 23
+      CharCase = ecNormal
+      NumGlyphs = 1
+      MaxLength = 10
+      TabOrder = 2
+    end
+    object cbPresetDates: TComboBox
+      Left = 16
+      Height = 21
+      Top = 9
+      Width = 289
+      ItemHeight = 13
+      ItemIndex = 0
+      Items.Strings = (
+        '[None]'
+        'User Specified'
+        'Current Week'
+        'Current Month'
+        'Current Quarter'
+        'Current Year'
+        'Future Transactions'
+      )
+      OnChange = cbPresetDatesChange
+      Style = csDropDownList
+      TabOrder = 0
+      Text = '[None]'
+    end
+  end
+  object gbPayee: TGroupBox
+    Left = 10
+    Height = 66
+    Top = 201
+    Width = 325
+    BorderSpacing.Around = 10
+    Caption = 'Payee'
+    ClientHeight = 48
+    ClientWidth = 321
+    TabOrder = 2
+    object cbPayee: TComboBox
+      Left = 16
+      Height = 21
+      Top = 9
+      Width = 289
+      ItemHeight = 13
+      Style = csDropDownList
+      TabOrder = 0
+    end
+  end
+  object gbCategory: TGroupBox
+    Left = 10
+    Height = 66
+    Top = 416
+    Width = 326
+    Align = alBottom
+    BorderSpacing.Around = 10
+    Caption = 'Category'
+    ClientHeight = 48
+    ClientWidth = 322
+    TabOrder = 5
+    object bCategory: TButton
+      Left = 56
+      Height = 25
+      Top = 8
+      Width = 215
+      Caption = 'Category Description'
+      OnClick = bCategoryClick
+      TabOrder = 0
+    end
+  end
+  object gbTransType: TGroupBox
+    Left = 10
+    Height = 65
+    Top = 274
+    Width = 325
+    BorderSpacing.Around = 10
+    Caption = 'Transaction Type'
+    ClientHeight = 47
+    ClientWidth = 321
+    TabOrder = 3
+    object cbTransType: TComboBox
+      Left = 16
+      Height = 21
+      Top = 9
+      Width = 289
+      ItemHeight = 13
+      Items.Strings = (
+        '[All Transactions]'
+        'Withdrawal'
+        'Deposit'
+        'Transfer'
+      )
+      Style = csDropDownList
+      TabOrder = 0
+    end
+  end
+  object gbAmount: TGroupBox
+    Left = 10
+    Height = 64
+    Top = 345
+    Width = 325
+    BorderSpacing.Around = 10
+    Caption = 'Between Amounts'
+    ClientHeight = 46
+    ClientWidth = 321
+    TabOrder = 4
+    object eAmountFrom: TEdit
+      Left = 16
+      Height = 21
+      Top = 8
+      Width = 121
+      Alignment = taRightJustify
+      OnExit = eAmountFromExit
+      TabOrder = 0
+    end
+    object eAmountTo: TEdit
+      Left = 182
+      Height = 21
+      Top = 8
+      Width = 121
+      Alignment = taRightJustify
+      OnExit = eAmountToExit
+      TabOrder = 1
+    end
+  end
+  object gbFilterName: TGroupBox
+    Left = 10
+    Height = 80
+    Top = 10
+    Width = 326
+    Align = alTop
+    BorderSpacing.Around = 10
+    Caption = 'Filter Name'
+    ClientHeight = 62
+    ClientWidth = 322
+    TabOrder = 0
+    object eFilterName: TEdit
+      Left = 16
+      Height = 21
+      Top = 9
+      Width = 289
+      TabOrder = 0
+    end
+    object cbShowFilters: TCheckBox
+      Left = 16
+      Height = 17
+      Top = 38
+      Width = 228
+      Caption = 'Show in the Bank Accounts filter drop down'
+      TabOrder = 1
+    end
+  end
+end

@@ -1,0 +1,200 @@
+object frAsset: TfrAsset
+  Left = 375
+  Height = 425
+  Top = 215
+  Width = 330
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsDialog
+  Caption = 'New/Edit Asset'
+  ClientHeight = 425
+  ClientWidth = 330
+  OnCloseQuery = FormCloseQuery
+  OnShow = FormShow
+  Position = poOwnerFormCenter
+  LCLVersion = '1.2.4.0'
+  object GroupBox1: TGroupBox
+    Left = 10
+    Height = 371
+    Top = 10
+    Width = 310
+    Align = alClient
+    BorderSpacing.Around = 10
+    Caption = 'Asset Details'
+    ClientHeight = 353
+    ClientWidth = 306
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 18
+      Height = 13
+      Top = 12
+      Width = 27
+      Caption = 'Name'
+      ParentColor = False
+    end
+    object Label2: TLabel
+      Left = 18
+      Height = 13
+      Top = 39
+      Width = 23
+      Caption = 'Date'
+      ParentColor = False
+    end
+    object Label3: TLabel
+      Left = 18
+      Height = 13
+      Top = 66
+      Width = 54
+      Caption = 'Asset Type'
+      ParentColor = False
+    end
+    object Label4: TLabel
+      Left = 18
+      Height = 13
+      Top = 95
+      Width = 26
+      Caption = 'Value'
+      ParentColor = False
+    end
+    object Label5: TLabel
+      Left = 18
+      Height = 13
+      Top = 123
+      Width = 77
+      Caption = 'Change in Value'
+      ParentColor = False
+    end
+    object Label6: TLabel
+      Left = 18
+      Height = 13
+      Top = 152
+      Width = 37
+      Caption = '% Rate'
+      ParentColor = False
+    end
+    object Label7: TLabel
+      Left = 18
+      Height = 13
+      Top = 176
+      Width = 28
+      Caption = 'Notes'
+      ParentColor = False
+    end
+    object deDate: TDateEdit
+      Left = 109
+      Height = 21
+      Top = 31
+      Width = 80
+      CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+      OKCaption = 'OK'
+      CancelCaption = 'Cancel'
+      DefaultToday = True
+      DateOrder = doYMd
+      ButtonWidth = 23
+      CharCase = ecNormal
+      NumGlyphs = 1
+      MaxLength = 10
+      TabOrder = 1
+    end
+    object cbAssetType: TComboBox
+      Left = 109
+      Height = 21
+      Top = 58
+      Width = 180
+      ItemHeight = 13
+      Items.Strings = (
+        'Property'
+        'Automobile'
+        'Household Object'
+        'Art'
+        'Jewellery'
+        'Cash'
+        'Other'
+      )
+      Style = csDropDownList
+      TabOrder = 2
+    end
+    object cbChangeInValue: TComboBox
+      Left = 109
+      Height = 21
+      Top = 115
+      Width = 180
+      ItemHeight = 13
+      Items.Strings = (
+        'None'
+        'Appreciates'
+        'Depreciates'
+      )
+      OnChange = cbChangeInValueChange
+      OnExit = cbChangeInValueExit
+      Style = csDropDownList
+      TabOrder = 4
+    end
+    object eName: TDBEdit
+      Left = 109
+      Height = 21
+      Top = 4
+      Width = 180
+      DataField = 'ASSETNAME'
+      DataSource = dmData.dsAssets
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 0
+    end
+    object mNotes: TDBMemo
+      Left = 109
+      Height = 152
+      Top = 175
+      Width = 180
+      DataField = 'NOTES'
+      DataSource = dmData.dsAssets
+      TabOrder = 6
+    end
+    object eValue: TEdit
+      Left = 109
+      Height = 21
+      Top = 87
+      Width = 105
+      Alignment = taRightJustify
+      OnExit = eValueExit
+      TabOrder = 3
+    end
+    object sePercentageRate: TSpinEdit
+      Left = 109
+      Height = 21
+      Top = 144
+      Width = 75
+      TabOrder = 5
+    end
+  end
+  object pBottom: TPanel
+    Left = 0
+    Height = 34
+    Top = 391
+    Width = 330
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 34
+    ClientWidth = 330
+    TabOrder = 1
+    object bOk: TButton
+      Left = 161
+      Height = 25
+      Top = 1
+      Width = 75
+      Anchors = [akTop, akRight]
+      Caption = '&Ok'
+      ModalResult = 1
+      TabOrder = 0
+    end
+    object bCancel: TButton
+      Left = 244
+      Height = 25
+      Top = 1
+      Width = 75
+      Anchors = [akTop, akRight]
+      Caption = '&Cancel'
+      ModalResult = 2
+      TabOrder = 1
+    end
+  end
+end

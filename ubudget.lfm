@@ -1,0 +1,203 @@
+object frBudget: TfrBudget
+  Left = 358
+  Height = 317
+  Top = 294
+  Width = 333
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsDialog
+  Caption = 'Budget'
+  ClientHeight = 317
+  ClientWidth = 333
+  OnClose = FormClose
+  OnCloseQuery = FormCloseQuery
+  OnShow = FormShow
+  Position = poOwnerFormCenter
+  LCLVersion = '1.2.4.0'
+  object GroupBox1: TGroupBox
+    Left = 10
+    Height = 263
+    Top = 10
+    Width = 313
+    Align = alClient
+    BorderSpacing.Around = 10
+    ClientHeight = 245
+    ClientWidth = 309
+    TabOrder = 0
+    OnClick = GroupBox1Click
+    object Label2: TLabel
+      Left = 16
+      Height = 13
+      Top = 112
+      Width = 63
+      Caption = 'Budget Year:'
+      ParentColor = False
+    end
+    object lbBaseBudgets: TLabel
+      Left = 16
+      Height = 13
+      Top = 177
+      Width = 79
+      Caption = 'Base budget on:'
+      ParentColor = False
+    end
+    object cbBudgets: TComboBox
+      Left = 107
+      Height = 21
+      Top = 169
+      Width = 141
+      ItemHeight = 13
+      Items.Strings = (
+        ''
+      )
+      Style = csDropDownList
+      TabOrder = 5
+    end
+    object seYear: TSpinEdit
+      Left = 107
+      Height = 21
+      Top = 104
+      Width = 99
+      MaxValue = 2999
+      MinValue = 1976
+      TabOrder = 3
+      Value = 2014
+    end
+    object Label5: TLabel
+      Left = 16
+      Height = 13
+      Top = 145
+      Width = 71
+      Caption = 'Budget Month:'
+      ParentColor = False
+    end
+    object cbMonth: TComboBox
+      Left = 107
+      Height = 21
+      Top = 137
+      Width = 141
+      ItemHeight = 13
+      Items.Strings = (
+        'January'
+        'February'
+        'March'
+        'April'
+        'May'
+        'June'
+        'July'
+        'August'
+        'September'
+        'October'
+        'November'
+        'December'
+      )
+      Style = csDropDownList
+      TabOrder = 4
+    end
+    object Label4: TLabel
+      Left = 16
+      Height = 13
+      Top = 49
+      Width = 68
+      Caption = 'Budget Name:'
+      ParentColor = False
+    end
+    object cbFrequency: TComboBox
+      Left = 107
+      Height = 21
+      Top = 73
+      Width = 141
+      ItemHeight = 13
+      Items.Strings = (
+        'Monthly'
+        'Yearly'
+      )
+      OnChange = cbFrequencyChange
+      Style = csDropDownList
+      TabOrder = 2
+    end
+    object Label6: TLabel
+      Left = 16
+      Height = 13
+      Top = 81
+      Width = 55
+      Caption = 'Frequency:'
+      ParentColor = False
+    end
+    object eBudgetName: TEdit
+      Left = 107
+      Height = 21
+      Top = 41
+      Width = 185
+      TabOrder = 1
+    end
+    object cbArchived: TCheckBox
+      Left = 16
+      Height = 17
+      Top = 208
+      Width = 144
+      Caption = 'Show in budgets treeview'
+      ParentBidiMode = False
+      TabOrder = 6
+    end
+    object Label7: TLabel
+      Left = 16
+      Height = 13
+      Top = 16
+      Width = 43
+      Caption = 'Account:'
+      ParentColor = False
+    end
+    object cbAccounts: TComboBox
+      Left = 107
+      Height = 21
+      Top = 8
+      Width = 185
+      ItemHeight = 13
+      Style = csDropDownList
+      TabOrder = 0
+    end
+  end
+  object pBottom: TPanel
+    Left = 0
+    Height = 34
+    Top = 283
+    Width = 333
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 34
+    ClientWidth = 333
+    TabOrder = 1
+    object bOk: TButton
+      Left = 164
+      Height = 25
+      Top = 1
+      Width = 75
+      Anchors = [akTop, akRight]
+      Caption = '&Ok'
+      Default = True
+      ModalResult = 1
+      TabOrder = 0
+    end
+    object bCancel: TButton
+      Left = 247
+      Height = 25
+      Top = 1
+      Width = 75
+      Anchors = [akTop, akRight]
+      Caption = '&Cancel'
+      ModalResult = 2
+      TabOrder = 1
+    end
+  end
+  object dsBudgetYearLookup: TDataSource
+    DataSet = ztBudgetYearLookup
+    left = 229
+    top = 129
+  end
+  object ztBudgetYearLookup: TZTable
+    Connection = dmData.zcDatabaseConnection
+    TableName = 'BUDGETYEAR_V1'
+    left = 267
+    top = 129
+  end
+end

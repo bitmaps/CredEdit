@@ -1,0 +1,99 @@
+object frBudgetEditor: TfrBudgetEditor
+  Left = 271
+  Height = 357
+  Top = 333
+  Width = 507
+  BorderStyle = bsDialog
+  Caption = 'Budgets'
+  ClientHeight = 357
+  ClientWidth = 507
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnShow = FormShow
+  Position = poOwnerFormCenter
+  LCLVersion = '1.2.4.0'
+  object panFooter: TPanel
+    Left = 0
+    Height = 40
+    Top = 317
+    Width = 507
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 40
+    ClientWidth = 507
+    TabOrder = 0
+    object bAdd: TButton
+      Left = 10
+      Height = 25
+      Top = 2
+      Width = 75
+      Caption = '&Add'
+      OnClick = bAddClick
+      TabOrder = 0
+    end
+    object bEdit: TButton
+      Left = 94
+      Height = 25
+      Top = 2
+      Width = 75
+      Caption = '&Edit'
+      OnClick = bEditClick
+      TabOrder = 1
+    end
+    object bDelete: TButton
+      Left = 178
+      Height = 25
+      Top = 2
+      Width = 75
+      Caption = '&Delete'
+      OnClick = bDeleteClick
+      TabOrder = 2
+    end
+    object bClose: TButton
+      Left = 421
+      Height = 25
+      Top = 2
+      Width = 75
+      Anchors = [akRight, akBottom]
+      Caption = '&Close'
+      Default = True
+      ModalResult = 1
+      TabOrder = 3
+    end
+  end
+  object RadioGroup1: TRadioGroup
+    Left = 10
+    Height = 297
+    Top = 10
+    Width = 487
+    Align = alClient
+    AutoFill = True
+    BorderSpacing.Around = 10
+    Caption = 'Budgets'
+    ChildSizing.LeftRightSpacing = 6
+    ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+    ChildSizing.EnlargeVertical = crsHomogenousChildResize
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 1
+    ClientHeight = 279
+    ClientWidth = 483
+    TabOrder = 1
+    object dbgBudgets: TDBGrid
+      Left = 10
+      Height = 259
+      Top = 10
+      Width = 463
+      Align = alClient
+      AutoEdit = False
+      BorderSpacing.Around = 10
+      Color = clWindow
+      Columns = <>
+      DataSource = dmData.dszqBudgetYear
+      Flat = True
+      Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgAutoSizeColumns, dgAnyButtonCanSelect, dgDisableDelete, dgDisableInsert, dgTruncCellHints, dgCellEllipsis]
+      TabOrder = 0
+    end
+  end
+end

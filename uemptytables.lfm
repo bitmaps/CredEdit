@@ -1,0 +1,72 @@
+object frEmptyTables: TfrEmptyTables
+  Left = 431
+  Height = 374
+  Top = 309
+  Width = 314
+  BorderStyle = bsDialog
+  Caption = 'Empty Tables'
+  ClientHeight = 374
+  ClientWidth = 314
+  OnClose = FormClose
+  OnShow = FormShow
+  Position = poMainFormCenter
+  LCLVersion = '1.2.4.0'
+  object pBottom: TPanel
+    Left = 0
+    Height = 34
+    Top = 340
+    Width = 314
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 34
+    ClientWidth = 314
+    TabOrder = 0
+    object bOk: TButton
+      Left = 145
+      Height = 25
+      Top = 1
+      Width = 75
+      Anchors = [akTop, akRight]
+      Caption = 'Ok'
+      Default = True
+      ModalResult = 1
+      TabOrder = 0
+    end
+    object bCancel: TButton
+      Left = 228
+      Height = 25
+      Top = 1
+      Width = 75
+      Anchors = [akTop, akRight]
+      Caption = 'Cancel'
+      ModalResult = 2
+      TabOrder = 1
+    end
+  end
+  object gbTables: TGroupBox
+    Left = 10
+    Height = 320
+    Top = 10
+    Width = 294
+    Align = alClient
+    BorderSpacing.Around = 10
+    Caption = 'Please select the tables you want to clear'
+    ClientHeight = 302
+    ClientWidth = 290
+    TabOrder = 1
+    object clbTables: TCheckListBox
+      Left = 13
+      Height = 279
+      Top = 10
+      Width = 264
+      Align = alClient
+      BorderSpacing.Left = 3
+      BorderSpacing.Right = 3
+      BorderSpacing.Bottom = 3
+      BorderSpacing.Around = 10
+      ItemHeight = 0
+      Sorted = True
+      TabOrder = 0
+    end
+  end
+end

@@ -1,0 +1,525 @@
+object frImportWizard: TfrImportWizard
+  Left = 430
+  Height = 460
+  Top = 307
+  Width = 536
+  BorderStyle = bsDialog
+  Caption = 'Import Wizard'
+  ClientHeight = 460
+  ClientWidth = 536
+  OnClose = FormClose
+  OnShow = FormShow
+  Position = poOwnerFormCenter
+  LCLVersion = '1.2.4.0'
+  object nbPages: TNotebook
+    Left = 0
+    Height = 426
+    Top = 0
+    Width = 536
+    PageIndex = 0
+    Align = alClient
+    TabOrder = 0
+    TabStop = True
+    object pgStep1: TPage
+      object GroupBox1: TGroupBox
+        Left = 10
+        Height = 406
+        Top = 10
+        Width = 516
+        Align = alClient
+        BorderSpacing.Around = 10
+        Caption = 'Step 1 of 4 : Import File Setup'
+        ClientHeight = 388
+        ClientWidth = 512
+        TabOrder = 0
+        object cbAccountName: TComboBox
+          Left = 16
+          Height = 21
+          Top = 103
+          Width = 299
+          ItemHeight = 13
+          Style = csDropDownList
+          TabOrder = 1
+        end
+        object Label6: TLabel
+          Left = 17
+          Height = 13
+          Top = 83
+          Width = 276
+          Caption = 'Please select the account you would like to import file into'
+          ParentColor = False
+        end
+        object fneImportFile: TFileNameEdit
+          Left = 16
+          Height = 21
+          Top = 33
+          Width = 458
+          Filter = 'CSV Files|*.csv'
+          FilterIndex = 0
+          HideDirectories = False
+          ButtonWidth = 23
+          NumGlyphs = 1
+          MaxLength = 0
+          TabOrder = 0
+          OnChange = fneImportFileChange
+        end
+        object Label5: TLabel
+          Left = 17
+          Height = 13
+          Top = 11
+          Width = 112
+          Caption = 'Please select import file'
+          ParentColor = False
+        end
+        object rgCSVDelimiter: TRadioGroup
+          Left = 16
+          Height = 49
+          Top = 165
+          Width = 369
+          AutoFill = True
+          Caption = 'CSV Delimiter'
+          ChildSizing.LeftRightSpacing = 6
+          ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+          ChildSizing.EnlargeVertical = crsHomogenousChildResize
+          ChildSizing.ShrinkHorizontal = crsScaleChilds
+          ChildSizing.ShrinkVertical = crsScaleChilds
+          ChildSizing.Layout = cclTopToBottomThenLeftToRight
+          ChildSizing.ControlsPerLine = 1
+          ClientHeight = 31
+          ClientWidth = 365
+          ColumnLayout = clVerticalThenHorizontal
+          Columns = 4
+          ItemIndex = 0
+          Items.Strings = (
+            'Comma'
+            'Semicolon'
+            'TAB'
+            'User Defined'
+          )
+          TabOrder = 3
+          Visible = False
+        end
+        object eUserDefined: TEdit
+          Left = 396
+          Height = 21
+          Top = 182
+          Width = 83
+          TabOrder = 4
+          Text = ','
+          Visible = False
+        end
+        object Label8: TLabel
+          Left = 357
+          Height = 13
+          Top = 83
+          Width = 60
+          Caption = 'Date Format'
+          ParentColor = False
+        end
+        object cbDateFormat: TComboBox
+          Left = 356
+          Height = 21
+          Top = 102
+          Width = 141
+          ItemHeight = 13
+          Items.Strings = (
+            'DDMMYY'
+            'DD-MM-YY'
+            'DD.MM.YY'
+            'DD/MM/YY'
+            'DDMMYYYY'
+            'DD-MM-YYYY'
+            'DD.MM.YYYY'
+            'DD/MM/YYYY'
+            'MMDDYY'
+            'MM-DD-YY'
+            'MM.DD.YY'
+            'MM/DD/YY'
+            'MMDDYYYY'
+            'MM-DD-YYYY'
+            'MM.DD.YYYY'
+            'MM/DD/YYYY'
+            'YYMMDD'
+            'YY-MM-DD'
+            'YY.MM.DD'
+            'YY/MM/DD'
+            'YYYYMMDD'
+            'YYYY-MM-DD'
+            'YYYY.MM.DD'
+            'YYYY/MM/DD'
+          )
+          Style = csDropDownList
+          TabOrder = 2
+        end
+        object gbAdvancedOptions: TGroupBox
+          Left = 16
+          Height = 77
+          Top = 254
+          Width = 480
+          Caption = 'Advanced Options'
+          ClientHeight = 59
+          ClientWidth = 476
+          TabOrder = 5
+          object Label9: TLabel
+            Left = 17
+            Height = 13
+            Top = 22
+            Width = 125
+            Caption = 'Ignore first (x) lines of file'
+            ParentColor = False
+          end
+          object seIgnoreLines: TSpinEdit
+            Left = 156
+            Height = 21
+            Top = 14
+            Width = 58
+            TabOrder = 0
+          end
+          object cbStripApostrophe: TCheckBox
+            Left = 233
+            Height = 17
+            Top = 18
+            Width = 233
+            BidiMode = bdRightToLeft
+            Caption = 'Remove apostrophes from the start of fields'
+            ParentBidiMode = False
+            TabOrder = 1
+          end
+        end
+      end
+    end
+    object pgStep2: TPage
+      object GroupBox2: TGroupBox
+        Left = 10
+        Height = 406
+        Top = 10
+        Width = 516
+        Align = alClient
+        BorderSpacing.Around = 10
+        Caption = 'Step 2 of 4 : Import File Columns'
+        ClientHeight = 388
+        ClientWidth = 512
+        TabOrder = 0
+        object lbCSVFields: TListBox
+          Left = 17
+          Height = 176
+          Top = 25
+          Width = 130
+          Items.Strings = (
+            'Date'
+            'Payee'
+            'Amount(+/-)'
+            'Category'
+            'SubCategory'
+            'Number'
+            'Notes'
+            'Ignore'
+            'Withdrawal'
+            'Deposit'
+            'To/From(+/-)'
+            'Balance'
+          )
+          ItemHeight = 13
+          OnDblClick = bAddClick
+          TabOrder = 0
+        end
+        object Label3: TLabel
+          Left = 17
+          Height = 13
+          Top = 5
+          Width = 204
+          Caption = 'Specify the order of fields in the import file'
+          ParentColor = False
+        end
+        object bAdd: TButton
+          Left = 157
+          Height = 25
+          Top = 25
+          Width = 75
+          Caption = 'Add'
+          OnClick = bAddClick
+          TabOrder = 1
+        end
+        object bRemove: TButton
+          Left = 157
+          Height = 25
+          Top = 57
+          Width = 75
+          Caption = 'Remove'
+          OnClick = bRemoveClick
+          TabOrder = 2
+        end
+        object bUp: TButton
+          Left = 401
+          Height = 25
+          Top = 25
+          Width = 75
+          Caption = 'Up'
+          OnClick = bUpClick
+          TabOrder = 3
+        end
+        object bDown: TButton
+          Left = 401
+          Height = 25
+          Top = 56
+          Width = 75
+          Caption = 'Down'
+          OnClick = bDownClick
+          TabOrder = 4
+        end
+        object bOpen: TButton
+          Left = 401
+          Height = 25
+          Top = 86
+          Width = 75
+          Caption = 'Open'
+          OnClick = bOpenClick
+          TabOrder = 5
+        end
+        object bSaveAs: TButton
+          Left = 401
+          Height = 25
+          Top = 118
+          Width = 75
+          Caption = 'Save As...'
+          OnClick = bSaveAsClick
+          TabOrder = 6
+        end
+        object lbChosenCSVFields: TListBox
+          Left = 261
+          Height = 176
+          Top = 25
+          Width = 130
+          ItemHeight = 0
+          OnDblClick = bRemoveClick
+          OnDragDrop = lbChosenCSVFieldsDragDrop
+          OnDragOver = lbChosenCSVFieldsDragOver
+          OnMouseDown = lbChosenCSVFieldsMouseDown
+          TabOrder = 7
+        end
+        object bDefault: TButton
+          Left = 157
+          Height = 25
+          Top = 93
+          Width = 75
+          Caption = 'Default'
+          OnClick = bDefaultClick
+          TabOrder = 8
+        end
+        object sgImportFile: TStringGrid
+          Left = 13
+          Height = 136
+          Top = 241
+          Width = 485
+          DefaultColWidth = 90
+          FixedCols = 0
+          FixedRows = 0
+          Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goRowSizing, goColSizing, goRowSelect, goDblClickAutoSize, goSmoothScroll, goCellEllipsis]
+          RowCount = 2
+          TabOrder = 9
+        end
+        object lPreview: TLabel
+          Left = 17
+          Height = 13
+          Top = 217
+          Width = 90
+          Caption = 'Import file preview'
+          ParentColor = False
+        end
+      end
+    end
+    object pgStep3: TPage
+      object GroupBox3: TGroupBox
+        Left = 10
+        Height = 406
+        Top = 10
+        Width = 516
+        Align = alClient
+        BorderSpacing.Around = 10
+        Caption = 'Step 3 of 4 : Payee Setup'
+        ClientHeight = 388
+        ClientWidth = 512
+        TabOrder = 0
+        object Panel1: TPanel
+          Left = 0
+          Height = 50
+          Top = 338
+          Width = 512
+          Align = alBottom
+          BevelOuter = bvNone
+          ClientHeight = 50
+          ClientWidth = 512
+          TabOrder = 1
+          object bNew: TButton
+            Left = 7
+            Height = 25
+            Top = 10
+            Width = 75
+            Caption = 'New'
+            OnClick = bNewClick
+            TabOrder = 0
+          end
+          object bEdit: TButton
+            Left = 89
+            Height = 25
+            Top = 10
+            Width = 75
+            Caption = 'Edit'
+            OnClick = bEditClick
+            TabOrder = 1
+          end
+          object bDelete: TButton
+            Left = 172
+            Height = 25
+            Top = 10
+            Width = 75
+            Caption = 'Delete'
+            OnClick = bDeleteClick
+            TabOrder = 2
+          end
+        end
+        object dbgPayeeReplace: TDBGrid
+          Left = 10
+          Height = 243
+          Top = 85
+          Width = 492
+          Align = alClient
+          AutoEdit = False
+          BorderSpacing.Around = 10
+          Color = clWindow
+          Columns = <>
+          DataSource = dmData.dszqPayeeImport
+          Flat = True
+          Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgAutoSizeColumns, dgAnyButtonCanSelect, dgDisableDelete, dgDisableInsert, dgTruncCellHints, dgCellEllipsis]
+          TabOrder = 0
+        end
+        object Panel2: TPanel
+          Left = 0
+          Height = 75
+          Top = 0
+          Width = 512
+          Align = alTop
+          BevelOuter = bvNone
+          ClientHeight = 75
+          ClientWidth = 512
+          TabOrder = 2
+          object cbUseExistingPayees: TCheckBox
+            Left = 16
+            Height = 17
+            Top = 31
+            Width = 251
+            Caption = 'Look for partial matches against existing Payees'
+            TabOrder = 0
+          end
+          object cbUsePayeeImport: TCheckBox
+            Left = 16
+            Height = 17
+            Top = 55
+            Width = 175
+            Caption = 'Use partial matches setup below'
+            TabOrder = 1
+          end
+          object Label1: TLabel
+            Left = 16
+            Height = 13
+            Top = 6
+            Width = 142
+            Caption = 'When imported a new payee:'
+            ParentColor = False
+          end
+        end
+      end
+    end
+    object pgStep4: TPage
+      object GroupBox4: TGroupBox
+        Left = 10
+        Height = 406
+        Top = 10
+        Width = 516
+        Align = alClient
+        BorderSpacing.Around = 10
+        Caption = 'Step 4 of 4 : Ready to Import'
+        ClientHeight = 388
+        ClientWidth = 512
+        TabOrder = 0
+        object Label7: TLabel
+          Left = 20
+          Height = 13
+          Top = 14
+          Width = 42
+          Caption = 'Progress'
+          ParentColor = False
+        end
+        object pbImport: TProgressBar
+          Left = 20
+          Height = 20
+          Top = 38
+          Width = 472
+          TabOrder = 0
+        end
+        object mProgress: TMemo
+          Left = 20
+          Height = 272
+          Top = 94
+          Width = 472
+          TabOrder = 1
+        end
+      end
+    end
+  end
+  object pBottom: TPanel
+    Left = 0
+    Height = 34
+    Top = 426
+    Width = 536
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 34
+    ClientWidth = 536
+    TabOrder = 1
+    object bPrevious: TButton
+      Left = 284
+      Height = 25
+      Top = 1
+      Width = 75
+      Anchors = [akTop, akRight]
+      Caption = '< Previous'
+      Enabled = False
+      OnClick = bPreviousClick
+      TabOrder = 0
+    end
+    object bNext: TButton
+      Left = 367
+      Height = 25
+      Top = 1
+      Width = 75
+      Anchors = [akTop, akRight]
+      Caption = 'Next >'
+      Default = True
+      OnClick = bNextClick
+      TabOrder = 1
+    end
+    object bCancel: TButton
+      Left = 450
+      Height = 25
+      Top = 1
+      Width = 75
+      Anchors = [akTop, akRight]
+      Caption = 'Cancel'
+      ModalResult = 2
+      TabOrder = 2
+    end
+  end
+  object OpenDialogCSVOrder: TOpenDialog
+    DefaultExt = '.mcv'
+    Filter = '*.mcv|*.mcv'
+    left = 152
+    top = 408
+  end
+  object SaveDialogCSVOrder: TSaveDialog
+    DefaultExt = '.mcv'
+    Filter = '*.mcv|*.mcv'
+    left = 40
+    top = 408
+  end
+end

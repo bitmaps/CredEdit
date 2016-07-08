@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectOptions>
+    <Version Value="9"/>
+    <PathDelim Value="\"/>
+    <General>
+      <SessionStorage Value="InProjectDir"/>
+      <MainUnit Value="0"/>
+      <Title Value="CredEdit"/>
+      <ResourceType Value="res"/>
+      <UseXPManifest Value="True"/>
+      <Icon Value="0"/>
+    </General>
+    <i18n>
+      <EnableI18N LFM="False"/>
+    </i18n>
+    <VersionInfo>
+      <UseVersionInfo Value="True"/>
+      <AutoIncrementBuild Value="True"/>
+      <MajorVersionNr Value="1"/>
+      <BuildNr Value="2"/>
+      <Language Value="0809"/>
+      <StringTable Comments="Money management software" CompanyName="Jeremy Mitchell" FileDescription="Jeremy Mitchell" LegalCopyright="Copyright (C) 2014 Jeremy Mitchell" OriginalFilename="CredEdit" ProductName="CredEdit" ProductVersion=""/>
+    </VersionInfo>
+    <BuildModes Count="3">
+      <Item1 Name="Default" Default="True"/>
+      <Item2 Name="Debug">
+        <CompilerOptions>
+          <Version Value="11"/>
+          <PathDelim Value="\"/>
+          <Target>
+            <Filename Value="CredEdit"/>
+          </Target>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+            <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+          </SearchPaths>
+          <Parsing>
+            <SyntaxOptions>
+              <IncludeAssertionCode Value="True"/>
+            </SyntaxOptions>
+          </Parsing>
+          <CodeGeneration>
+            <Checks>
+              <IOChecks Value="True"/>
+              <RangeChecks Value="True"/>
+              <OverflowChecks Value="True"/>
+              <StackChecks Value="True"/>
+            </Checks>
+            <SmallerCode Value="True"/>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <DebugInfoType Value="dsDwarf2Set"/>
+              <UseValgrind Value="True"/>
+              <StripSymbols Value="True"/>
+            </Debugging>
+            <Options>
+              <Win32>
+                <GraphicApplication Value="True"/>
+              </Win32>
+            </Options>
+          </Linking>
+        </CompilerOptions>
+      </Item2>
+      <Item3 Name="Release">
+        <CompilerOptions>
+          <Version Value="11"/>
+          <PathDelim Value="\"/>
+          <Target>
+            <Filename Value="CredEdit"/>
+          </Target>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+            <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+          </SearchPaths>
+          <CodeGeneration>
+            <SmartLinkUnit Value="True"/>
+            <Optimizations>
+              <OptimizationLevel Value="3"/>
+            </Optimizations>
+            <SmallerCode Value="True"/>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <GenerateDebugInfo Value="False"/>
+              <UseValgrind Value="True"/>
+              <StripSymbols Value="True"/>
+            </Debugging>
+            <LinkSmart Value="True"/>
+            <Options>
+              <Win32>
+                <GraphicApplication Value="True"/>
+              </Win32>
+            </Options>
+          </Linking>
+        </CompilerOptions>
+      </Item3>
+    </BuildModes>
+    <PublishOptions>
+      <Version Value="2"/>
+    </PublishOptions>
+    <RunParams>
+      <local>
+        <FormatVersion Value="1"/>
+      </local>
+    </RunParams>
+    <RequiredPackages Count="7">
+      <Item1>
+        <PackageName Value="Printer4Lazarus"/>
+      </Item1>
+      <Item2>
+        <PackageName Value="lazreport"/>
+      </Item2>
+      <Item3>
+        <PackageName Value="TAChartAggPas"/>
+      </Item3>
+      <Item4>
+        <PackageName Value="TAChartLazarusPkg"/>
+      </Item4>
+      <Item5>
+        <PackageName Value="FCL"/>
+      </Item5>
+      <Item6>
+        <PackageName Value="zcomponent"/>
+      </Item6>
+      <Item7>
+        <PackageName Value="LCL"/>
+      </Item7>
+    </RequiredPackages>
+    <Units Count="30">
+      <Unit0>
+        <Filename Value="CredEdit.lpr"/>
+        <IsPartOfProject Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="umain.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frMain"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uMain"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="uaccountwizard.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frNewAccountWizard"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uAccountWizard"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="uaccount.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frAccount"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uAccount"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="uorganisecategories.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frOrganiseCategories"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uOrganiseCategories"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="uabout.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frAbout"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uAbout"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="unewtransaction.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frNewTransaction"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uNewTransaction"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="uasset.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frAsset"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uAsset"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="uoptions.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frOptions"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uOptions"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="uorganisepayees.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frPayee"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uOrganisePayees"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="udatamodule.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="dmData"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="uDataModule"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="uimportwizard.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frImportWizard"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uImportWizard"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="urelocatecategory.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frRelocateCategory"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uRelocateCategory"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="usqllog.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frSQLLog"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uSQLLog"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="urelocatepayee.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frRelocatePayee"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uRelocatePayee"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="ureportfuncs.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uReportFuncs"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="ulogin.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frLogin"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uLogin"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="ubudgetentry.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frBudgetEntry"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uBudgetEntry"/>
+      </Unit17>
+      <Unit18>
+        <Filename Value="ureportfilter.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frReportFilter"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uReportFilter"/>
+      </Unit18>
+      <Unit19>
+        <Filename Value="usplittransaction.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frSplitTransaction"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uSplitTransaction"/>
+      </Unit19>
+      <Unit20>
+        <Filename Value="usplitdetail.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frSplitDetail"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uSplitDetail"/>
+      </Unit20>
+      <Unit21>
+        <Filename Value="urepeatingtransaction.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frRepeatingTransaction"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uRepeatingTransaction"/>
+      </Unit21>
+      <Unit22>
+        <Filename Value="ubudgeteditor.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frBudgetEditor"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uBudgetEditor"/>
+      </Unit22>
+      <Unit23>
+        <Filename Value="ubudget.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frBudget"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uBudget"/>
+      </Unit23>
+      <Unit24>
+        <Filename Value="utransactionfilter.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frTransactionFilter"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uTransactionFilter"/>
+      </Unit24>
+      <Unit25>
+        <Filename Value="utransfilterslist.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frTransFilterList"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uTransFiltersList"/>
+      </Unit25>
+      <Unit26>
+        <Filename Value="uerrordialog.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frErrorDialog"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uErrorDialog"/>
+      </Unit26>
+      <Unit27>
+        <Filename Value="upayeeimport.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frPayeeImport"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uPayeeImport"/>
+      </Unit27>
+      <Unit28>
+        <Filename Value="uprogressbar.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frProgressBar"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uProgressBar"/>
+      </Unit28>
+      <Unit29>
+        <Filename Value="uemptytables.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frEmptyTables"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uEmptyTables"/>
+      </Unit29>
+    </Units>
+  </ProjectOptions>
+  <CompilerOptions>
+    <Version Value="11"/>
+    <PathDelim Value="\"/>
+    <Target>
+      <Filename Value="CredEdit"/>
+    </Target>
+    <SearchPaths>
+      <IncludeFiles Value="$(ProjOutDir)"/>
+      <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+    </SearchPaths>
+    <CodeGeneration>
+      <SmartLinkUnit Value="True"/>
+      <SmallerCode Value="True"/>
+    </CodeGeneration>
+    <Linking>
+      <Debugging>
+        <DebugInfoType Value="dsDwarf2Set"/>
+        <UseValgrind Value="True"/>
+        <StripSymbols Value="True"/>
+      </Debugging>
+      <LinkSmart Value="True"/>
+      <Options>
+        <Win32>
+          <GraphicApplication Value="True"/>
+        </Win32>
+      </Options>
+    </Linking>
+  </CompilerOptions>
+  <Debugging>
+    <Exceptions Count="3">
+      <Item1>
+        <Name Value="EAbort"/>
+      </Item1>
+      <Item2>
+        <Name Value="ECodetoolError"/>
+      </Item2>
+      <Item3>
+        <Name Value="EFOpenError"/>
+      </Item3>
+    </Exceptions>
+  </Debugging>
+</CONFIG>

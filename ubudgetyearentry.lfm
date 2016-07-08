@@ -1,0 +1,98 @@
+object frBudgetYearEntry: TfrBudgetYearEntry
+  Left = 418
+  Height = 160
+  Top = 383
+  Width = 289
+  BorderStyle = bsDialog
+  Caption = 'Budget Year Entry'
+  ClientHeight = 160
+  ClientWidth = 289
+  OnShow = FormShow
+  Position = poOwnerFormCenter
+  LCLVersion = '1.2.2.0'
+  object pBottom: TPanel
+    Left = 0
+    Height = 34
+    Top = 126
+    Width = 289
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 34
+    ClientWidth = 289
+    TabOrder = 0
+    object bOk: TButton
+      Left = 120
+      Height = 25
+      Top = 1
+      Width = 75
+      Anchors = [akTop, akRight]
+      Caption = 'Ok'
+      ModalResult = 1
+      TabOrder = 0
+    end
+    object bCancel: TButton
+      Left = 203
+      Height = 25
+      Top = 1
+      Width = 75
+      Anchors = [akTop, akRight]
+      Caption = 'Cancel'
+      ModalResult = 2
+      TabOrder = 1
+    end
+  end
+  object GroupBox1: TGroupBox
+    Left = 10
+    Height = 106
+    Top = 10
+    Width = 269
+    Align = alClient
+    BorderSpacing.Around = 10
+    ClientHeight = 88
+    ClientWidth = 265
+    TabOrder = 1
+    object Label2: TLabel
+      Left = 16
+      Height = 13
+      Top = 14
+      Width = 63
+      Caption = 'Budget Year:'
+      ParentColor = False
+    end
+    object Label3: TLabel
+      Left = 16
+      Height = 13
+      Top = 54
+      Width = 79
+      Caption = 'Base budget on:'
+      ParentColor = False
+    end
+    object Label4: TLabel
+      Left = 16
+      Height = 13
+      Top = 174
+      Width = 41
+      Caption = 'Amount:'
+      ParentColor = False
+    end
+    object cbBudgets: TComboBox
+      Left = 107
+      Height = 21
+      Top = 46
+      Width = 141
+      ItemHeight = 13
+      Style = csDropDownList
+      TabOrder = 1
+    end
+    object seYear: TSpinEdit
+      Left = 107
+      Height = 21
+      Top = 6
+      Width = 99
+      MaxValue = 2999
+      MinValue = 1976
+      TabOrder = 0
+      Value = 2014
+    end
+  end
+end
