@@ -10,7 +10,7 @@ object frImportWizard: TfrImportWizard
   OnClose = FormClose
   OnShow = FormShow
   Position = poOwnerFormCenter
-  LCLVersion = '1.6.0.4'
+  LCLVersion = '1.7'
   object nbPages: TNotebook
     Left = 0
     Height = 426

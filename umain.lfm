@@ -4759,9 +4759,9 @@ object frMain: TfrMain
   end
   object lcsPieChartValues: TListChartSource
     DataPoints.Strings = (
-      '0|10|?|test 1'
-      '0|57|?|test 2'
       '0|150|?|test 3'
+      '0|57|?|test 2'
+      '0|10|?|test 1'
     )
     Sorted = True
     left = 552
@@ -4774,9 +4774,9 @@ object frMain: TfrMain
   end
   object lcsPieLabels: TListChartSource
     DataPoints.Strings = (
-      '0|150|?|150 test 1'
-      '0|57|?|57 test 2'
       '0|10|?|10 test 3'
+      '0|57|?|57 test 2'
+      '0|150|?|150 test 1'
     )
     Sorted = True
     left = 488
@@ -4796,15 +4796,15 @@ object frMain: TfrMain
   end
   object lcsLeftAxisValues: TListChartSource
     DataPoints.Strings = (
-      '0|600|?|£600.00'
-      '0|500|?|£500.00'
-      '0|800|?|£800.00'
-      '0|700|?|£700.00'
-      '0|400|?|£400.00'
-      '0|100|?|£100.00'
       '0|0|?|£0.00'
-      '0|300|?|£300.00'
+      '0|100|?|£100.00'
       '0|200|?|£200.00'
+      '0|300|?|£300.00'
+      '0|400|?|£400.00'
+      '0|500|?|£500.00'
+      '0|600|?|£600.00'
+      '0|700|?|£700.00'
+      '0|800|?|£800.00'
     )
     Sorted = True
     left = 216
