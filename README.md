@@ -7,4 +7,6 @@ Software needed to recompile and edit source code:
 
 Lazarus: http://www.lazarus-ide.org/
 
+ZeosLib: https://sourceforge.net/projects/zeoslib/
+
 SQLite (Precompiled Binaries for Windows): https://www.sqlite.org/download.html
