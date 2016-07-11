@@ -1,8 +1,8 @@
 object dmData: TdmData
   OldCreateOrder = False
   Height = 662
-  HorizontalOffset = 214
-  VerticalOffset = 208
+  HorizontalOffset = 506
+  VerticalOffset = 197
   Width = 998
   object ztAccountList: TZTable
     Connection = zcDatabaseConnection
@@ -29,7 +29,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = True
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object ztAccountListACCOUNTTYPE: TMemoField
@@ -42,7 +41,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = True
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object ztAccountListACCOUNTNUM: TMemoField
@@ -55,7 +53,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = False
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object ztAccountListSTATUS: TMemoField
@@ -67,7 +64,6 @@ object dmData: TdmData
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = True
-      BlobType = ftBlob
       Transliterate = False
     end
     object ztAccountListNOTES: TMemoField
@@ -80,7 +76,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = False
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object ztAccountListHELDAT: TMemoField
@@ -93,7 +88,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = False
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object ztAccountListWEBSITE: TMemoField
@@ -106,7 +100,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = False
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object ztAccountListCONTACTINFO: TMemoField
@@ -119,7 +112,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = False
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object ztAccountListACCESSINFO: TMemoField
@@ -132,7 +124,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = False
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object ztAccountListINITIALBAL: TFloatField
@@ -159,7 +150,6 @@ object dmData: TdmData
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = True
-      BlobType = ftBlob
       Transliterate = False
     end
     object ztAccountListCURRENCYID: TLargeintField
@@ -188,9 +178,10 @@ object dmData: TdmData
     DesignConnection = True
     SQLHourGlass = True
     Port = 0
-    Database = 'C:\Code\Lazarus\MoneyManager\creddata.db3'
+    Database = 'C:\Users\jeremy.mitchell\Documents\GitHub\CredEdit\creddata.db3'
     Password = 'jeremy'
     Protocol = 'sqlite-3'
+    LibraryLocation = 'C:\Users\jeremy.mitchell\Documents\GitHub\CredEdit\sqlite3.dll'
     left = 40
     top = 16
   end
@@ -240,7 +231,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = True
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object ztCategoryCOLOUR: TMemoField
@@ -253,7 +243,6 @@ object dmData: TdmData
       ReadOnly = True
       Required = False
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object ztCategoryINCLUDEBUDGET: TMemoField
@@ -265,7 +254,6 @@ object dmData: TdmData
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      BlobType = ftBlob
       Transliterate = False
     end
   end
@@ -301,7 +289,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = True
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object ztAssetsASSETNAME: TMemoField
@@ -315,7 +302,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = True
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object ztAssetsVALUE: TFloatField
@@ -345,7 +331,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = False
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object ztAssetsNOTES: TMemoField
@@ -387,7 +372,6 @@ object dmData: TdmData
       Required = False
       Visible = False
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object ztAssetsCURRENTVALUE: TCurrencyField
@@ -436,7 +420,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = True
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object ztSubCategoryCATEGID: TLargeintField
@@ -458,7 +441,6 @@ object dmData: TdmData
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      BlobType = ftBlob
       Transliterate = False
     end
   end
@@ -497,7 +479,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = True
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object ztPayeeCATEGID: TLargeintField
@@ -548,7 +529,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = False
       Visible = False
-      BlobType = ftBlob
       Transliterate = False
     end
     object MemoField2: TMemoField
@@ -565,7 +545,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = False
       Visible = False
-      BlobType = ftBlob
       Transliterate = False
     end
     object ztPayeeCOLOUR: TMemoField
@@ -579,7 +558,6 @@ object dmData: TdmData
       Required = False
       Visible = False
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
   end
@@ -643,7 +621,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = True
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object ztCheckingAccountTRANSAMOUNT: TFloatField
@@ -670,7 +647,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = False
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object ztCheckingAccountTRANSACTIONNUMBER: TMemoField
@@ -683,7 +659,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = False
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object ztCheckingAccountNOTES: TMemoField
@@ -696,7 +671,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = False
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object ztCheckingAccountCATEGID: TLargeintField
@@ -728,7 +702,6 @@ object dmData: TdmData
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      BlobType = ftBlob
       Transliterate = False
     end
     object ztCheckingAccountFOLLOWUPID: TLargeintField
@@ -811,7 +784,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = True
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object zqAssetsSTARTDATE: TMemoField
@@ -824,7 +796,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = True
       Visible = False
-      BlobType = ftBlob
       Transliterate = False
     end
     object zqAssetsfrmstartdate: TStringField
@@ -850,7 +821,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = False
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object zqAssetsVALUE: TFloatField
@@ -880,7 +850,6 @@ object dmData: TdmData
       Required = False
       Visible = False
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object zqAssetsVALUECHANGERATE: TFloatField
@@ -910,7 +879,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = False
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object zqAssetsCALCURVALUE1: TCurrencyField
@@ -983,7 +951,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = True
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object ztBudgetYearBUDGETFREQUENCY: TMemoField
@@ -995,7 +962,6 @@ object dmData: TdmData
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      BlobType = ftBlob
       Transliterate = False
     end
     object ztBudgetYearBUDGETYEAR: TMemoField
@@ -1007,7 +973,6 @@ object dmData: TdmData
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      BlobType = ftBlob
       Transliterate = False
     end
     object ztBudgetYearBUDGETMONTH: TMemoField
@@ -1019,7 +984,6 @@ object dmData: TdmData
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      BlobType = ftBlob
       Transliterate = False
     end
     object ztBudgetYearARCHIVED: TMemoField
@@ -1031,7 +995,6 @@ object dmData: TdmData
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      BlobType = ftBlob
       Transliterate = False
     end
     object ztBudgetYearBUDGETACCOUNT: TMemoField
@@ -1043,7 +1006,6 @@ object dmData: TdmData
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      BlobType = ftBlob
       Transliterate = False
     end
   end
@@ -1106,7 +1068,6 @@ object dmData: TdmData
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = True
-      BlobType = ftBlob
       Transliterate = False
     end
     object ztBudgetAMOUNT: TFloatField
@@ -1137,6 +1098,7 @@ object dmData: TdmData
     top = 344
   end
   object frTextExport1: TfrTextExport
+    ShowExportParamsDlg = False
     left = 40
     top = 176
   end
@@ -1185,7 +1147,6 @@ object dmData: TdmData
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = True
-      BlobType = ftBlob
       Transliterate = False
     end
     object zqCategoriesSUBCATEGNAME: TMemoField
@@ -1198,7 +1159,6 @@ object dmData: TdmData
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = True
-      BlobType = ftBlob
       Transliterate = False
     end
   end
@@ -1295,7 +1255,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = True
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object zqTransactionsTRANSDATE: TMemoField
@@ -1308,7 +1267,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = False
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object zqTransactionsfrmtrandate: TStringField
@@ -1333,7 +1291,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = False
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object zqTransactionsPAYEENAME: TMemoField
@@ -1346,7 +1303,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = True
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object zqTransactionsSTATUS: TMemoField
@@ -1359,7 +1315,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = False
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object zqTransactionscategory: TStringField
@@ -1419,7 +1374,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = True
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object zqTransactionsTRANSAMOUNT: TFloatField
@@ -1446,7 +1400,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = False
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
   end
@@ -1656,7 +1609,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = True
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object zqBudgetSUBCATEGID: TLargeintField
@@ -1681,7 +1633,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = True
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object zqBudgetBUDGET_YEAR_ID: TStringField
@@ -1800,7 +1751,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = True
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object ztRepeatTransactionsTRANSAMOUNT: TFloatField
@@ -1827,7 +1777,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = False
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object ztRepeatTransactionsTRANSACTIONNUMBER: TMemoField
@@ -1840,7 +1789,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = False
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object ztRepeatTransactionsNOTES: TMemoField
@@ -1853,7 +1801,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = False
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object ztRepeatTransactionsCATEGID: TLargeintField
@@ -1886,7 +1833,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = False
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object ztRepeatTransactionsFOLLOWUPID: TLargeintField
@@ -1933,7 +1879,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = False
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object ztRepeatTransactionsNUMOCCURRENCES: TLargeintField
@@ -1955,7 +1900,6 @@ object dmData: TdmData
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      BlobType = ftBlob
       Transliterate = False
     end
     object ztRepeatTransactionsAUTORUNUSER: TMemoField
@@ -1967,7 +1911,6 @@ object dmData: TdmData
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      BlobType = ftBlob
       Transliterate = False
     end
   end
@@ -2020,7 +1963,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = True
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object zqRepeatTransactionsACCOUNTNAME: TMemoField
@@ -2034,7 +1976,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = True
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object zqRepeatTransactionsTRANSCODE: TMemoField
@@ -2048,7 +1989,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = True
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object zqRepeatTransactionsTRANSAMOUNT: TFloatField
@@ -2078,7 +2018,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = False
       Visible = False
-      BlobType = ftBlob
       Transliterate = False
     end
     object zqRepeatTransactionsfrmnextdate: TStringField
@@ -2128,7 +2067,6 @@ object dmData: TdmData
       Required = False
       Visible = False
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object zqRepeatTransactionsREPTRANSID: TLargeintField
@@ -2186,7 +2124,6 @@ object dmData: TdmData
       Required = False
       Visible = False
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object zqRepeatTransactionsTRANSACTIONNUMBER: TMemoField
@@ -2200,7 +2137,6 @@ object dmData: TdmData
       Required = False
       Visible = False
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object zqRepeatTransactionsCATEGID: TLargeintField
@@ -2235,7 +2171,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = False
       Visible = False
-      BlobType = ftBlob
       Transliterate = False
     end
     object zqRepeatTransactionsfrmtrandate: TStringField
@@ -2331,7 +2266,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = True
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object ztTransFilterFROMDATE: TMemoField
@@ -2345,7 +2279,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = False
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object ztTransFilterTODATE: TMemoField
@@ -2359,7 +2292,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = False
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object ztTransFilterTRANSCODE: TMemoField
@@ -2373,7 +2305,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = False
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object ztTransFilterFROMAMOUNT: TFloatField
@@ -2417,7 +2348,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = False
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object ztTransFilterCATEGID: TFloatField
@@ -2457,7 +2387,6 @@ object dmData: TdmData
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      BlobType = ftBlob
       Transliterate = False
     end
     object ztTransFilterDATEFILTER: TFloatField
@@ -2530,7 +2459,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = True
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object zqTransFiltersDATERANGE: TStringField
@@ -2556,7 +2484,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = False
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object zqTransFiltersDATEFILTER: TFloatField
@@ -2584,22 +2511,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = False
       Visible = False
-      BlobType = ftBlob
-      Transliterate = False
-    end
-    object zqTransFiltersFRMFROMDATE: TMemoField
-      DisplayLabel = 'From Date'
-      DisplayWidth = 10
-      FieldKind = fkData
-      FieldName = 'FRMFROMDATE'
-      Index = 6
-      LookupCache = False
-      ProviderFlags = [pfInUpdate, pfInWhere]
-      ReadOnly = False
-      Required = False
-      Visible = False
-      OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object zqTransFiltersTODATE: TMemoField
@@ -2607,28 +2518,12 @@ object dmData: TdmData
       DisplayWidth = 10
       FieldKind = fkData
       FieldName = 'TODATE'
-      Index = 7
+      Index = 6
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
       Visible = False
-      BlobType = ftBlob
-      Transliterate = False
-    end
-    object zqTransFiltersFRMTODATE: TMemoField
-      DisplayLabel = 'To Date'
-      DisplayWidth = 10
-      FieldKind = fkData
-      FieldName = 'FRMTODATE'
-      Index = 8
-      LookupCache = False
-      ProviderFlags = [pfInUpdate, pfInWhere]
-      ReadOnly = False
-      Required = False
-      Visible = False
-      OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object zqTransFiltersTRANSCODE: TMemoField
@@ -2636,13 +2531,12 @@ object dmData: TdmData
       DisplayWidth = 10
       FieldKind = fkData
       FieldName = 'TRANSCODE'
-      Index = 9
+      Index = 7
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object zqTransFiltersFROMAMOUNT: TFloatField
@@ -2650,7 +2544,7 @@ object dmData: TdmData
       DisplayWidth = 10
       FieldKind = fkData
       FieldName = 'FROMAMOUNT'
-      Index = 10
+      Index = 8
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
@@ -2665,7 +2559,7 @@ object dmData: TdmData
       DisplayWidth = 10
       FieldKind = fkData
       FieldName = 'TOAMOUNT'
-      Index = 11
+      Index = 9
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
@@ -2679,7 +2573,7 @@ object dmData: TdmData
       DisplayWidth = 10
       FieldKind = fkData
       FieldName = 'CATEGID'
-      Index = 12
+      Index = 10
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
@@ -2693,7 +2587,7 @@ object dmData: TdmData
       DisplayWidth = 10
       FieldKind = fkData
       FieldName = 'SUBCATEGID'
-      Index = 13
+      Index = 11
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
@@ -2708,7 +2602,7 @@ object dmData: TdmData
       DisplayWidth = 1020
       FieldKind = fkData
       FieldName = 'CATEGORY'
-      Index = 14
+      Index = 12
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = True
@@ -2719,13 +2613,12 @@ object dmData: TdmData
       DisplayWidth = 10
       FieldKind = fkData
       FieldName = 'ARCHIVED'
-      Index = 15
+      Index = 13
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = True
       Required = False
       Visible = False
-      BlobType = ftBlob
       Transliterate = False
     end
   end
@@ -2770,7 +2663,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = False
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object zqBudgetYearBUDGETYEARNAME: TMemoField
@@ -2784,7 +2676,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = True
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object zqBudgetYearBUDGETFREQUENCY: TMemoField
@@ -2798,7 +2689,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = False
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object zqBudgetYearBUDGETYEAR: TMemoField
@@ -2812,7 +2702,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = False
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object zqBudgetYearBUDGETMONTH: TMemoField
@@ -2827,7 +2716,6 @@ object dmData: TdmData
       Required = False
       Visible = False
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object zqBudgetYearMONTHDESCRIPTION1: TStringField
@@ -2852,7 +2740,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = False
       Visible = False
-      BlobType = ftBlob
       Transliterate = False
     end
   end
@@ -2906,7 +2793,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = True
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object zqUpcomingTransACCOUNTNAME: TMemoField
@@ -2920,7 +2806,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = True
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object zqUpcomingTransTRANSCODE: TMemoField
@@ -2934,7 +2819,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = True
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object zqUpcomingTransTRANSAMOUNT: TFloatField
@@ -2963,7 +2847,6 @@ object dmData: TdmData
       Required = False
       Visible = False
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object zqUpcomingTransfrmnextdate: TStringField
@@ -3014,7 +2897,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = False
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object zqUpcomingTransREPTRANSID: TLargeintField
@@ -3071,7 +2953,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = False
       Visible = False
-      BlobType = ftBlob
       Transliterate = False
     end
     object zqUpcomingTransTRANSACTIONNUMBER: TMemoField
@@ -3084,7 +2965,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = False
       Visible = False
-      BlobType = ftBlob
       Transliterate = False
     end
     object zqUpcomingTransCATEGID: TLargeintField
@@ -3119,7 +2999,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = False
       Visible = False
-      BlobType = ftBlob
       Transliterate = False
     end
     object zqUpcomingTransfrmtrandate: TStringField
@@ -3233,7 +3112,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = False
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object ztPayeeImportPAYEEID: TLargeintField
@@ -3290,7 +3168,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = False
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object zqPayeeImportPAYEEID: TLargeintField
@@ -3315,7 +3192,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = True
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
   end
@@ -3364,7 +3240,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = True
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object zqPayeeCATEGID: TLargeintField
@@ -3401,7 +3276,6 @@ object dmData: TdmData
       Required = False
       Visible = False
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object zqPayeeCATEGORY: TStringField
@@ -3545,7 +3419,6 @@ object dmData: TdmData
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = True
-      BlobType = ftBlob
       Transliterate = False
     end
     object zqTodaysRepTransTRANSAMOUNT: TFloatField
@@ -3570,7 +3443,6 @@ object dmData: TdmData
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      BlobType = ftBlob
       Transliterate = False
     end
     object zqTodaysRepTransTRANSACTIONNUMBER: TMemoField
@@ -3582,7 +3454,6 @@ object dmData: TdmData
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      BlobType = ftBlob
       Transliterate = False
     end
     object zqTodaysRepTransNOTES: TMemoField
@@ -3594,7 +3465,6 @@ object dmData: TdmData
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      BlobType = ftBlob
       Transliterate = False
     end
     object zqTodaysRepTransCATEGID: TLargeintField
@@ -3626,7 +3496,6 @@ object dmData: TdmData
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      BlobType = ftBlob
       Transliterate = False
     end
     object zqTodaysRepTransFOLLOWUPID: TLargeintField
@@ -3671,7 +3540,6 @@ object dmData: TdmData
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      BlobType = ftBlob
       Transliterate = False
     end
     object zqTodaysRepTransNUMOCCURRENCES: TLargeintField
@@ -3693,7 +3561,6 @@ object dmData: TdmData
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      BlobType = ftBlob
       Transliterate = False
     end
     object zqTodaysRepTransAUTORUNUSER: TMemoField
@@ -3705,7 +3572,6 @@ object dmData: TdmData
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      BlobType = ftBlob
       Transliterate = False
     end
   end
@@ -3803,7 +3669,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = False
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object zqBankAccountsPAYEE: TStringField
@@ -3831,7 +3696,6 @@ object dmData: TdmData
       Required = True
       Visible = False
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object zqBankAccounts2chstatus: TMemoField
@@ -3846,7 +3710,6 @@ object dmData: TdmData
       Required = False
       Visible = False
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object zqBankAccountsSTATUSDESCRIPTION1: TStringField
@@ -3966,7 +3829,6 @@ object dmData: TdmData
       ReadOnly = False
       Required = False
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object zqBankAccounts2chtransid: TLargeintField
@@ -3992,7 +3854,6 @@ object dmData: TdmData
       Required = False
       Visible = False
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object zqBankAccounts2chsubcategid: TLargeintField
@@ -4031,7 +3892,6 @@ object dmData: TdmData
       Required = True
       Visible = False
       OnGetText = ShowDBTextFields
-      BlobType = ftBlob
       Transliterate = False
     end
     object zqBankAccounts2chtransamount: TFloatField
@@ -4097,7 +3957,6 @@ object dmData: TdmData
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      BlobType = ftBlob
       Transliterate = False
     end
     object ztGridSettingsFIELDNAME: TMemoField
@@ -4109,7 +3968,6 @@ object dmData: TdmData
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      BlobType = ftBlob
       Transliterate = False
     end
     object ztGridSettingsCOLUMNINDEX: TLargeintField
@@ -4141,7 +3999,6 @@ object dmData: TdmData
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      BlobType = ftBlob
       Transliterate = False
     end
     object ztGridSettingsCAPTION: TMemoField
@@ -4153,7 +4010,6 @@ object dmData: TdmData
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      BlobType = ftBlob
       Transliterate = False
     end
   end
