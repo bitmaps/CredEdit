@@ -10,7 +10,7 @@ object frTransFilterList: TfrTransFilterList
   OnClose = FormClose
   OnCreate = FormCreate
   Position = poOwnerFormCenter
-  LCLVersion = '1.2.4.0'
+  LCLVersion = '1.7'
   object panFooter: TPanel
     Left = 0
     Height = 40
@@ -76,12 +76,12 @@ object frTransFilterList: TfrTransFilterList
     ChildSizing.ShrinkVertical = crsScaleChilds
     ChildSizing.Layout = cclLeftToRightThenTopToBottom
     ChildSizing.ControlsPerLine = 1
-    ClientHeight = 354
+    ClientHeight = 352
     ClientWidth = 726
     TabOrder = 0
     object dbgTranFilters: TDBGrid
       Left = 10
-      Height = 334
+      Height = 332
       Top = 10
       Width = 706
       Align = alClient

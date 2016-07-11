@@ -12,7 +12,7 @@ object frTransactionFilter: TfrTransactionFilter
   OnCloseQuery = FormCloseQuery
   OnShow = FormShow
   Position = poOwnerFormCenter
-  LCLVersion = '1.2.4.0'
+  LCLVersion = '1.7'
   object pBottom: TPanel
     Left = 0
     Height = 34
@@ -52,12 +52,12 @@ object frTransactionFilter: TfrTransactionFilter
     Width = 325
     BorderSpacing.Around = 10
     Caption = 'Between Dates'
-    ClientHeight = 82
+    ClientHeight = 80
     ClientWidth = 321
     TabOrder = 1
     object deFromDate: TDateEdit
       Left = 16
-      Height = 21
+      Height = 23
       Top = 42
       Width = 113
       CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
@@ -65,14 +65,14 @@ object frTransactionFilter: TfrTransactionFilter
       CancelCaption = 'Cancel'
       DateOrder = doYMd
       ButtonWidth = 23
-      CharCase = ecNormal
       NumGlyphs = 1
       MaxLength = 10
       TabOrder = 1
+      Text = '    /  /  '
     end
     object deToDate: TDateEdit
       Left = 168
-      Height = 21
+      Height = 23
       Top = 42
       Width = 113
       CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
@@ -80,17 +80,17 @@ object frTransactionFilter: TfrTransactionFilter
       CancelCaption = 'Cancel'
       DateOrder = doYMd
       ButtonWidth = 23
-      CharCase = ecNormal
       NumGlyphs = 1
       MaxLength = 10
       TabOrder = 2
+      Text = '    /  /  '
     end
     object cbPresetDates: TComboBox
       Left = 16
-      Height = 21
+      Height = 23
       Top = 9
       Width = 289
-      ItemHeight = 13
+      ItemHeight = 15
       ItemIndex = 0
       Items.Strings = (
         '[None]'
@@ -114,15 +114,15 @@ object frTransactionFilter: TfrTransactionFilter
     Width = 325
     BorderSpacing.Around = 10
     Caption = 'Payee'
-    ClientHeight = 48
+    ClientHeight = 46
     ClientWidth = 321
     TabOrder = 2
     object cbPayee: TComboBox
       Left = 16
-      Height = 21
+      Height = 23
       Top = 9
       Width = 289
-      ItemHeight = 13
+      ItemHeight = 15
       Style = csDropDownList
       TabOrder = 0
     end
@@ -135,7 +135,7 @@ object frTransactionFilter: TfrTransactionFilter
     Align = alBottom
     BorderSpacing.Around = 10
     Caption = 'Category'
-    ClientHeight = 48
+    ClientHeight = 46
     ClientWidth = 322
     TabOrder = 5
     object bCategory: TButton
@@ -155,15 +155,15 @@ object frTransactionFilter: TfrTransactionFilter
     Width = 325
     BorderSpacing.Around = 10
     Caption = 'Transaction Type'
-    ClientHeight = 47
+    ClientHeight = 45
     ClientWidth = 321
     TabOrder = 3
     object cbTransType: TComboBox
       Left = 16
-      Height = 21
+      Height = 23
       Top = 9
       Width = 289
-      ItemHeight = 13
+      ItemHeight = 15
       Items.Strings = (
         '[All Transactions]'
         'Withdrawal'
@@ -181,12 +181,12 @@ object frTransactionFilter: TfrTransactionFilter
     Width = 325
     BorderSpacing.Around = 10
     Caption = 'Between Amounts'
-    ClientHeight = 46
+    ClientHeight = 44
     ClientWidth = 321
     TabOrder = 4
     object eAmountFrom: TEdit
       Left = 16
-      Height = 21
+      Height = 23
       Top = 8
       Width = 121
       Alignment = taRightJustify
@@ -195,7 +195,7 @@ object frTransactionFilter: TfrTransactionFilter
     end
     object eAmountTo: TEdit
       Left = 182
-      Height = 21
+      Height = 23
       Top = 8
       Width = 121
       Alignment = taRightJustify
@@ -211,21 +211,21 @@ object frTransactionFilter: TfrTransactionFilter
     Align = alTop
     BorderSpacing.Around = 10
     Caption = 'Filter Name'
-    ClientHeight = 62
+    ClientHeight = 60
     ClientWidth = 322
     TabOrder = 0
     object eFilterName: TEdit
       Left = 16
-      Height = 21
+      Height = 23
       Top = 9
       Width = 289
       TabOrder = 0
     end
     object cbShowFilters: TCheckBox
       Left = 16
-      Height = 17
+      Height = 19
       Top = 38
-      Width = 228
+      Width = 252
       Caption = 'Show in the Bank Accounts filter drop down'
       TabOrder = 1
     end
