@@ -215,8 +215,6 @@ type
     zqTransFiltersCATEGORY: TStringField;
     zqTransFiltersDATEFILTER: TFloatField;
     zqTransFiltersDATERANGE: TStringField;
-    zqTransFiltersFRMFROMDATE: TMemoField;
-    zqTransFiltersFRMTODATE: TMemoField;
     zqTransFiltersFROMAMOUNT: TFloatField;
     zqTransFiltersFROMDATE: TMemoField;
     zqTransFiltersPAYEENAME: TMemoField;
