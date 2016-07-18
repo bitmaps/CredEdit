@@ -74,7 +74,6 @@ type
     ToDate : string;
   end;
 
-
   TfrMain = class(TForm)
     bAssetsDelete: TSpeedButton;
     bAssetsEdit: TSpeedButton;
@@ -506,7 +505,6 @@ type
     procedure tsRepeatingTransactionsShow(Sender: TObject);
     procedure tsReportsShow(Sender: TObject);
     procedure tvNavigationChange(Sender: TObject; Node: TTreeNode);
-    procedure tvNavigationClick(Sender: TObject);
     procedure AutoSizeCol(Grid: TStringGrid; Column: integer);
     procedure tvNavigationDeletion(Sender: TObject; Node: TTreeNode);
     procedure tvNavigationMouseDown(Sender: TObject; Button: TMouseButton;
@@ -2758,6 +2756,14 @@ var BankID : integer;
   DateStr : string;
   ReconBalance, TotalBalance, DifBalance : Real;
 begin
+  //Setup default display values
+  ReconBalance := 0;
+  TotalBalance := 0;
+  DifBalance := 0;
+  lAccountBalance.Caption:= 'Account Balance: '+CurrencySymbol+dmData.ConvertFloatToCurrencyString(TotalBalance);
+  lReconciledBalance.Caption:= 'Reconciled Balance: '+CurrencySymbol+dmData.ConvertFloatToCurrencyString(ReconBalance);
+  lDifferenceBalance.Caption:= 'Difference Balance: '+CurrencySymbol+dmData.ConvertFloatToCurrencyString(DifBalance);
+
   if PAccountRec(tvNavigation.Selected.Data) = nil then
   begin
     BankID := 0;
@@ -2970,12 +2976,6 @@ begin
 
   cbRepGroup.Visible:= (Node.Text <> 'Income Vs Expenses');
   cbItemLimit.Visible:= (Node.Text <> 'Income Vs Expenses');
-end;
-
-procedure TfrMain.tvNavigationClick(Sender: TObject);
-var parentNode : TTreeNode;
-begin
-
 end;
 
 procedure TfrMain.CreateBankAccountItems;
