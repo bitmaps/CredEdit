@@ -6,7 +6,9 @@ object dmData: TdmData
   Width = 998
   object ztAccountList: TZTable
     Connection = zcDatabaseConnection
-    TableName = 'ACCOUNTLIST_V1'
+    SortedFields = 'ACCOUNTNAME'
+    TableName = 'ACCOUNTS'
+    IndexFieldNames = 'ACCOUNTNAME Asc'
     left = 168
     top = 16
     object ztAccountListACCOUNTID: TLargeintField
@@ -218,7 +220,8 @@ object dmData: TdmData
   end
   object ztCategory: TZTable
     Connection = zcDatabaseConnection
-    TableName = 'CATEGORY_V1'
+    Active = True
+    TableName = 'CATEGORIES'
     left = 472
     top = 16
     object ztCategoryCATEGID: TLargeintField
@@ -277,7 +280,7 @@ object dmData: TdmData
   end
   object ztAssets: TZTable
     Connection = zcDatabaseConnection
-    TableName = 'ASSETS_V1'
+    TableName = 'ASSETS'
     left = 240
     top = 16
     object ztAssetsASSETID: TLargeintField
@@ -414,7 +417,8 @@ object dmData: TdmData
   end
   object ztSubCategory: TZTable
     Connection = zcDatabaseConnection
-    TableName = 'SUBCATEGORY_V1'
+    Active = True
+    TableName = 'SUB_CATEGORIES'
     left = 624
     top = 152
     object ztSubCategorySUBCATEGID: TLargeintField
@@ -473,7 +477,7 @@ object dmData: TdmData
     AfterOpen = ztPayeeAfterOpen
     AfterRefresh = ztPayeeAfterRefresh
     OnCalcFields = ztPayeeCalcFields
-    TableName = 'PAYEE_V1'
+    TableName = 'PAYEES'
     left = 832
     top = 16
     object ztPayeePAYEEID: TLargeintField
@@ -591,7 +595,7 @@ object dmData: TdmData
   end
   object ztCheckingAccount: TZTable
     Connection = zcDatabaseConnection
-    TableName = 'CHECKINGACCOUNT_V1'
+    TableName = 'TRANSACTIONS'
     left = 560
     top = 16
     object ztCheckingAccountTRANSID: TLargeintField
@@ -948,7 +952,7 @@ object dmData: TdmData
   end
   object ztInfoTable: TZTable
     Connection = zcDatabaseConnection
-    TableName = 'INFOTABLE_V1'
+    TableName = 'USER_SETTINGS'
     left = 656
     top = 16
   end
@@ -1454,7 +1458,7 @@ object dmData: TdmData
   end
   object ztSplitTransactions: TZTable
     Connection = zcDatabaseConnection
-    TableName = 'SPLITTRANSACTIONS_V1'
+    TableName = 'SPLIT_TRANSACTIONS'
     left = 520
     top = 152
     object ztSplitTransactionsSPLITTRANSID: TLargeintField
@@ -1749,7 +1753,7 @@ object dmData: TdmData
   end
   object ztRepeatTransactions: TZTable
     Connection = zcDatabaseConnection
-    TableName = 'REPEATTRANSACTIONS_V1'
+    TableName = 'REPEAT_TRANSACTIONS'
     left = 168
     top = 152
     object ztRepeatTransactionsREPTRANSID: TLargeintField
@@ -2308,7 +2312,7 @@ object dmData: TdmData
   end
   object ztTransFilter: TZTable
     Connection = zcDatabaseConnection
-    TableName = 'TRANSFILTERS'
+    TableName = 'TRANS_FILTERS'
     left = 705
     top = 152
     object ztTransFilterTRANSFILTERID: TLargeintField
@@ -3180,7 +3184,7 @@ object dmData: TdmData
   end
   object ztPayeeImport: TZTable
     Connection = zcDatabaseConnection
-    TableName = 'PAYEEIMPORT'
+    TableName = 'PAYEE_IMPORT'
     left = 904
     top = 16
     object ztPayeeImportPAYEEIMPORTID: TLargeintField
@@ -3397,7 +3401,7 @@ object dmData: TdmData
   end
   object ztRepeatSplitTransactions: TZTable
     Connection = zcDatabaseConnection
-    TableName = 'REPEATSPLITTRANSACTIONS_V1'
+    TableName = 'REPEAT_SPLIT_TRANSACTIONS'
     left = 312
     top = 152
     object ztRepeatSplitTransactionsSPLITTRANSID: TLargeintField
